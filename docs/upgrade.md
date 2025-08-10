@@ -1,16 +1,16 @@
 # Upgrade Guide
 - - -
 
-# Upgrading to V5
-So you have decided to upgrade to v5! **Congratulations**!!
+# Upgrading to V6
+So you have decided to upgrade to v6! **Congratulations**!!
 
-Phalcon v5 contains a lot of changes in components and interfaces. Upgrading is going to be a time-consuming task, depending on how big and complex your application is. We hope that this document will make your upgrade journey smoother and also offer insight as to why certain changes were made and how they will help the framework in the future.
+Phalcon v6 contains a lot of changes in components and interfaces. Upgrading is going to be a time-consuming task, depending on how big and complex your application is. We hope that this document will make your upgrade journey smoother and also offer insight as to why certain changes were made and how they will help the framework in the future.
 
-We will outline the areas that you need to pay attention to and make necessary changes so that your code can run as smoothly as it has been with v4. Although the changes are significant, it is more of a methodical task than a daunting one.
+We will outline the areas that you need to pay attention to and make necessary changes so that your code can run as smoothly as it has been with v5. Although the changes are significant, it is more of a methodical task than a daunting one.
 
 ## Requirements
-### PHP 8.0
-Phalcon v5 supports only PHP 8.0 and above. PHP 8.0 [active support][php-support] has already expired, including security fixes. We will be supporting this version for a while longer, offering developers more time to upgrade their applications.
+### PHP 8.1
+Phalcon v6 supports only PHP 8.1 and above. PHP 8.1 [active support][php-support] has already expired, including security fixes. We will be supporting this version for a while longer, offering developers more time to upgrade their applications.
 
 Since Phalcon 4, we have been following the PHP releases and adjusting Phalcon accordingly to work with those releases.
 
@@ -19,7 +19,7 @@ Phalcon can be installed using PECL.
 
 ```
 pecl install phalcon
-// pecl install phalcon-5.9.3
+// pecl install phalcon-6.0.0
 ```
 
 **Alternative installation**
@@ -36,7 +36,7 @@ Compile Phalcon
 
 ```bash
 cd cphalcon/
-git checkout tags/5.9.3 ./
+git checkout tags/6.0.0 ./
 zephir fullclean
 zephir build
 ```

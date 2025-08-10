@@ -99,9 +99,19 @@ hide:
         <td class="version-td-right">8.0-8.3</td>
     </tr>
     <tr>
-        <td class="version-td-center current-version">5.8</td>
+        <td class="version-td-center previous-version">5.8</td>
         <td class="version-td-center">Jun 09, 2024</td>
         <td class="version-td-right">8.0-8.3</td>
+    </tr>
+    <tr>
+        <td class="version-td-center previous-version">5.9</td>
+        <td class="version-td-center">Mar 10, 2025</td>
+        <td class="version-td-right">8.1-8.4</td>
+    </tr>
+    <tr>
+        <td class="version-td-center current-version">6.0</td>
+        <td class="version-td-center">TBD</td>
+        <td class="version-td-right">8.1-TBD</td>
     </tr>
     </tbody>
 </table>
