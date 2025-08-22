@@ -142,7 +142,7 @@ The above code will prefix all the URLs with `/portal/`, allowing you to _group_
 <?php
 
 use Phalcon\Mvc\Url;
-use Phalcon\Mvc\Controller
+use Phalcon\Mvc\Controller;
 
 /**
  * @property Url $url
