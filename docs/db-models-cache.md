@@ -371,7 +371,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->belongsTo(
             'inv_cst_id',
@@ -453,7 +453,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->belongsTo(
             'inv_cst_id',
@@ -542,7 +542,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->belongsTo(
             'inv_cst_id',

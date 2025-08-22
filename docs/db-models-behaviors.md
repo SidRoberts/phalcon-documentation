@@ -36,7 +36,7 @@ class Invoices extends Model
      */
     public $inv_title;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->addBehavior(
             new Timestampable(
@@ -68,7 +68,7 @@ This behavior receives an array of options, the first level key must be an event
 
 use Phalcon\Mvc\Model\Behavior\Timestampable;
 
-public function initialize()
+public function initialize(): void
 {
     $this->addBehavior(
         new Timestampable(
@@ -92,7 +92,7 @@ use DateTime;
 use DateTimeZone;
 use Phalcon\Mvc\Model\Behavior\Timestampable;
 
-public function initialize()
+public function initialize(): void
 {
     $this->addBehavior(
         new Timestampable(
@@ -149,7 +149,7 @@ class Invoices extends Model
      */
     public $inv_title;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->addBehavior(
             new SoftDelete(
@@ -281,7 +281,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->addBehavior(
             new Blameable()

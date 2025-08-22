@@ -74,7 +74,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->hasOne(
             'inv_cst_id',
@@ -163,7 +163,7 @@ class Invoices extends Model
     public $inv_total;
     public $inv_created_at;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->hasManyToMany(
             'inv_id',
@@ -203,7 +203,7 @@ class InvoicesProducts extends Model
     public $ixp_inv_id;
     public $ixp_prd_id;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->belongsTo(
             'ixp_inv_id',
@@ -242,7 +242,7 @@ class Products extends Model
     public $prd_price;
     public $prd_created_at;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->hasMany(
             'prd_id',
@@ -287,7 +287,7 @@ class Invoices extends Model
     public $inv_total;
     public $inv_created_at;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->hasManyToMany(
             'inv_id',
@@ -328,7 +328,7 @@ class Invoices extends Model
     public $inv_total;
     public $inv_created_at;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->hasMany(
             'inv_cst_id',
@@ -423,7 +423,7 @@ class Products extends Model
     public $prd_type_flag;
     public $prd_name;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->hasOne(
             [
@@ -768,7 +768,7 @@ class Invoices extends Model
     public $inv_total;
     public $inv_created_at;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->hasManyToMany(
             'inv_id',
@@ -800,7 +800,7 @@ class Invoices extends Model
     public $inv_total;
     public $inv_created_at;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->hasManyToMany(
             'inv_id',
@@ -835,7 +835,7 @@ class Parts extends Model
     public $par_type_flag;
     public $par_name;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->hasMany(
             'par_id',
@@ -900,7 +900,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->hasOne(
             'inv_cst_id',
@@ -942,7 +942,7 @@ class Invoices extends Model
     public $inv_total;
     public $inv_created_at;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->hasManyToMany(
             'inv_id',
@@ -979,7 +979,7 @@ class Invoices extends Model
     public $inv_total;
     public $inv_created_at;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->hasManyToMany(
             'inv_id',
@@ -998,7 +998,7 @@ class Invoices extends Model
 
 class Companies extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->hasMany(
             'id',
@@ -1089,7 +1089,7 @@ class InvoicesProducts extends Model
     public $ixp_inv_id;
     public $ixp_prd_id;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->belongsTo(
             'ixp_inv_id',
@@ -1135,7 +1135,7 @@ class Products extends Model
     public $prd_price;
     public $prd_created_at;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->hasMany(
             'prd_id',
@@ -1167,7 +1167,7 @@ class InvoicesProducts extends Model
     public $ixp_inv_id;
     public $ixp_prd_id;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->belongsTo(
             'ixp_inv_id',
@@ -1219,7 +1219,7 @@ class Products extends Model
     public $prd_price;
     public $prd_created_at;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->hasMany(
             'prd_id',

@@ -196,7 +196,7 @@ use Phalcon\Filter\Validation\Validator\PresenceOf;
 
 class MyValidation extends Validation
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->add(
             'name',
@@ -1916,7 +1916,7 @@ use Phalcon\Filter\Validation;
  */
 class LoginValidation extends Validation
 {
-    public function initialize()
+    public function initialize(): void
     {
         // ...
     }
@@ -2051,7 +2051,7 @@ class CompanyValidation extends Validation
      */
     protected $phoneValidation;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->phoneValidation = new PhoneValidation();
     }

@@ -470,7 +470,7 @@ final protected function initialize(
     mixed $key,
     mixed $table,
     mixed $schema
-)
+): void
 ```
 Initialize the metadata for certain table
 

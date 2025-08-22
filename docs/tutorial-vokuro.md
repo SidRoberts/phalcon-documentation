@@ -535,7 +535,7 @@ class SuccessLogins extends Model
      */
     public $userAgent;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->belongsTo(
             'usersId',
@@ -816,7 +816,7 @@ class SignUpForm extends Form
     public function initialize(
         string $entity = null,
         array $options = []
-    ) {
+    ): void {
         $name = new Text('name');
         $name->setLabel('Name');
         $name->addValidators(
@@ -1311,7 +1311,7 @@ class Users extends Model
 {
     // ...
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->belongsTo(
             'profilesId',

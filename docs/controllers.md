@@ -80,7 +80,7 @@ use Phalcon\Tag;
  */
 class InvoicesController extends Controller
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->tag->title()->set('Invoices Management');
     }

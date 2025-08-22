@@ -120,7 +120,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->hasMany(
             'inv_cst_id',

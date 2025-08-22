@@ -765,7 +765,7 @@ use Phalcon\Mvc\Router\Group;
 
 class InvoicesRoutes extends Group
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->setPaths(
             [

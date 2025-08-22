@@ -453,7 +453,7 @@ use Phalcon\Forms\Form;
 
 class CustomersForm extends Form
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->add(
             new Text(
@@ -501,7 +501,7 @@ class CustomersForm extends Form
     public function initialize(
         Customers $customer,
         array $options
-    ) {
+    ): void {
         $mode = $options['mode'] ?? 'view';
         if ('edit' === $mode) {
             $this->add(
@@ -1036,7 +1036,7 @@ use Phalcon\Forms\Form;
 
 class ContactForm extends Form
 {
-    public function initialize()
+    public function initialize(): void
     {
         // ...
     }
@@ -1183,7 +1183,7 @@ use Phalcon\Security;
  */
 class ContactForm extends Form
 {
-    public function initialize()
+    public function initialize(): void
     {
         // Set the same form as the entity
         $this->setEntity($this);

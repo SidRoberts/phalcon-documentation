@@ -38,7 +38,7 @@ class Invoices extends Model
 
     public $inv_created_at;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->setSource('co_invoices');
 
@@ -73,7 +73,7 @@ class Customers extends Model
 
     public $cst_created_at;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->setSource('co_customers');
 

@@ -279,7 +279,7 @@ class Customers extends Model
      */
     public $cst_name_first;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->setSource('customers');
     }

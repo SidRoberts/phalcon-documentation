@@ -149,7 +149,7 @@ use Phalcon\Mvc\Controller
  */
 class InvoicesController extends Controller
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->url->setBaseUri('/portal/');
     }

@@ -134,7 +134,7 @@ use Phalcon\Mvc\Model\Behavior\Timestampable;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->addBehavior(
             new Timestampable(
@@ -1171,7 +1171,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->allowEmptyStringValues(
             [
@@ -1201,7 +1201,7 @@ use Phalcon\Mvc\Model;
 
 class InvoicesXProducts extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->belongsTo(
             'ixp_inv_id',
@@ -1231,7 +1231,7 @@ use Phalcon\Mvc\Model;
 
 class Customers extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->hasMany(
             'cst_id',
@@ -1264,7 +1264,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->hasManyToMany(
             'inv_id',
@@ -1297,7 +1297,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->hasOne(
             'inv_cst_id',
@@ -1324,7 +1324,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->keepSnapshots(true);
     }
@@ -1359,7 +1359,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->skipAttributes(
             [
@@ -1386,7 +1386,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->skipAttributesOnCreate(
             [
@@ -1413,7 +1413,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->skipAttributesOnUpdate(
             [
@@ -1440,7 +1440,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->useDynamicUpdate(true);
     }
@@ -1518,7 +1518,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->setSource('co_invoices');
     }
@@ -2387,7 +2387,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->setSource('co_invoices');
     }
@@ -3149,7 +3149,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->skipAttributes(
             [
@@ -3234,7 +3234,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->useDynamicUpdate(true);
     }
@@ -3346,7 +3346,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->keepSnapshots(true);
     }
@@ -3408,7 +3408,7 @@ class Invoices extends Model
     public $inv_total;
     public $inv_created_at;
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->keepSnapshots(true);
     }
@@ -3603,7 +3603,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->setSchema('invoices');
     }
@@ -3667,7 +3667,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->setConnectionService('dbPostgres');
     }
@@ -3731,7 +3731,7 @@ use Phalcon\Mvc\Model;
 
 class Invoices extends Model
 {
-    public function initialize()
+    public function initialize(): void
     {
         $this->setReadConnectionService('mysqlRead');
 

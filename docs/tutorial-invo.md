@@ -844,7 +844,7 @@ use Phalcon\Validation\Validator\Numericality;
 
 class ProductsForm extends Form
 {
-    public function initialize($entity = null, $options = [])
+    public function initialize($entity = null, $options = []): void
     {
         if (!isset($options['edit'])) {
             $this->add((new Text('id'))->setLabel('Id'));
@@ -1332,7 +1332,7 @@ class Products extends Model
 {
     // ...
 
-    public function initialize()
+    public function initialize(): void
     {
         $this->belongsTo(
             'product_types_id',
@@ -1663,7 +1663,7 @@ When you navigate through the application, you will see that the title changes d
 
 class ProductsController extends ControllerBase
 {
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -1685,7 +1685,7 @@ use Phalcon\Mvc\Controller;
 
 class ControllerBase extends Controller
 {
-    protected function initialize()
+    protected function initialize(): void
     {
         $this->tag->title()
                   ->prepend('INVO | ')
