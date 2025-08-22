@@ -435,7 +435,7 @@ class Application
      */
     protected function initializeProviders(): void
     {
-        $filename = $this->rootPath 
+        $filename = $this->rootPath
                  . '/configs/providers.php';
         if (!file_exists($filename) || !is_readable($filename)) {
             throw new Exception(
@@ -538,9 +538,9 @@ class SuccessLogins extends Model
     public function initialize()
     {
         $this->belongsTo(
-            'usersId', 
-            Users::class, 
-            'id', 
+            'usersId',
+            Users::class,
+            'id',
             [
                 'alias' => 'user',
             ]
@@ -590,28 +590,28 @@ The available controllers, actions, and routes for Vökuró are:
 
 | Controller    | Action           | Route                     | Description                                 |
 |---------------|------------------|---------------------------|---------------------------------------------|
-| `About`       | `index`          | `/about`                  | Shows the `about` page                      | 
-| `Index`       | `index`          | `/`                       | Default action - home page                  | 
-| `Permissions` | `index`          | `/permissions`            | View/change permissions for a profile level | 
-| `Privacy`     | `index`          | `/privacy`                | View the privacy page                       | 
-| `Profiles`    | `index`          | `/profiles`               | View profiles default page                  | 
-| `Profiles`    | `create`         | `/profiles/create`        | Create profile                              | 
-| `Profiles`    | `delete`         | `/profiles/delete`        | Delete profile                              | 
-| `Profiles`    | `edit`           | `/profiles/edit`          | Edit profile                                | 
-| `Profiles`    | `search`         | `/profiles/search`        | Search profiles                             | 
-| `Session`     | `index`          | `/session`                | Session default action                      | 
-| `Session`     | `forgotPassword` | `/session/forgotPassword` | Forget password                             | 
-| `Session`     | `login`          | `/session/login`          | Login                                       | 
-| `Session`     | `logout`         | `/session/logout`         | Logout                                      | 
-| `Session`     | `signup`         | `/session/signup`         | Signup                                      | 
-| `Terms`       | `index`          | `/terms`                  | View the terms page                         | 
-| `UserControl` | `confirmEmail`   | `/confirm`                | Confirm email                               | 
-| `UserControl` | `resetPassword`  | `/reset-password`         | Reset password                              | 
-| `Users`       | `index`          | `/users`                  | Users default screen                        | 
-| `Users`       | `changePassword` | `/users/changePassword`   | Change user password                        | 
-| `Users`       | `create`         | `/users/create`           | Create user                                 | 
-| `Users`       | `delete`         | `/users/delete`           | Delete user                                 | 
-| `Users`       | `edit`           | `/users/edit`             | Edit user                                   | 
+| `About`       | `index`          | `/about`                  | Shows the `about` page                      |
+| `Index`       | `index`          | `/`                       | Default action - home page                  |
+| `Permissions` | `index`          | `/permissions`            | View/change permissions for a profile level |
+| `Privacy`     | `index`          | `/privacy`                | View the privacy page                       |
+| `Profiles`    | `index`          | `/profiles`               | View profiles default page                  |
+| `Profiles`    | `create`         | `/profiles/create`        | Create profile                              |
+| `Profiles`    | `delete`         | `/profiles/delete`        | Delete profile                              |
+| `Profiles`    | `edit`           | `/profiles/edit`          | Edit profile                                |
+| `Profiles`    | `search`         | `/profiles/search`        | Search profiles                             |
+| `Session`     | `index`          | `/session`                | Session default action                      |
+| `Session`     | `forgotPassword` | `/session/forgotPassword` | Forget password                             |
+| `Session`     | `login`          | `/session/login`          | Login                                       |
+| `Session`     | `logout`         | `/session/logout`         | Logout                                      |
+| `Session`     | `signup`         | `/session/signup`         | Signup                                      |
+| `Terms`       | `index`          | `/terms`                  | View the terms page                         |
+| `UserControl` | `confirmEmail`   | `/confirm`                | Confirm email                               |
+| `UserControl` | `resetPassword`  | `/reset-password`         | Reset password                              |
+| `Users`       | `index`          | `/users`                  | Users default screen                        |
+| `Users`       | `changePassword` | `/users/changePassword`   | Change user password                        |
+| `Users`       | `create`         | `/users/create`           | Create user                                 |
+| `Users`       | `delete`         | `/users/delete`           | Delete user                                 |
+| `Users`       | `edit`           | `/users/edit`             | Edit user                                   |
 
 
 ## Views
@@ -619,7 +619,7 @@ The last element of the [Model-View-Controller][mvc] pattern is the views. Vöku
 
 !!! info "NOTE"
 
-    Generally, one would expect to see a `views` folder under the `/src` folder. Vökuró uses a slightly different approach, storing all the view files under `/themes/vokuro`. 
+    Generally, one would expect to see a `views` folder under the `/src` folder. Vökuró uses a slightly different approach, storing all the view files under `/themes/vokuro`.
 
 The views directory contains directories that map to each controller. Inside each of those directories, `.volt` files are mapped to each action. So for example the route:
 
@@ -643,26 +643,26 @@ The available views are:
 
 | Controller    | Action           | View                           | Description                                 |
 |---------------|------------------|--------------------------------|---------------------------------------------|
-| `About`       | `index`          | `/about/index.volt`            | Shows the `about` page                      | 
-| `Index`       | `index`          | `/index/index.volt`            | Default action - home page                  | 
-| `Permissions` | `index`          | `/permissions/index.volt`      | View/change permissions for a profile level | 
-| `Privacy`     | `index`          | `/privacy/index.volt`          | View the privacy page                       | 
-| `Profiles`    | `index`          | `/profiles/index.volt`         | View profiles default page                  | 
-| `Profiles`    | `create`         | `/profiles/create.volt`        | Create profile                              | 
-| `Profiles`    | `delete`         | `/profiles/delete.volt`        | Delete profile                              | 
-| `Profiles`    | `edit`           | `/profiles/edit.volt`          | Edit profile                                | 
-| `Profiles`    | `search`         | `/profiles/search.volt`        | Search profiles                             | 
-| `Session`     | `index`          | `/session/index.volt`          | Session default action                      | 
-| `Session`     | `forgotPassword` | `/session/forgotPassword.volt` | Forget password                             | 
-| `Session`     | `login`          | `/session/login.volt`          | Login                                       | 
-| `Session`     | `logout`         | `/session/logout.volt`         | Logout                                      | 
-| `Session`     | `signup`         | `/session/signup.volt`         | Signup                                      | 
-| `Terms`       | `index`          | `/terms/index.volt`            | View the terms page                         | 
-| `Users`       | `index`          | `/users/index.volt`            | Users default screen                        | 
-| `Users`       | `changePassword` | `/users/changePassword.volt`   | Change user password                        | 
-| `Users`       | `create`         | `/users/create.volt`           | Create user                                 | 
-| `Users`       | `delete`         | `/users/delete.volt`           | Delete user                                 | 
-| `Users`       | `edit`           | `/users/edit.volt`             | Edit user                                   | 
+| `About`       | `index`          | `/about/index.volt`            | Shows the `about` page                      |
+| `Index`       | `index`          | `/index/index.volt`            | Default action - home page                  |
+| `Permissions` | `index`          | `/permissions/index.volt`      | View/change permissions for a profile level |
+| `Privacy`     | `index`          | `/privacy/index.volt`          | View the privacy page                       |
+| `Profiles`    | `index`          | `/profiles/index.volt`         | View profiles default page                  |
+| `Profiles`    | `create`         | `/profiles/create.volt`        | Create profile                              |
+| `Profiles`    | `delete`         | `/profiles/delete.volt`        | Delete profile                              |
+| `Profiles`    | `edit`           | `/profiles/edit.volt`          | Edit profile                                |
+| `Profiles`    | `search`         | `/profiles/search.volt`        | Search profiles                             |
+| `Session`     | `index`          | `/session/index.volt`          | Session default action                      |
+| `Session`     | `forgotPassword` | `/session/forgotPassword.volt` | Forget password                             |
+| `Session`     | `login`          | `/session/login.volt`          | Login                                       |
+| `Session`     | `logout`         | `/session/logout.volt`         | Logout                                      |
+| `Session`     | `signup`         | `/session/signup.volt`         | Signup                                      |
+| `Terms`       | `index`          | `/terms/index.volt`            | View the terms page                         |
+| `Users`       | `index`          | `/users/index.volt`            | Users default screen                        |
+| `Users`       | `changePassword` | `/users/changePassword.volt`   | Change user password                        |
+| `Users`       | `create`         | `/users/create.volt`           | Create user                                 |
+| `Users`       | `delete`         | `/users/delete.volt`           | Delete user                                 |
+| `Users`       | `edit`           | `/users/edit.volt`             | Edit user                                   |
 
 The `/index.volt` file contains the main layout of the page, including stylesheets, javascript references, etc. The `/layouts` directory contains different layouts that are used in the application, for instance, a `public` one if the user is not logged in, and a `private` one for logged-in users. The individual views are injected into the layouts and constructed on the final page.
 
@@ -814,7 +814,7 @@ class SignUpForm extends Form
      * @param array       $options
      */
     public function initialize(
-        string $entity = null, 
+        string $entity = null,
         array $options = []
     ) {
         $name = new Text('name');
@@ -894,7 +894,7 @@ class SignUpForm extends Form
         $this->add($confirmPassword);
 
         $terms = new Check(
-            'terms', 
+            'terms',
             [
                 'value' => 'yes',
             ]
@@ -928,7 +928,7 @@ class SignUpForm extends Form
 
         $this->add(
             new Submit(
-                'Sign Up', 
+                'Sign Up',
                 [
                     'class' => 'btn btn-success',
                 ]
@@ -961,7 +961,7 @@ In the `initialize` method we are setting up all the HTML elements we need. Thes
 | `name`            | `Text`     | The name of the user         |
 | `email`           | `Text`     | The email for the account    |
 | `password`        | `Password` | The password for the account |
-| `confirmPassword` | `Password` | Password confirmation        | 
+| `confirmPassword` | `Password` | Password confirmation        |
 | `terms`           | `Check`    | Accept the terms checkbox    |
 | `csrf`            | `Hidden`   | CSRF protection element      |
 | `Sign Up`         | `Submit`   | Submit button                |
@@ -990,7 +990,7 @@ $email->addValidators(
 );
 
 $this->add($email);
-``` 
+```
 
 First, we create a `Text` object and set its name to `email`. We also set the label of the element to `E-Mail`. After that, we attach various validators to the element. These will be invoked after the user submits data, and that data is passed in the form.
 
@@ -1018,10 +1018,10 @@ Our view now needs to _render_ the elements:
 
 ```twig
 {# ... #}
-{% 
-    set isEmailValidClass = form.messages('email') ? 
-        'form-control is-invalid' : 
-        'form-control' 
+{%
+    set isEmailValidClass = form.messages('email') ?
+        'form-control is-invalid' :
+        'form-control'
 %}
 {# ... #}
 
@@ -1031,23 +1031,23 @@ Our view now needs to _render_ the elements:
     {# ... #}
 
     <div class="form-group row">
-        {{ 
+        {{
             form.label(
-                'email', 
+                'email',
                 [
                     'class': 'col-sm-2 col-form-label'
                 ]
-            ) 
+            )
         }}
         <div class="col-sm-10">
-            {{ 
+            {{
                 form.render(
-                    'email', 
+                    'email',
                     [
-                        'class': isEmailValidClass, 
+                        'class': isEmailValidClass,
                         'placeholder': 'Email'
                     ]
-                ) 
+                )
             }}
             <div class="invalid-feedback">
                 {{ form.messages('email') }}
@@ -1058,13 +1058,13 @@ Our view now needs to _render_ the elements:
     {# ... #}
     <div class="form-group row">
         <div class="col-sm-10">
-            {{ 
+            {{
                 form.render(
-                    'csrf', 
+                    'csrf',
                     [
                         'value': security.getToken()
                     ]
-                ) 
+                )
             }}
             {{ form.messages('csrf') }}
 
@@ -1247,7 +1247,7 @@ $user = Users::findFirst(
         'conditions' => 'id = :id:',
         'bind'       => [
             'id' => 7,
-        ] 
+        ]
     ]
 );
 
@@ -1256,7 +1256,7 @@ $logins = SuccessLogin::find(
         'conditions' => 'userId = :userId:',
         'bind'       => [
             'userId' => 7,
-        ] 
+        ]
     ]
 );
 ```
@@ -1277,7 +1277,7 @@ $user = Users::findFirst(
         'conditions' => 'id = :id:',
         'bind'       => [
             'id' => 7,
-        ] 
+        ]
     ]
 );
 
@@ -1314,9 +1314,9 @@ class Users extends Model
     public function initialize()
     {
         $this->belongsTo(
-            'profilesId', 
-            Profiles::class, 
-            'id', 
+            'profilesId',
+            Profiles::class,
+            'id',
             [
                 'alias'    => 'profile',
                 'reusable' => true,
@@ -1324,9 +1324,9 @@ class Users extends Model
         );
 
         $this->hasMany(
-            'id', 
-            SuccessLogins::class, 
-            'usersId', 
+            'id',
+            SuccessLogins::class,
+            'usersId',
             [
                 'alias'      => 'successLogins',
                 'foreignKey' => [
@@ -1337,9 +1337,9 @@ class Users extends Model
         );
 
         $this->hasMany(
-            'id', 
-            PasswordChanges::class, 
-            'usersId', 
+            'id',
+            PasswordChanges::class,
+            'usersId',
             [
                 'alias'      => 'passwordChanges',
                 'foreignKey' => [
@@ -1350,8 +1350,8 @@ class Users extends Model
         );
 
         $this->hasMany(
-            'id', 
-            ResetPasswords::class, 
+            'id',
+            ResetPasswords::class,
             'usersId', [
             'alias'      => 'resetPasswords',
             'foreignKey' => [
@@ -1392,8 +1392,8 @@ class Users extends Model
     {
         if (true === empty($this->password)) {
             $tempPassword = preg_replace(
-                '/[^a-zA-Z0-9]/', 
-                '', 
+                '/[^a-zA-Z0-9]/',
+                '',
                 base64_encode(openssl_random_pseudo_bytes(12))
             );
 
@@ -1486,7 +1486,7 @@ class Users extends Model
         $validator = new Validation();
 
         $validator->add(
-            'email', 
+            'email',
             new Uniqueness(
                 [
                     "message" => "The email is already registered",

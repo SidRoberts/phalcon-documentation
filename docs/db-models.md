@@ -31,7 +31,7 @@ class Invoices extends Model
 use MyApp\Models\Invoices;
 
 /**
- * Create an invoice 
+ * Create an invoice
  */
 $invoice = new Invoices();
 
@@ -81,7 +81,7 @@ if (false === $result) {
 
 ```php
 final public function __construct(
-    mixed $data = null, 
+    mixed $data = null,
     DiInterface $container = null,
     ManagerInterface $modelsManager = null
 )
@@ -96,7 +96,7 @@ Handles method calls when a method is not implemented. Throws [Phalcon\Mvc\Model
 
 ```php
 public static function __callStatic(
-    string $method, 
+    string $method,
     array $arguments
 ): mixed
 ```
@@ -182,8 +182,8 @@ class Invoices extends Model
 
 ```php
 public function assign(
-    mixed $data, 
-    array $whiteList = null, 
+    mixed $data,
+    array $whiteList = null,
     array $dataColumnMap = null
 ): ModelInterface
 ```
@@ -287,8 +287,8 @@ echo 'AVG [Customer: 1] ', $average, PHP_EOL;
 
 ```php
 public static function cloneResult(
-    ModelInterface $base, 
-    array $data, 
+    ModelInterface $base,
+    array $data,
     int $dirtyState = 0
 ): ModelInterface
 ```
@@ -313,10 +313,10 @@ $invoice = Invoices::cloneResult(
 
 ```php
 public static function cloneResultMap(
-    mixed $base, 
-    array $data, 
-    array $columnMap, 
-    int $dirtyState = 0, 
+    mixed $base,
+    array $data,
+    array $columnMap,
+    int $dirtyState = 0,
     bool $keepSnapshots = null
 ): ModelInterface
 ```
@@ -341,8 +341,8 @@ $invoice = Invoices::cloneResultMap(
 
 ```php
 public static function cloneResultMapHydrate(
-    array $data, 
-    array $columnMap, 
+    array $data,
+    array $columnMap,
     int $hydrationMode
 ): mixed
 ```
@@ -498,7 +498,7 @@ $invoice = Invoices::findFirst();
 
 print_r(
     $invoice->getChangedFields()
-); 
+);
 // []
 
 $invoice->inv_total = 120;;
@@ -539,7 +539,7 @@ $invoice->inv_created_at  = '2019-12-25 01:02:03';
 $result = $invoice->save();
 
 if (false === $result) {
-    
+
     echo 'Error saving Invoice: ';
 
     $messages = $invoice->getMessages();
@@ -590,7 +590,7 @@ Returns the DependencyInjection connection service name used to read data relate
 
 ```php
 public function getRelated(
-    string $alias, 
+    string $alias,
     mixed $arguments = null
 ): Phalcon\Mvc\Model\Resultset\Simple | null
 ```
@@ -657,7 +657,7 @@ $invoice = Invoices::findFirst();
 
 print_r(
     $invoice->getChangedFields()
-); 
+);
 // []
 
 $invoice->inv_total = 120;;
@@ -694,7 +694,7 @@ Returns the DependencyInjection connection service name used to write data relat
 
 ```php
 public function hasChanged(
-    string | array $fieldName = null, 
+    string | array $fieldName = null,
     bool $allFields = false
 ): bool
 ```
@@ -727,9 +727,9 @@ $hasChanged = $invoice->hasChanged(
 // true
 $hasChanged = $invoice->hasChanged(
     [
-        'inv_title', 
+        'inv_title',
         'inv_total'
-    ], 
+    ],
     true
 );
 // false
@@ -742,7 +742,7 @@ Check if the object has internal snapshot data
 
 ```php
 public function hasUpdated(
-    string | array $fieldName = null, 
+    string | array $fieldName = null,
     bool $allFields = false
 ): bool
 ```
@@ -790,7 +790,7 @@ echo 'MAX [Customer: 1] ', $max, PHP_EOL;
 ```php
 public static function minimum(
     mixed parameters = null
-): mixed 
+): mixed
 ```
 Returns the minimum value of a column for a result-set of rows that match the specified conditions
 
@@ -911,7 +911,7 @@ Sets the DependencyInjection connection service name used to read data
 
 ```php
 public function setOldSnapshotData(
-    array $data, 
+    array $data,
     array $columnMap = null
 )
 ```
@@ -919,7 +919,7 @@ Sets the record's old snapshot data. This method is used internally to set old s
 
 ```php
 public function setSnapshotData(
-    array $data, 
+    array $data,
     array $columnMap = null
 ): void
 ```
@@ -943,7 +943,7 @@ use Phalcon\Mvc\Model\Transaction\Failed;
 try {
     $txManager   = new Manager();
     $transaction = $txManager->get();
-    
+
     $customer = new Customers();
     $customer->setTransaction($transaction);
     $customer->cst_name_last  = 'Vader';
@@ -1141,13 +1141,13 @@ $invoice->update();
 
 !!! warning "NOTE"
 
-    When retrieving the record with `findFirst()`, you need to get the full 
-    object back (no `columns` definition) but also retrieve it using the 
+    When retrieving the record with `findFirst()`, you need to get the full
+    object back (no `columns` definition) but also retrieve it using the
     primary key. If not, the ORM will issue an `INSERT` instead of `UPDATE`.
 
 ```php
 public function writeAttribute(
-    string $attribute, 
+    string $attribute,
     mixed $value
 ): void
 ```
@@ -1165,7 +1165,7 @@ protected function allowEmptyStringValues(
 Sets a list of attributes that must be skipped from the generated `UPDATE` statement
 
 ```php
-<?php 
+<?php
 
 use Phalcon\Mvc\Model;
 
@@ -1184,16 +1184,16 @@ class Invoices extends Model
 
 ```php
 protected function belongsTo(
-    string | array $fields, 
-    string $referenceModel, 
-    string | array $referencedFields, 
+    string | array $fields,
+    string $referenceModel,
+    string | array $referencedFields,
     array options = null
 ): Relation
 ```
 Set up a reverse 1-1 or n-1 relation between two models
 
 ```php
-<?php 
+<?php
 
 namespace MyApp\Models;
 
@@ -1214,16 +1214,16 @@ class InvoicesXProducts extends Model
 
 ```php
 protected function hasMany(
-    string | array $fields, 
-    string $referenceModel, 
-    string | array $referencedFields, 
+    string | array $fields,
+    string $referenceModel,
+    string | array $referencedFields,
     array options = null
 ): Relation
 ```
 Setup a 1-n relation between two models
 
 ```php
-<?php 
+<?php
 
 namespace MyApp\Models;
 
@@ -1245,10 +1245,10 @@ class Customers extends Model
 ```php
 protected function hasManyToMany(
     string | array $fields,
-    string $intermediateModel, 
+    string $intermediateModel,
     string | array $intermediateFields,
     string | array $intermediateReferencedFields,
-    string $referenceModel, 
+    string $referenceModel,
     string | array $referencedFields,
     array $options = null
 ): Relation
@@ -1256,7 +1256,7 @@ protected function hasManyToMany(
 Set up an n-n relation between two models, through an intermediate relation
 
 ```php
-<?php 
+<?php
 
 namespace MyApp\Models;
 
@@ -1280,16 +1280,16 @@ class Invoices extends Model
 
 ```php
 protected function hasOne(
-    string | array $fields, 
-    string $referenceModel, 
-    string | array $referencedFields, 
+    string | array $fields,
+    string $referenceModel,
+    string | array $referencedFields,
     array options = null
 ): Relation
 ```
 Setup a 1-1 relation between two models
 
 ```php
-<?php 
+<?php
 
 namespace MyApp\Models;
 
@@ -1605,22 +1605,22 @@ class Invoices extends Model
     {
         return (int) $this->inv_cst_id;
     }
-    
+
     public function getStatus(): int
     {
         return (int) $this->inv_status_flag;
     }
-    
+
     public function getTitle(): string
     {
         return (string) $this->inv_title;
     }
-    
+
     public function getTotal(): float
     {
         return (float) $this->inv_total;
     }
-    
+
     public function getCreatedAt(): string
     {
         return (string) $this->inv_created_at;
@@ -1629,24 +1629,24 @@ class Invoices extends Model
     public function setCustomerId(int $customerId): Invoices
     {
         $this->inv_cst_id = $customerId;
-        
+
         return $this;
     }
-    
+
     public function setStatus(int $status): Invoices
     {
         $this->inv_status_flag = $status;
-        
+
         return $this;
     }
-    
+
     public function setTitle(string $title): Invoices
     {
         $this->inv_title = $title;
-        
+
         return $this;
     }
-    
+
     public function setTotal(float $total): Invoices
     {
         if ($total < 0) {
@@ -1656,14 +1656,14 @@ class Invoices extends Model
         }
 
         $this->inv_total = $total;
-        
+
         return $this;
     }
-    
+
     public function setCreatedAt(string $date): Invoices
     {
         $this->inv_created_at = $date;
-    
+
         return $this;
     }
 }
@@ -2391,7 +2391,7 @@ class Invoices extends Model
     {
         $this->setSource('co_invoices');
     }
-    
+
     public function getResultsetClass()
     {
         return Custom::class;
@@ -2442,7 +2442,7 @@ Bound parameters are also supported in [Phalcon\Mvc\Model][mvc-model]. You are e
 
 !!! info "NOTE"
 
-    When using `integer` placeholders you must prefix them with `?` (`?0`, `?1`). When using `string` placeholders you must enclose the string in `:` (`:name:`, `:total:`). 
+    When using `integer` placeholders you must prefix them with `?` (`?0`, `?1`). When using `string` placeholders you must enclose the string in `:` (`:name:`, `:total:`).
 
 Some examples:
 
@@ -2523,7 +2523,7 @@ You can also bind arrays in the parameters, especially when using the `IN` SQL k
 
 !!! info "NOTE"
 
-    You need to use a zero-based array for arrays without missing elements 
+    You need to use a zero-based array for arrays without missing elements
 
 ```php
 <?php
@@ -2605,7 +2605,7 @@ class Invoices extends Model
     {
         $this->status = explode(',', $this->status);
     }
-    
+
     public function afterSave()
     {
         $this->status = explode(',', $this->status);
@@ -2808,7 +2808,7 @@ $invoice->inv_created_at  = '2019-12-25 01:02:03';
 $result = $invoice->save();
 
 if (false === $result) {
-    
+
     echo 'Error saving Invoice: ';
 
     $messages = $invoice->getMessages();
@@ -2905,7 +2905,7 @@ $invoice->inv_created_at  = '2019-12-25 01:02:03';
 $result = $invoice->update();
 
 if (false === $result) {
-    
+
     echo 'Error saving Invoice: ';
 
     $messages = $invoice->getMessages();
@@ -2942,7 +2942,7 @@ $invoice = Invoices::findFirst(
 if (false !== $invoice) {
     if (false === $invoice->delete()) {
         $messages = $invoice->getMessages();
-    
+
         foreach ($messages as $message) {
             echo $message . PHP_EOL;
         }
@@ -2972,7 +2972,7 @@ $invoice = Invoices::find(
 foreach ($invoices as $invoice) {
     if (false === $invoice->delete()) {
         $messages = $invoice->getMessages();
-    
+
         foreach ($messages as $message) {
             echo $message . PHP_EOL;
         }
@@ -3383,7 +3383,7 @@ Phalcon\Mvc\Model::setup(
         'updateSnapshotOnSave' => false,
     ]
 );
-``` 
+```
 or if you prefer set this in your `php.ini`
 
 ```ini
@@ -3508,7 +3508,7 @@ use Phalcon\Mvc\Model\Transaction\Failed;
 try {
     $txManager   = new Manager();
     $transaction = $txManager->get();
-    
+
     $customer = new Customers();
     $customer->setTransaction($transaction);
     $customer->cst_name_last  = 'Vader';
@@ -3551,7 +3551,7 @@ use Phalcon\Mvc\Model\Transaction\Failed;
 try {
     $txManager   = new Manager();
     $transaction = $txManager->get();
-    
+
     $customer = new Customers();
     $customer->setTransaction($transaction);
     $customer->cst_name_last  = 'Vader';
@@ -3560,7 +3560,7 @@ try {
     if (false === $customer->save()) {
         $transaction->rollback('Cannot save Customer');
     }
-    
+
     $average = Invoices::average(
         [
             Model::TRANSACTION_INDEX => $transaction,
@@ -3761,8 +3761,8 @@ class Invoices extends Model
      * @return Phalcon\Db\Adapter\AdapterInterface
      */
     public function selectReadConnection(
-        array $intermediate, 
-        array $bindParams, 
+        array $intermediate,
+        array $bindParams,
         array $bindTypes
     ) {
         if (true === isset($intermediate['where'])) {
@@ -3860,7 +3860,7 @@ The available options are:
 | `lateStateBinding`              | `false` | Late state binding of the `Phalcon\Mvc\Model::cloneResultMap()` method |
 | `notNullValidations`            | `true`  | Automatically validate the not `null` columns present                  |
 | `phqlLiterals`                  | `true`  | Literals in the PHQL parser                                            |
-| `prefetchRecords`               |   `0`   | The number of records to prefetch when getting data from the ORM       |                       
+| `prefetchRecords`               |   `0`   | The number of records to prefetch when getting data from the ORM       |
 | `updateSnapshotOnSave`          | `true`  | Update snapshots on `save()`                                           |
 | `virtualForeignKeys`            | `true`  | Virtual foreign keys                                                   |
 
@@ -3922,7 +3922,7 @@ Model::setup(
 
 Registering the provider should look like this:
 
-```php 
+```php
 <?php
 
 $parameters = [

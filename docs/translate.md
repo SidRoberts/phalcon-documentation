@@ -27,7 +27,7 @@ class UserController extends Controller
         $this->view->name = 'Mike';
         $this->view->t    = $this->getTranslator();
     }
-    
+
     /**
      * @return NativeArray
      */
@@ -35,18 +35,18 @@ class UserController extends Controller
     {
         $language = $this->request->getBestLanguage();
         $messages = [];
-        
+
         $translationFile = 'app/messages/' . $language . '.php';
 
         if (true !== file_exists($translationFile)) {
             $translationFile = 'app/messages/en.php';
         }
-        
+
         require $translationFile;
 
         $interpolator = new InterpolatorFactory();
         $factory      = new TranslateFactory($interpolator);
-        
+
         return $factory->newInstance(
             'array',
             [
@@ -120,18 +120,18 @@ class Locale extends Injectable
         // Ask the browser what is the best language
         $language = $this->request->getBestLanguage();
         $messages = [];
-        
+
         $translationFile = 'app/messages/' . $language . '.php';
 
         if (true !== file_exists($translationFile)) {
             $translationFile = 'app/messages/en.php';
         }
-        
+
         require $translationFile;
 
         $interpolator = new InterpolatorFactory();
         $factory      = new TranslateFactory($interpolator);
-        
+
         return $factory->newInstance(
             'array',
             [
@@ -140,7 +140,7 @@ class Locale extends Injectable
         );
     }
 }
-``` 
+```
 
 Then we can register it in the Di container when setting up services during bootstrap:
 
@@ -174,7 +174,7 @@ class MyController extends Controller
                 'name' => $name,
             ]
         );
-        
+
         $this->view->text = $text;
     }
 }
@@ -346,7 +346,7 @@ If your translation strings are stored in a `.csv` file. The [Phalcon\Translate\
 |-------------|--------------------------------------------------------------------|
 | `content`   | The location of the CSV file on the file system                    |
 | `delimiter` | The delimiter the CSV file uses (optional - defaults to `;`)       |
-| `enclosure` | The character that surrounds the text (optional - defaults to `"`) | 
+| `enclosure` | The character that surrounds the text (optional - defaults to `"`) |
 
 ```php
 <?php
@@ -470,26 +470,26 @@ class MyTranslateAdapter implements AdapterInterface
     /**
      * @param  string $translateKey
      * @param  array  $placeholders
-     * 
+     *
      * @return string
      */
     public function t(string $translateKey, array $placeholders = []);
-    
+
     /**
      * @param   string $translateKey
      * @param   array  $placeholders
-     * 
+     *
      * @return  string
      */
     public function _(
-        string $translateKey, 
+        string $translateKey,
         array $placeholders = []
     ): string;
 
     /**
      * @param   string $index
      * @param   array  $placeholders
-     * 
+     *
      * @return  string
      */
     public function query(string $index, array $placeholders = []): string;

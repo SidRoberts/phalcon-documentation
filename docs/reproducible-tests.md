@@ -31,7 +31,7 @@ $container['session'] = function() {
     $session->setHandler($adapter);
 
     $session->start();
-    
+
     return $session;
 };
 
@@ -39,7 +39,7 @@ $container['cookies'] = function() {
     $cookies = new Cookies();
 
     $cookies->useEncryption(false);
-    
+
     return $cookies;
 };
 
@@ -85,7 +85,7 @@ use Phalcon\Db\Adapter\Pdo\Mysql;
 $container = new FactoryDefault();
 
 $container->setShared(
-    'db', 
+    'db',
     function () {
         return new Mysql(
             [
@@ -151,7 +151,7 @@ $application->setDI($container);
 
 class IndexController extends Controller
 {
-    public function indexAction() { 
+    public function indexAction() {
           /* your content here */
     }
 }
@@ -232,7 +232,7 @@ $container['modelsMetadata'] = new ModelsMetadata();
 if (true !== $connection->tableExists('user', 'test')) {
     $connection->execute(
         'CREATE TABLE user (
-            id integer primary key auto_increment, 
+            id integer primary key auto_increment,
             email varchar(120) not null
         )'
     );
@@ -253,7 +253,7 @@ class User extends Model
         if (false === $newUser->save()) {
             return false;
         }
-        
+
         return $newUser->id;
     }
 }

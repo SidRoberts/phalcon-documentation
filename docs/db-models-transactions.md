@@ -22,36 +22,36 @@ class InvoicesController extends Controller
     public function saveAction()
     {
         $this->db->begin();
-        
+
         try {
             $customer = Customers::findFirst(
                 [
                     'conditions' => 'cst_id = :cst_id:',
                     'bind'       => [
                         'cst_id' => 10,
-                    ]    
-                ]  
+                    ]
+                ]
             );
-            
+
             $customer->cst_has_unpaid = true;
             $result = $customer->save();
 
             if (false === $result) {
                 throw new \Exception('Error saving file');
             }
-    
+
             $invoice = new Invoices();
             $invoice->inv_cst_id     = $customer->cst_id;
             $invoice->inv_number     = 'INV-00001';
             $invoice->inv_name       = 'Invoice for Goods';
             $invoice->inv_created_at = date('Y-m-d');
-            
+
             $result = $invoice->save();
-            
+
             if (false === $result) {
                 throw new \Exception('Error saving file');
             }
-    
+
             $this->db->commit();
         } catch (\Exception $ex) {
             $this->db->rollback();
@@ -103,10 +103,10 @@ try {
             'conditions' => 'cst_id = :cst_id:',
             'bind'       => [
                 'cst_id' => 10,
-            ]    
-        ]  
+            ]
+        ]
     );
-    
+
     $customer->cst_has_unpaid = true;
     $result = $customer->save();
 
@@ -119,9 +119,9 @@ try {
     $invoice->inv_number     = 'INV-00001';
     $invoice->inv_name       = 'Invoice for Goods';
     $invoice->inv_created_at = date('Y-m-d');
-    
+
     $result = $invoice->save();
-    
+
     if (false === $result) {
         throw new \Exception('Error saving file');
     }
@@ -151,10 +151,10 @@ try {
             'conditions' => 'inv_cst_id = :cst_id:',
             'bind'       => [
                 'cst_id' => 10,
-            ]    
-        ]  
+            ]
+        ]
     );
-    
+
     foreach ($invoices as $invoice) {
         $invoice->setTransaction($transaction);
         if (false === $invoice->delete()) {
@@ -199,10 +199,10 @@ try {
             'conditions' => 'inv_cst_id = :cst_id:',
             'bind'       => [
                 'cst_id' => 10,
-            ]    
-        ]  
+            ]
+        ]
     );
-    
+
     foreach ($invoices as $invoice) {
         $invoice->setTransaction($transaction);
         if (false === $invoice->delete()) {

@@ -22,7 +22,7 @@ In programming, ACLs typically involve two key entities: the object seeking acce
     - Manager Access
 
     - Guest Access
-    
+
     **Component**
 
     - Login page
@@ -90,7 +90,7 @@ use Phalcon\Acl\Role;
 $acl = new Memory();
 
 $roleAdmins     = new Role('admins', 'Administrator Access');
-$roleAccounting = new Role('accounting', 'Accounting Department Access'); 
+$roleAccounting = new Role('accounting', 'Accounting Department Access');
 
 $acl->addRole($roleAdmins);
 $acl->addRole($roleAccounting);
@@ -243,7 +243,7 @@ $acl->deny('guest', '*', 'view');
 !!! danger "NOTE"
 
     Please be **VERY** careful when using the `*` wildcard. It is very easy to make a mistake and the wildcard, although it seems convenient, it may allow users to access areas of your application that they are not supposed to. The best way to be 100% sure is to write tests specifically to test the permissions and the ACL. These can be done in the `unit` test suite by instantiating the component and then checking the `isAllowed()` if it is `true` or `false`.
-    
+
     There are plenty of tests in our GitHub repository (`tests` folder) to offer guidance and ideas.
 
 ## Querying
@@ -539,8 +539,8 @@ $acl->addComponent(
 // The `ManagerRole` and `ModelSubject` parameters are necessary
 // for the custom function to work
 $acl->allow(
-    'manager', 
-    'reports', 
+    'manager',
+    'reports',
     'list',
     function (ManagerRole $manager, ReportsComponent $model) {
         return boolval($manager->getId() === $model->getUserId());

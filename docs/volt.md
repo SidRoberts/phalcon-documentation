@@ -65,7 +65,7 @@ compared to:
 
 ```php
 public function __construct(
-    ViewBaseInterface $view, 
+    ViewBaseInterface $view,
     DiInterface $container = null
 )
 ```
@@ -181,7 +181,7 @@ $container->setShared(
                 'prefix'    => '-prefix-',
             ]
         );
-        
+
         return $volt;
     }
 );
@@ -265,7 +265,7 @@ $container->set(
                             'prefix'    => '-prefix-',
                         ]
                     );
-                    
+
                     return $volt;
                 }
             ]
@@ -407,7 +407,7 @@ class PostsController extends Controller
 
 !!! warning "NOTE"
 
-    The placeholders for Volt `{{`, `}}`, `{%`, and `%}` cannot be changed or set. 
+    The placeholders for Volt `{{`, `}}`, `{%`, and `%}` cannot be changed or set.
 
 ### Vue.js
 If you are using [Vue][vue] you will need to change the interpolators in Vue itself:
@@ -1080,7 +1080,7 @@ Macros can be used to reuse logic in a template, they act as PHP functions, can 
     <ul>
         {%- for link in related_links %}
         <li>
-            <a href='{{ url(link.url) }}' 
+            <a href='{{ url(link.url) }}'
                title='{{ link.title|striptags }}'>
                 {{ link.text }}
             </a>
@@ -1112,12 +1112,12 @@ When calling macros, parameters can be passed by name:
 {%- endmacro %}
 
 {# Call the macro #}
-{{ 
+{{
     error_messages(
-        'type': 'Invalid', 
-        'message': 'The name is not valid', 
+        'type': 'Invalid',
+        'message': 'The name is not valid',
         'field': 'name'
-    ) 
+    )
 }}
 
 ```
@@ -1321,7 +1321,7 @@ A partial is included in runtime, Volt also provides `include`, which compiles t
 ### Partial Vs Include
 Keep the following points in mind when choosing to use the `partial` function or `include`:
 
-| Type       | Description                                                                                                                                                                                                                                                            |                                                                                                                                                                                                                                                            
+| Type       | Description                                                                                                                                                                                                                                                            |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `partial`  | allows you to include templates made in Volt and in other template engines. As well allows you to pass an expression like a variable allowing you to include the content of another view dynamically. It's better if the content that you have to include changes frequently |
 | `includes` | copies the compiled content into the view which improves the performance. Only allows to include templates made with Volt. Requires an existing template at compile time                                                                                               |
@@ -1347,7 +1347,7 @@ With template inheritance, you can create base templates that can be extended by
 
         <div id='footer'>
             {% block footer %}
-                &copy; Copyright 2012-present. 
+                &copy; Copyright 2012-present.
                 All rights reserved.
             {% endblock %}
         </div>
@@ -1391,7 +1391,7 @@ Not all blocks must be replaced at a child template, only those that are needed.
         </div>
 
         <div id='footer'>
-            &copy; Copyright 2012-present. 
+            &copy; Copyright 2012-present.
             All rights reserved.
         </div>
     </body>
@@ -1690,7 +1690,7 @@ Registers an extension
 
 ```php
 public function addFilter(
-    string $name, 
+    string $name,
     mixed definition
 ): Compiler
 ```
@@ -1698,7 +1698,7 @@ Register a new filter
 
 ```php
 public function addFunction(
-    string $name, 
+    string $name,
     mixed $definition
 ): Compiler
 ```
@@ -1711,7 +1711,7 @@ Resolves attribute reading
 
 ```php
 public function compile(
-    string $templatePath, 
+    string $templatePath,
     bool $extendsMode = false
 )
 ```
@@ -1725,7 +1725,7 @@ require $compiler->getCompiledTemplatePath();
 
 ```php
 public function compileAutoEscape(
-    array $statement, 
+    array $statement,
     bool $extendsMode
 ): string
 ```
@@ -1736,7 +1736,7 @@ Compiles an "autoescape" statement returning PHP code
  * @deprecated Will be removed in 5.0
  */
 public function compileCache(
-    array $statement, 
+    array $statement,
     bool $extendsMode = false
 ): string
 ```
@@ -1750,7 +1750,7 @@ Compiles calls to macros
 
 ```php
 public function compileCase(
-    array $statement, 
+    array $statement,
     bool $caseClause = true
 ): string
 ```
@@ -1773,8 +1773,8 @@ Compiles a `elseif` statement returning PHP code
 
 ```php
 public function compileFile(
-    string $path, 
-    string $compiledPath, 
+    string $path,
+    string $compiledPath,
     bool $extendsMode = false
 ): string | array
 ```
@@ -1789,7 +1789,7 @@ $compiler->compileFile(
 
 ```php
 public function compileForeach(
-    array $statement, 
+    array $statement,
     bool $extendsMode = false
 ): string
 ```
@@ -1802,7 +1802,7 @@ Compiles a `forelse` statement returning PHP code
 
 ```php
 public function compileIf(
-    array $statement, 
+    array $statement,
     bool $extendsMode = false
 ): string
 ```
@@ -1815,7 +1815,7 @@ Compiles a `include` statement returning PHP code
 
 ```php
 public function compileMacro(
-    array $statement, 
+    array $statement,
     bool $extendsMode
 ): string
 ```
@@ -1883,7 +1883,7 @@ echo $compiler->compileSet($source);
 
 ```php
 public function compileString(
-    string $viewCode, 
+    string $viewCode,
     bool $extendsMode = false
 ): string
 ```
@@ -1895,7 +1895,7 @@ echo $compiler->compileString('{{ "hello world" }}');
 
 ```php
 public function compileSwitch(
-    array $statement, 
+    array $statement,
     bool $extendsMode = false
 ): string
 ```
@@ -1908,7 +1908,7 @@ Resolves an expression node in an AST volt tree
 
 ```php
 final public function fireExtensionEvent(
-    string $name, 
+    string $name,
     array $arguments = null
 )
 ```
@@ -2078,7 +2078,7 @@ $iterator    = new RecursiveIteratorIterator(
 );
 
 foreach ($iterator as $file) {
-    if (true !== $file->isDir() && 
+    if (true !== $file->isDir() &&
         true !== in_array($file->getFilename(), $whitelist)) {
         $fileList[] = $file->getPathname();
     }
@@ -2122,7 +2122,7 @@ if (php_sapi_name() !== "cli") {
 
 $bootstrap = new Web();
 $container = $bootstrap->getContainer();
-$view      = $container->getShared('view'); 
+$view      = $container->getShared('view');
 $viewPath  = $view->getViewsDir();
 $volt      = $container->getShared('volt');
 
@@ -2136,7 +2136,7 @@ $iterator    = new RecursiveIteratorIterator(
 );
 
 foreach ($iterator as $file) {
-    if (true !== $file->isDir() && 
+    if (true !== $file->isDir() &&
         true !== in_array($file->getFilename(), $whitelist)) {
         $fileList[] = $file->getPathname();
     }

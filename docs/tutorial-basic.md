@@ -88,7 +88,7 @@ $loader->setDirectories(
         APP_PATH . '/models/',
     ]
 );
-    
+
 
 $loader->register();
 ```
@@ -462,7 +462,7 @@ class Users extends Model
 
 !!! info "NOTE"
 
-    Note that the public properties of the model correspond to the names of the fields in our table. 
+    Note that the public properties of the model correspond to the names of the fields in our table.
 
 ## Setting a Database Connection
 In order to use a database connection and subsequently access data through our models, we need to specify it in our bootstrap process. A database connection is just another service that our application has, that can be used throughout our application:
@@ -636,7 +636,7 @@ We can now add small design touches to our application. We can add the [Bootstra
 <head>
     <meta charset="UTF-8">
     <title>Phalcon Tutorial</title>
-    <link rel="stylesheet" 
+    <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 </head>
 <body>

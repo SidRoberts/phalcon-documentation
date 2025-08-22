@@ -50,7 +50,7 @@ return new Config([
         'logInDb'              => true,
         'migrationsDir'        => 'db/migrations',
         // true - TIMESTAMP, false - versions
-        'migrationsTsBased'    => true, 
+        'migrationsTsBased'    => true,
         'exportDataFromTables' => [
             // Tables names
         ],

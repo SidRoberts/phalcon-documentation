@@ -23,7 +23,7 @@ class InvoiceComponent
                 'dbname'   => 'tutorial',
             ]
         );
-        
+
         $invoice = $connection->exec(
             'SELECT * FROM Invoices WHERE inv_id = 1'
         );
@@ -46,7 +46,7 @@ use Phalcon\Db\Adapter\Mysql;
 class InvoiceComponent
 {
     private $connection;
-    
+
     public function calculate()
     {
         $invoice = $this
@@ -63,7 +63,7 @@ class InvoiceComponent
         Mysql $connection
     ): InvoiceComponent {
         $this->connection = $connection;
-    
+
         return $this;
     }
 }
@@ -111,7 +111,7 @@ class Registry
 class InvoiceComponent
 {
     private $connection;
-    
+
     public function calculate()
     {
         $invoice = $this
@@ -128,7 +128,7 @@ class InvoiceComponent
         Mysql $connection
     ): InvoiceComponent {
         $this->connection = $connection;
-    
+
         return $this;
     }
 }
@@ -182,7 +182,7 @@ class Registry
 class InvoiceComponent
 {
     private $connection;
-    
+
     public function calculate()
     {
         $invoice = $this
@@ -199,7 +199,7 @@ class InvoiceComponent
         Mysql $connection
     ): InvoiceComponent {
         $this->connection = $connection;
-    
+
         return $this;
     }
 }
@@ -231,10 +231,10 @@ $selector   = new Selector();
 $session    = new Session();
 
 $invoice =  new InvoiceComponent(
-    $connection, 
-    $session, 
-    $fileSystem, 
-    $filter, 
+    $connection,
+    $session,
+    $fileSystem,
+    $filter,
     $selector
 );
 
@@ -259,14 +259,14 @@ class InvoiceComponent
     private $filter;
     private $selector;
     private $session;
-    
+
     public function __construct(
         Connection $connection,
         FileSystem $fileSystem,
         Filter $filter,
         Selector $selector,
         Session $session
-    
+
     ) {
         $this->connection = $connection;
         $this->fileSystem = $fileSystem;
@@ -284,11 +284,11 @@ class InvoiceComponent
         $session    = new Session();
 
         return new self(
-            $connection, 
-            $fileSystem, 
-            $filter, 
+            $connection,
+            $fileSystem,
+            $filter,
             $selector,
-            $session 
+            $session
         );
     }
 }
@@ -327,7 +327,7 @@ class InvoiceComponent
             ->container
             ->get('filter')
         ;
-        
+
         $id = $filter->sanitize($id, null, 'int');
 
         $connection = $this
@@ -380,7 +380,7 @@ Additionally, this pattern increases testability in the code, thus making it les
 
 ```php
 public function __call(
-    string $method, 
+    string $method,
     array $arguments = []
 ): mixed | null
 ```
@@ -388,8 +388,8 @@ Magic method to get or set services using setters/getters
 
 ```php
 public function attempt(
-    string $name, 
-    mixed definition, 
+    string $name,
+    mixed definition,
     bool shared = false
 ): ServiceInterface | bool
 ```
@@ -397,7 +397,7 @@ Attempts to register a service in the services' container. Only is successful if
 
 ```php
 public function get(
-    string $name, 
+    string $name,
     mixed parameters = null
 ): mixed
 ```
@@ -429,8 +429,8 @@ public function getServices(): ServiceInterface[]
 Return the services registered in the DI
 
 ```php
-public function getShared( 
-    string $name, 
+public function getShared(
+    string $name,
     mixed parameters = null
 ): mixed
 ```
@@ -468,7 +468,7 @@ $container->loadFromPhp("/app/config/services.php");
 
 ```php
 public function loadFromYaml(
-    string $filePath, 
+    string $filePath,
     array $callbacks = null
 )
 ```
@@ -568,8 +568,8 @@ Resets the internal default DI
 
 ```php
 public function set(
-    string $name, 
-    mixed $definition, 
+    string $name,
+    mixed $definition,
     bool $shared = false
 ): ServiceInterface
 ```
@@ -589,7 +589,7 @@ Sets the internal event manager
 
 ```php
 public function setService(
-    string $name, 
+    string $name,
     ServiceInterface $rawDefinition
 ): ServiceInterface
 ```
@@ -597,7 +597,7 @@ Sets a service using a raw Phalcon\Di\Service definition
 
 ```php
 public function setShared(
-    string $name, 
+    string $name,
     mixed $definition
 ): ServiceInterface
 ```
@@ -965,7 +965,7 @@ class Responder
      * @var Response
      */
     public $response;
-    
+
     /**
      * @var string
      */
@@ -1384,7 +1384,7 @@ return [
     MyApp\Providers\ConfigProvider::class,
     MyApp\Providers\RegistryProvider::class,
     MyApp\Providers\LoggerProvider::class,
-];    
+];
 ```
 
 `app/library/Providers/ConfigProvider.php`
@@ -1479,7 +1479,7 @@ class LoggerProvider implements ServiceProviderInterface
     public function register(DiInterface $container)
     {
         $container->setShared(
-            'logger', 
+            'logger',
             function () {
                 $adapter = new Stream('/storage/logs/main.log');
 
@@ -1557,7 +1557,7 @@ If certain components are registered (such as a database connection) they are us
 | Name                 | Object                             | Shared | Description                  |
 |----------------------|------------------------------------|--------|------------------------------|
 | `db`                 | [Phalcon\Db][db-layer]             |  Yes   | Database connection          |
-| `modelsCache`        |                                    |        | Cache backend for models     |                      
+| `modelsCache`        |                                    |        | Cache backend for models     |
 | `session`            |                                    |        | Session Service              |
 | `sessionBag`         | [Phalcon\Session\Bag][session-bag] |  Yes   | Session Bag service          |
 

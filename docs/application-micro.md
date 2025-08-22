@@ -72,7 +72,7 @@ Appends a before middleware to be called before executing the route
 
 ```php
 public function delete(
-    string $routePattern, 
+    string $routePattern,
     callable $handler
 ): RouteInterface
 ```
@@ -94,7 +94,7 @@ Appends a `finish` middleware to be called when the request is finished
 
 ```php
 public function get(
-    string $routePattern, 
+    string $routePattern,
     callable $handler
 ): RouteInterface
 ```
@@ -160,7 +160,7 @@ Checks if a service is registered in the DI
 
 ```php
 public function head(
-    string $routePattern, 
+    string $routePattern,
     callable $handler
 ): RouteInterface
 ```
@@ -168,7 +168,7 @@ Maps a route to a handler that only matches if the HTTP method is HEAD
 
 ```php
 public function map(
-    string $routePattern, 
+    string $routePattern,
     callable $handler
 ): RouteInterface
 ```
@@ -204,7 +204,7 @@ Gets a DI service from the internal DI container using the array syntax
 
 ```php
 public function offsetSet(
-    mixed $alias, 
+    mixed $alias,
     mixed $definition
 )
 ```
@@ -222,8 +222,8 @@ public function offsetUnset(
 Removes a service from the internal DI container using the array syntax
 
 ```php
-public function options(    
-    string $routePattern, 
+public function options(
+    string $routePattern,
     callable $handler
 ): RouteInterface
 ```
@@ -231,7 +231,7 @@ Maps a route to a handler that only matches if the HTTP method is `OPTIONS`
 
 ```php
 public function patch(
-    string $routePattern, 
+    string $routePattern,
     callable $handler
 ): RouteInterface
 ```
@@ -239,7 +239,7 @@ Maps a route to a handler that only matches if the HTTP method is `PATCH`
 
 ```php
 public function post(
-    string $routePattern, 
+    string $routePattern,
     callable $handler
 ): RouteInterface
 ```
@@ -247,7 +247,7 @@ Maps a route to a handler that only matches if the HTTP method is `POST`
 
 ```php
 public function put(
-    string $routePattern, 
+    string $routePattern,
     callable $handler
 ): RouteInterface
 ```
@@ -262,7 +262,7 @@ Sets externally the handler that must be called by the matched route
 
 ```php
 public function setModelBinder(
-    BinderInterface $modelBinder, 
+    BinderInterface $modelBinder,
     mixed $cache = null
 ): Micro
 ```
@@ -286,8 +286,8 @@ Appends a custom `response` handler to be called instead of the default one
 
 ```php
 public function setService(
-    string $serviceName, 
-    mixed $definition, 
+    string $serviceName,
+    mixed $definition,
     bool $shared = false
 ): ServiceInterface
 ```
@@ -554,7 +554,7 @@ To enhance performance, consider implementing lazy loading for your controllers 
 use MyApp\Controllers\InvoicesController;
 
 $invoices->setHandler(
-    InvoicesController::class, 
+    InvoicesController::class,
     true
 );
 
@@ -633,11 +633,11 @@ $users
     ->setHandler(new UsersController())
     ->setPrefix('/users')
     ->get(
-        '/get/{id}', 
+        '/get/{id}',
         'get'
     )
     ->get(
-        '/add/{payload}', 
+        '/add/{payload}',
         'add'
     )
 ;
@@ -649,11 +649,11 @@ $invoices
     ->setHandler(new InvoicesController())
     ->setPrefix('/invoices')
     ->get(
-        '/get/{id}', 
+        '/get/{id}',
         'get'
     )
     ->get(
-        '/add/{payload}', 
+        '/add/{payload}',
         'add'
     )
 ;
@@ -665,11 +665,11 @@ $products
     ->setHandler(new ProductsController())
     ->setPrefix('/products')
     ->get(
-        '/get/{id}', 
+        '/get/{id}',
         'get'
     )
     ->get(
-        '/add/{payload}', 
+        '/add/{payload}',
         'add'
     )
 ;
@@ -694,11 +694,11 @@ $users
     )
     ->setPrefix('/users')
     ->get(
-        '/get/{id}', 
+        '/get/{id}',
         'get'
     )
     ->get(
-        '/add/{payload}', 
+        '/add/{payload}',
         'add'
     )
 ;
@@ -713,11 +713,11 @@ $invoices
     )
     ->setPrefix('/invoices')
     ->get(
-        '/get/{id}', 
+        '/get/{id}',
         'get'
     )
     ->get(
-        '/add/{payload}', 
+        '/add/{payload}',
         'add'
     )
 ;
@@ -732,15 +732,15 @@ $products
     )
     ->setPrefix('/products')
     ->get(
-        '/get/{id}', 
+        '/get/{id}',
         'get'
     )
     ->get(
-        '/add/{payload}', 
+        '/add/{payload}',
         'add'
     )
-    
-$app->mount($products);   
+
+$app->mount($products);
 ```
 
 With this simple change, all handlers remain uninstantiated until requested by a caller. Consequently, when a caller requests `/invoices/get/2`, our application instantiates the `InvoicesController` and calls the `get` method. The application now utilizes fewer resources.
@@ -764,17 +764,17 @@ switch ($collection) {
             )
             ->setPrefix('/users')
             ->get(
-                '/get/{id}', 
+                '/get/{id}',
                 'get'
             )
             ->get(
-                '/add/{payload}', 
+                '/add/{payload}',
                 'add'
             )
         ;
 
         $app->mount($users);
-        
+
         break;
 
     case "invoices":
@@ -786,20 +786,20 @@ switch ($collection) {
             )
             ->setPrefix('/invoices')
             ->get(
-                '/get/{id}', 
+                '/get/{id}',
                 'get'
             )
             ->get(
-                '/add/{payload}', 
+                '/add/{payload}',
                 'add'
             )
         ;
 
-        $app->mount($invoices);   
-        
+        $app->mount($invoices);
+
         break;
 
-    case "products": 
+    case "products":
         $products = new MicroCollection();
         $products
             ->setHandler(
@@ -808,19 +808,19 @@ switch ($collection) {
             )
             ->setPrefix('/products')
             ->get(
-                '/get/{id}', 
+                '/get/{id}',
                 'get'
             )
             ->get(
-                '/add/{payload}', 
+                '/add/{payload}',
                 'add'
             )
 
-        $app->mount($products);  
-        
+        $app->mount($products);
+
         break;
 
-    default: 
+    default:
     // ...
 }
 ```
@@ -1004,8 +1004,8 @@ The available methods for the [Phalcon\Mvc\Micro\Collection][mvc-micro-collectio
 
 ```php
 public function delete(
-    string $routePattern, 
-    callable $handler, 
+    string $routePattern,
+    callable $handler,
     string $name = null
 ): CollectionInterface
 ```
@@ -1013,8 +1013,8 @@ Maps a route to a handler that only matches if the HTTP method is `DELETE`.
 
 ```php
 public function get(
-    string $routePattern, 
-    callable $handler,  
+    string $routePattern,
+    callable $handler,
     string $name = null
 ): CollectionInterface
 ```
@@ -1037,8 +1037,8 @@ Returns the collection prefix if any
 
 ```php
 public function head(
-    string $routePattern, 
-    callable $handler, 
+    string $routePattern,
+    callable $handler,
     string $name = null
 ): CollectionInterface
 ```
@@ -1051,9 +1051,9 @@ Returns if the main handler must be lazy loaded
 
 ```php
 public function map(
-    string $routePattern, 
-    callable $handler, 
-    string | array $method, 
+    string $routePattern,
+    callable $handler,
+    string | array $method,
     string $name = null
 ): CollectionInterface
 ```
@@ -1061,9 +1061,9 @@ Maps a route to a handler.
 
 ```php
 public function mapVia(
-    string $routePattern, 
-    callable $handler, 
-    string | array $method, 
+    string $routePattern,
+    callable $handler,
+    string | array $method,
     string $name = null
 ): CollectionInterface
 ```
@@ -1074,7 +1074,7 @@ $collection->mapVia(
     "/invoices",
     "indexAction",
     [
-        "POST", 
+        "POST",
         "GET"
     ],
     "invoices"
@@ -1083,8 +1083,8 @@ $collection->mapVia(
 
 ```php
 public function options(
-    string $routePattern, 
-    callable $handler, 
+    string $routePattern,
+    callable $handler,
     string $name = null
 ): CollectionInterface
 ```
@@ -1092,8 +1092,8 @@ Maps a route to a handler that only matches if the HTTP method is `OPTIONS`.
 
 ```php
 public function patch(
-    string $routePattern, 
-    callable $handler, 
+    string $routePattern,
+    callable $handler,
     string $name = null
 ): CollectionInterface
 ```
@@ -1101,8 +1101,8 @@ Maps a route to a handler that only matches if the HTTP method is `PATCH`.
 
 ```php
 public function post(
-    string $routePattern, 
-    callable $handler, 
+    string $routePattern,
+    callable $handler,
     string $name = null
 ): CollectionInterface
 ```
@@ -1110,8 +1110,8 @@ Maps a route to a handler that only matches if the HTTP method is `POST`.
 
 ```php
 public function put(
-    string $routePattern, 
-    callable $handler, 
+    string $routePattern,
+    callable $handler,
     string $name = null
 ): CollectionInterface
 ```
@@ -1119,7 +1119,7 @@ Maps a route to a handler that only matches if the HTTP method is `PUT`.
 
 ```php
 public function setHandler(
-    callable $handler, 
+    callable $handler,
     bool $lazy = false
 ): CollectionInterface
 ```
@@ -1275,13 +1275,13 @@ $invoices
     )
     ->setPrefix('/invoices')
     ->get(
-        '/view/{id}', 
-        'get', 
+        '/view/{id}',
+        'get',
         'view-invoice'
     )
     ->post(
-        '/add', 
-        'post', 
+        '/add',
+        'post',
         'add-invoice'
     )
 ;
@@ -1521,7 +1521,7 @@ $app->get(
     function () {
         return (new Response())
             ->setStatusCode(
-                401, 
+                401,
                 'Unauthorized'
             )
             ->setContent(
@@ -1913,7 +1913,7 @@ class FirewallMiddleware implements MiddlewareInterface
      * @returns bool
      */
     public function beforeHandleRoute(
-        Event $event, 
+        Event $event,
         Micro $application
     ) {
         $whitelist = [
@@ -2030,7 +2030,7 @@ class RedirectMiddleware implements MiddlewareInterface
      * @returns bool
      */
     public function beforeHandleRoute(
-        Event $event, 
+        Event $event,
         Micro $application
     ) {
         if ('github' === $application->request->getURI()) {
@@ -2086,7 +2086,7 @@ class CORSMiddleware implements MiddlewareInterface
      * @returns bool
      */
     public function beforeHandleRoute(
-        Event $event, 
+        Event $event,
         Micro $application
     ) {
         if ($application->request->getHeader('ORIGIN')) {
@@ -2101,7 +2101,7 @@ class CORSMiddleware implements MiddlewareInterface
         $application
             ->response
             ->setHeader(
-                'Access-Control-Allow-Origin', 
+                'Access-Control-Allow-Origin',
                 $origin
             )
             ->setHeader(
@@ -2114,7 +2114,7 @@ class CORSMiddleware implements MiddlewareInterface
                 'Content-Disposition, Content-Type, Authorization'
             )
             ->setHeader(
-                'Access-Control-Allow-Credentials', 
+                'Access-Control-Allow-Credentials',
                 'true'
             )
         ;
@@ -2160,7 +2160,7 @@ class RequestMiddleware implements MiddlewareInterface
      * @returns bool
      */
     public function beforeExecuteRoute(
-        Event $event, 
+        Event $event,
         Micro $application
     ) {
         json_decode(
@@ -2415,7 +2415,7 @@ use Phalcon\Mvc\Micro\Exception;
 try {
     $app = new Micro();
     $app->before(false);
-    
+
     $app->handle(
         $_SERVER["REQUEST_URI"]
     );
@@ -2439,7 +2439,7 @@ $app->get(
     '/',
     function () {
         throw new \Exception(
-            'Error', 
+            'Error',
             401
         );
     }

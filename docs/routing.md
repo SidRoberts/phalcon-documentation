@@ -43,9 +43,9 @@ Phalcon\Mvc\Router constructor
 
 ```php
 public function add(
-    string $pattern, 
-    mixed $paths = null, 
-    mixed $httpMethods = null, 
+    string $pattern,
+    mixed $paths = null,
+    mixed $httpMethods = null,
     int $position = Router::POSITION_LAST
 ): RouteInterface
 ```
@@ -72,8 +72,8 @@ $router->add(
 
 ```php
 public function addConnect(
-    string $pattern, 
-    mixed $paths = null, 
+    string $pattern,
+    mixed $paths = null,
     int $position = Router::POSITION_LAST
 ): RouteInterface
 ```
@@ -81,8 +81,8 @@ Adds a route to the router that only matches if the HTTP method is `CONNECT`
 
 ```php
 public function addDelete(
-    string $pattern, 
-    mixed $paths = null, 
+    string $pattern,
+    mixed $paths = null,
     int $position = Router::POSITION_LAST
 ): RouteInterface
 ```
@@ -90,8 +90,8 @@ Adds a route to the router that only matches if the HTTP method is `DELETE`
 
 ```php
 public function addGet(
-    string $pattern, 
-    mixed $paths = null, 
+    string $pattern,
+    mixed $paths = null,
     int $position = Router::POSITION_LAST
 ): RouteInterface
 ```
@@ -99,8 +99,8 @@ Adds a route to the router that only matches if the HTTP method is `GET`
 
 ```php
 public function addHead(
-    string $pattern, 
-    mixed $paths = null, 
+    string $pattern,
+    mixed $paths = null,
     int $position = Router::POSITION_LAST
 ): RouteInterface
 ```
@@ -108,8 +108,8 @@ Adds a route to the router that only matches if the HTTP method is `HEAD`
 
 ```php
 public function addOptions(
-    string $pattern, 
-    mixed $paths = null, 
+    string $pattern,
+    mixed $paths = null,
     int $position = Router::POSITION_LAST
 ): RouteInterface
 ```
@@ -117,8 +117,8 @@ Add a route to the router that only matches if the HTTP method is `OPTIONS`
 
 ```php
 public function addPatch(
-    string $pattern, 
-    mixed $paths = null, 
+    string $pattern,
+    mixed $paths = null,
     int $position = Router::POSITION_LAST
 ): RouteInterface
 ```
@@ -126,8 +126,8 @@ Adds a route to the router that only matches if the HTTP method is `PATCH`
 
 ```php
 public function addPost(
-    string $pattern, 
-    mixed $paths = null, 
+    string $pattern,
+    mixed $paths = null,
     int $position = Router::POSITION_LAST
 ): RouteInterface
 ```
@@ -135,8 +135,8 @@ Adds a route to the router that only matches if the HTTP method is `POST`
 
 ```php
 public function addPurge(
-    string $pattern, 
-    mixed $paths = null, 
+    string $pattern,
+    mixed $paths = null,
     int $position = Router::POSITION_LAST
 ): RouteInterface
 ```
@@ -144,8 +144,8 @@ Adds a route to the router that only matches if the HTTP method is `PURGE` (Squi
 
 ```php
 public function addPut(
-    string $pattern, 
-    mixed $paths = null, 
+    string $pattern,
+    mixed $paths = null,
     int $position = Router::POSITION_LAST
 ): RouteInterface
 ```
@@ -153,8 +153,8 @@ Adds a route to the router that only matches if the HTTP method is `PUT`
 
 ```php
 public function addTrace(
-    string $pattern, 
-    mixed $paths = null, 
+    string $pattern,
+    mixed $paths = null,
     int $position = Router::POSITION_LAST
 ): RouteInterface
 ```
@@ -162,7 +162,7 @@ Adds a route to the router that only matches if the HTTP method is `TRACE`
 
 ```php
 public function attach(
-    RouteInterface $route, 
+    RouteInterface $route,
     int $position = Router::POSITION_LAST
 ): RouterInterface
 ```
@@ -180,8 +180,8 @@ $router = new Router();
 
 $router->attach(
     new CustomRoute(
-        "/about", 
-        "About::index", 
+        "/about",
+        "About::index",
         ["GET", "HEAD"]
     ),
     Router::POSITION_FIRST
@@ -501,7 +501,7 @@ class InvoicesController extends Controller
         // month
         $month = $this->dispatcher->getParam('month');
 
-        // day 
+        // day
         $day = $this->dispatcher->getParam('day');
 
         // invoiceNo
@@ -782,14 +782,14 @@ class InvoicesRoutes extends Group
                 'action' => 'list',
             ]
         );
-        
+
         $this->add(
             '/edit/{id}',
             [
                 'action' => 'edit',
             ]
         );
-        
+
         $this->add(
             '/view',
             [
@@ -993,7 +993,7 @@ $route = $router->add(
 
 $route->beforeMatch(
     function ($uri, $route) {
-        if (true === isset($_SERVER['HTTP_X_REQUESTED_WITH']) && 
+        if (true === isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
             $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest'
         ) {
             return false;
@@ -1309,8 +1309,8 @@ $container['router'] = function () {
     $router = new Annotations(false);
 
     $router->addModuleResource(
-        'admin', 
-        'Invoices', 
+        'admin',
+        'Invoices',
         '/admin/invoices'
     );
 

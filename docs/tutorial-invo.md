@@ -6,7 +6,7 @@
 
 !!! info "NOTE"
 
-    It is recommended that you open the application in your favorite editor so that you can follow this tutorial easier. 
+    It is recommended that you open the application in your favorite editor so that you can follow this tutorial easier.
 
 !!! info "NOTE"
 
@@ -189,7 +189,7 @@ use Phalcon\Session\Adapter\Stream as SessionAdapter;
 use Phalcon\Session\Manager as SessionManager;
 
 $di->setShared(
-    'session', 
+    'session',
     function () {
         $session = new SessionManager();
         $files   = new SessionAdapter(
@@ -282,7 +282,7 @@ use Invo\Models\Users;
 class SessionController extends ControllerBase
 {
     // ...
-    
+
     /**
      * This action authenticate and logs a user into the application
      */
@@ -335,7 +335,7 @@ class SessionController extends ControllerBase
     private function registerSession(Users $user): void
     {
         $this->session->set(
-            'auth', 
+            'auth',
             [
                 'id'   => $user->id,
                 'name' => $user->name,
@@ -454,7 +454,7 @@ use Phalcon\Mvc\Dispatcher;
 
 // ...
 $di->setShared(
-    'dispatcher', 
+    'dispatcher',
     function () {
         // ...
         $dispatcher = new Dispatcher();
@@ -481,16 +481,16 @@ use Phalcon\Events\Manager as EventsManager;
 use Phalcon\Mvc\Dispatcher;
 
 $di->setShared(
-    'dispatcher', 
+    'dispatcher',
     function () {
         $eventsManager = new EventsManager();
 
         /**
-         * Check if the user is allowed to access certain actions using 
+         * Check if the user is allowed to access certain actions using
          * the SecurityPlugin
          */
         $eventsManager->attach(
-            'dispatch:beforeExecuteRoute', 
+            'dispatch:beforeExecuteRoute',
             new SecurityPlugin()
         );
 
@@ -498,7 +498,7 @@ $di->setShared(
          * Handle exceptions and not-found exceptions using NotFoundPlugin
          */
         $eventsManager->attach(
-            'dispatch:beforeException', 
+            'dispatch:beforeException',
             new NotFoundPlugin()
         );
 
@@ -547,7 +547,7 @@ class SecurityPlugin extends Injectable
     // ...
 
     public function beforeExecuteRoute(
-        Event $event, 
+        Event $event,
         Dispatcher $containerspatcher
     ) {
         // ...
@@ -570,7 +570,7 @@ class SecurityPlugin extends Plugin
     // ...
 
     public function beforeExecuteRoute(
-        Event $event, 
+        Event $event,
         Dispatcher $containerspatcher
     ) {
         $auth = $this->session->get('auth');
@@ -662,34 +662,34 @@ use Phalcon\Acl\Component;
 
 $privateComponents = [
     'companies'    => [
-        'index', 
-        'search', 
-        'new', 
-        'edit', 
-        'save', 
-        'create', 
+        'index',
+        'search',
+        'new',
+        'edit',
+        'save',
+        'create',
         'delete',
     ],
     'products'     => [
-        'index', 
-        'search', 
-        'new', 
-        'edit', 
-        'save', 
-        'create', 
+        'index',
+        'search',
+        'new',
+        'edit',
+        'save',
+        'create',
         'delete',
     ],
     'producttypes' => [
-        'index', 
-        'search', 
-        'new', 
-        'edit', 
-        'save', 
-        'create', 
+        'index',
+        'search',
+        'new',
+        'edit',
+        'save',
+        'create',
         'delete',
     ],
     'invoices'     => [
-        'index', 
+        'index',
         'profile',
     ],
 ];
@@ -712,17 +712,17 @@ $publicComponents = [
         'index',
         ],
     'errors'   => [
-        'show404', 
+        'show404',
         'show500',
     ],
     'session'  => [
-        'index', 
-        'register', 
-        'start', 
+        'index',
+        'register',
+        'start',
         'end',
     ],
     'contact'  => [
-        'index', 
+        'index',
         'send',
     ],
 ];
@@ -1049,8 +1049,8 @@ This produces the following HTML:
         </div>
 
         <div class='control-group'>
-            <input type='submit' 
-                   value='Search' 
+            <input type='submit'
+                   value='Search'
                    class='btn btn-primary' />
         </div>
 
@@ -1182,21 +1182,21 @@ In the view (`themes/invo/products/search.volt`), we traverse the results corres
         <td>${{ "%.2f"|format(product.price) }}</td>
         <td>{{ product.getActiveDetail() }}</td>
         <td width="7%">
-            {{ 
+            {{
                 link_to(
-                    "products/edit/" ~ product.id, 
-                    '<i class="glyphicon glyphicon-edit"></i> Edit', 
+                    "products/edit/" ~ product.id,
+                    '<i class="glyphicon glyphicon-edit"></i> Edit',
                     "class": "btn btn-default"
-                ) 
+                )
             }}
         </td>
         <td width="7%">
-            {{ 
+            {{
                 link_to(
-                    "products/delete/" ~ product.id, 
-                    '<i class="glyphicon glyphicon-remove"></i> Delete', 
+                    "products/delete/" ~ product.id,
+                    '<i class="glyphicon glyphicon-remove"></i> Delete',
                     "class": "btn btn-default"
-                ) 
+                )
             }}
         </td>
     </tr>
@@ -1206,33 +1206,33 @@ In the view (`themes/invo/products/search.volt`), we traverse the results corres
         <tr>
             <td colspan="7" align="right">
                 <div class="btn-group">
-                    {{ 
+                    {{
                         link_to(
-                            "products/search", 
-                            '<i class="icon-fast-backward"></i> First', 
+                            "products/search",
+                            '<i class="icon-fast-backward"></i> First',
                             "class": "btn"
-                        ) 
+                        )
                     }}
-                    {{ 
+                    {{
                         link_to(
-                            "products/search?page=" ~ page.before, 
-                            '<i class="icon-step-backward"></i> Previous', 
+                            "products/search?page=" ~ page.before,
+                            '<i class="icon-step-backward"></i> Previous',
                             "class": "btn"
-                        ) 
+                        )
                     }}
-                    {{ 
+                    {{
                         link_to(
-                            "products/search?page=" ~ page.next, 
-                            '<i class="icon-step-forward"></i> Next', 
+                            "products/search?page=" ~ page.next,
+                            '<i class="icon-step-forward"></i> Next',
                             "class": "btn"
-                        ) 
+                        )
                     }}
-                    {{ 
+                    {{
                         link_to(
-                            "products/search?page=" ~ page.last, 
-                            '<i class="icon-fast-forward"></i> Last', 
+                            "products/search?page=" ~ page.last,
+                            '<i class="icon-fast-forward"></i> Last',
                             "class": "btn"
-                        ) 
+                        )
                     }}
                     <span class="help-inline">
                         {{ page.current }} of {{ page.total_pages }}

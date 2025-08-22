@@ -31,7 +31,7 @@ use Phalcon\Http\Response;
 // Getting a response instance
 $response = new Response(
     "Sorry, the page doesn't exist",
-    404, 
+    404,
     'Not Found'
 );
 
@@ -50,7 +50,7 @@ use Phalcon\Http\Response;
 // Getting a response instance
 $response = new Response(
     "Sorry, the page doesn't exist",
-    404, 
+    404,
     'Not Found'
 );
 
@@ -107,7 +107,7 @@ $response
     ->setContent($contents)
     ->setContentType('application/pdf')
     ->setHeader(
-        'Content-Disposition', 
+        'Content-Disposition',
         "attachment; filename='downloaded.pdf'"
     )
     ->send()
@@ -128,7 +128,7 @@ $contents = [
         'name'  => 'invoice.pdf',
         'date'  => '2019-01-01 01:02:03',
         'owner' => 'admin',
-    ]   
+    ]
 ];
 
 $response
@@ -150,7 +150,7 @@ $contents = [
         'name'  => 'invoice.pdf',
         'date'  => '2019-01-01 01:02:03',
         'owner' => 'admin',
-    ]   
+    ]
 ];
 
 $response
@@ -174,11 +174,11 @@ $response = new Response();
 
 $response
     ->setHeader(
-        'Content-Type', 
+        'Content-Type',
         'application/pdf'
     )
     ->setHeader(
-        'Content-Disposition', 
+        'Content-Disposition',
         "attachment; filename='downloaded.pdf'"
     )
 ;
@@ -198,7 +198,7 @@ use Phalcon\Http\Response;
 $response = new Response();
 
 $response->setHeader(
-    'Content-Type', 
+    'Content-Type',
     'application/pdf'
 );
 
@@ -219,7 +219,7 @@ use Phalcon\Http\Response;
 $response = new Response();
 
 $response->setHeader(
-    'Content-Type', 
+    'Content-Type',
     'application/pdf'
 );
 
@@ -239,11 +239,11 @@ $headers  = new Headers();
 
 $headers
     ->set(
-        'Content-Type', 
+        'Content-Type',
         'application/pdf'
     )
     ->set(
-        'Content-Disposition', 
+        'Content-Disposition',
         "attachment; filename='downloaded.pdf'"
     )
 ;
@@ -260,13 +260,13 @@ The [Phalcon\Http\Response\Headers][http-response-headers] object offers the fol
 | Name                                    | Description                                             |
 |-----------------------------------------|---------------------------------------------------------|
 | `get( string $name ): string|bool` | Gets a header value from the object                     |
-| `has( string $name ): bool`             | Checks if a header already exists in the response        |             
-| `remove( string $header )`              | Removes a header from the response                      |                            
+| `has( string $name ): bool`             | Checks if a header already exists in the response        |
+| `remove( string $header )`              | Removes a header from the response                      |
 | `reset()`                               | Resets all headers                                      |
-| `send(): bool`                          | Sends the headers to the client                         |                                           
-| `set( string $name, string $value )`    | Sets a header to be sent at the end of the response     | 
-| `setRaw( string $header )`              | Sets a raw header to be sent at the end of the response |         
-| `toArray(): array`                      | Returns the current headers as an array                 |                               
+| `send(): bool`                          | Sends the headers to the client                         |
+| `set( string $name, string $value )`    | Sets a header to be sent at the end of the response     |
+| `setRaw( string $header )`              | Sets a raw header to be sent at the end of the response |
+| `toArray(): array`                      | Returns the current headers as an array                 |
 
 ```php
 <?php
@@ -317,8 +317,8 @@ $cookie  = new Cookie(
     ".phalcon.io",                 // domain
     true,                          // httponly
     [                              // options
-        "samesite" => "Strict",    // 
-    ]                              // 
+        "samesite" => "Strict",    //
+    ]                              //
 );
 ```
 
@@ -332,7 +332,7 @@ The cookies collection is automatically registered as part of the `response` ser
 In order to set the sign key used to generate a message you can either set it in the constructor:
 
 ```php
-<?php 
+<?php
 
 use Phalcon\Http\Response;
 use Phalcon\Http\Response\Cookies;
@@ -348,7 +348,7 @@ $response->setCookies($cookies);
 or if you want you can use the `setSignKey()` method:
 
 ```php
-<?php 
+<?php
 
 use Phalcon\Http\Response;
 use Phalcon\Http\Response\Cookies;
@@ -369,7 +369,7 @@ $response->setCookies($cookies);
 
 !!! danger "NOTE"
 
-    Cookies can contain complex structures such as service information, resultsets, etc. As a result, sending cookies without encryption to clients could expose application details that can be used by attackers to compromise the application and underlying system. If you do not wish to use encryption, you could send only unique identifiers that could be tied to a database table that stores more complex information that your application can use. 
+    Cookies can contain complex structures such as service information, resultsets, etc. As a result, sending cookies without encryption to clients could expose application details that can be used by attackers to compromise the application and underlying system. If you do not wish to use encryption, you could send only unique identifiers that could be tied to a database table that stores more complex information that your application can use.
 
 ### Methods
 
@@ -466,7 +466,7 @@ With [Phalcon\Http\Response][http-response] you can also execute HTTP redirectio
 Redirect to the default URI
 
 ```php
-<?php 
+<?php
 
 use Phalcon\Http\Response;
 
@@ -478,7 +478,7 @@ $response->redirect();
 Redirect to `posts/index`
 
 ```php
-<?php 
+<?php
 
 use Phalcon\Http\Response;
 
@@ -490,7 +490,7 @@ $response->redirect('posts/index');
 Redirect to an external URI (note the second parameter set to `true`)
 
 ```php
-<?php 
+<?php
 
 use Phalcon\Http\Response;
 
@@ -502,7 +502,7 @@ $response->redirect('https://en.wikipedia.org', true);
 Redirect to an external URI with an HTTP status code, handy for permanent or temporary redirections.
 
 ```php
-<?php 
+<?php
 
 use Phalcon\Http\Response;
 
@@ -514,7 +514,7 @@ $response->redirect('https://www.example.com/new-location', true, 301);
 All internal URIs are generated using the [url][url] service (by default [Phalcon\Mvc\Url][url]). This example demonstrates how you can redirect using a route you have defined in your application:
 
 ```php
-<?php 
+<?php
 
 use Phalcon\Http\Response;
 
@@ -596,7 +596,7 @@ use Phalcon\Http\Response;
 $response = new Response();
 
 $response->setHeader(
-    'Cache-Control', 
+    'Cache-Control',
     'max-age=86400'
 );
 ```
@@ -624,7 +624,7 @@ use Phalcon\Http\Response;
 $response = new Response();
 
 $response->setHeader(
-    'Cache-Control', 
+    'Cache-Control',
     'private, max-age=0, must-revalidate'
 );
 ```

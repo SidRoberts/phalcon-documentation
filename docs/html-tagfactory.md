@@ -84,14 +84,14 @@ If you do not wish to call `newInstance()`, you can always use the method call t
 
 ```php
 public function a(
-    string $href, 
-    string $text, 
-    array $attributes = [], 
+    string $href,
+    string $text,
+    array $attributes = [],
     bool $raw = false
 ): string
 
 public function base(
-    string $href, 
+    string $href,
     array $attributes = []
 ): string
 
@@ -105,25 +105,25 @@ public function breadcrumbs(
 ): Breadcrumbs
 
 public function button(
-    string $text, 
-    array $attributes = [], 
+    string $text,
+    array $attributes = [],
     bool $raw = false
 ): string
 
 public function close(
-    string $tag, 
+    string $tag,
     bool $raw = false
 ): string
 
 public function doctype(
-    int $flag, 
+    int $flag,
     string $delimiter
 ): Doctype
 
 public function element(
-    string $tag, 
-    string $text, 
-    array $attributes = [], 
+    string $tag,
+    string $text,
+    array $attributes = [],
     bool $raw = false
 ): string
 
@@ -132,194 +132,194 @@ public function form(
 ): string
 
 public function img(
-    string $src, 
+    string $src,
     array $attributes = []
 ): string
 
 public function inputCheckbox(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Checkbox
 
 public function inputColor(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Color
 
 public function inputDate(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Date
 
 public function inputDateTime(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): DateTime
 
 public function inputDateTimeLocal(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): DateTimeLocal
 
 public function inputEmail(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Email
 
 public function inputFile(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): File
 
 public function inputHidden(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Hidden
 
 public function inputImage(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Image
 
 public function inputInput(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Input
 
 public function inputMonth(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Month
 
 public function inputNumeric(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Numeric
 
 public function inputPassword(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Password
 
 public function inputRadio(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Radio
 
 public function inputRange(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Range
 
 public function inputSearch(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Search
 
 public function inputSelect(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Select
 
 public function inputSubmit(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Submit
 
 public function inputTel(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Tel
 
 public function inputText(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Text
 
 public function inputTextarea(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Textarea
 
 public function inputTime(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Time
 
 public function inputUrl(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Url
 
 public function inputWeek(
-    string $name, 
-    string $value = null, 
+    string $name,
+    string $value = null,
     array $attributes = []
 ): Week
 
 public function label(
-    string $label, 
-    array $attributes = [], 
+    string $label,
+    array $attributes = [],
     bool $raw = false
 ): string
 
 public function link(
-    string $indent = '    ', 
+    string $indent = '    ',
     string $delimiter = PHP_EOL
 ): Link
 
 public function meta(
-    string $indent = '    ', 
+    string $indent = '    ',
     string $delimiter = PHP_EOL
 ): Meta
 
 public function ol(
-    string $text, 
-    array $attributes = [], 
+    string $text,
+    array $attributes = [],
     bool $raw = false
 ): Ol
 
 public function script(
-    string $indent = '    ', 
+    string $indent = '    ',
     string $delimiter = PHP_EOL
 ): Script
 
 public function style(
-    string $indent = '    ', 
+    string $indent = '    ',
     string $delimiter = PHP_EOL
 ): Style
 
 public function title(
-    string $indent = '    ', 
+    string $indent = '    ',
     string $delimiter = PHP_EOL
 ): Title
 
 public function ul(
-    string $text, 
-    array $attributes = [], 
+    string $text,
+    array $attributes = [],
     bool $raw = false
 ): Ul
 
@@ -342,7 +342,7 @@ $image  = $container
 $result = $container
     ->tag
     ->a(
-        'https://phalcon.io', 
+        'https://phalcon.io',
         $image,
         true
     )
@@ -381,9 +381,9 @@ $options = [
 ];
 
 echo $helper('/myurl', 'click<>me', $options);
-// <a href="/myurl" 
-//    id="my-id" 
-//    name="my-name" 
+// <a href="/myurl"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 //     click&lt;&gt;me
 // </a>
@@ -410,7 +410,7 @@ $options = [
 ];
 
 echo $helper('/myurl', $options);
-// <base href="/myurl" 
+// <base href="/myurl"
 //    target="_blank">
 ```
 
@@ -429,7 +429,7 @@ An example is an application that has an `admin` module, an `invoices` area, and
 
 ```php
 Home / Admin / Invoices / Viewing Invoice [1234]
-``` 
+```
 Each of the words above (apart from the last one) are links to the respective pages. This way the user can quickly navigate back to a different area without having to click the back button or use another menu.
 
 [Phalcon\Html\Helper\Breadcrumbs][html-helper-breadcrumbs] offers functionality to add text, URL, icon and attributes to each element. The resulting HTML when calling `render()` will have each breadcrumb formatted and enclosed in the HTML structure defined by the template. Each element will be separated from another using the default separator `<li>/</li>`.
@@ -439,7 +439,7 @@ Each of the words above (apart from the last one) are links to the respective pa
 public function __invoke(
     string $indent = '    ',
     string $delimiter = PHP_EOL
-): static 
+): static
 ```
 
 Sets the indent and delimiter and returns the object back
@@ -450,7 +450,7 @@ public function add(
     string $link = '',
     string $icon = '',
     array $attributes = []
-): static 
+): static
 ```
 Adds a new crumb.
 
@@ -534,7 +534,7 @@ public function setTemplate(
     string $main,
     string $line,
     string $last
-): static 
+): static
 ```
 
 Sets the HTML template
@@ -606,27 +606,27 @@ $tagFactory = new TagFactory($escaper);
 
 $separator = '
 <span class="mx-5 text-gray-500 dark:text-gray-300 rtl:-scale-x-100">
-    <svg xmlns="http://www.w3.org/2000/svg" 
-         class="w-5 h-5" 
-         viewBox="0 0 20 20" 
+    <svg xmlns="http://www.w3.org/2000/svg"
+         class="w-5 h-5"
+         viewBox="0 0 20 20"
          fill="currentColor">
-        <path fill-rule="evenodd" 
-              d="M7.293 14.707a1 1 0 010-1.414L10.586 
-                10 7.293 6.707a1 1 0 011.414-1.414l4 
-                4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" 
+        <path fill-rule="evenodd"
+              d="M7.293 14.707a1 1 0 010-1.414L10.586
+                10 7.293 6.707a1 1 0 011.414-1.414l4
+                4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
               clip-rule="evenodd" />
     </svg>
 </span>
 ';
 
 $homeIcon = '
-<svg xmlns="http://www.w3.org/2000/svg" 
-     class="w-5 h-5" viewBox="0 0 20 20" 
+<svg xmlns="http://www.w3.org/2000/svg"
+     class="w-5 h-5" viewBox="0 0 20 20"
      fill="currentColor">
-    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 
-            0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 
-            0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 
-            0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 
+    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1
+            0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1
+            0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1
+            0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1
             0 001.414-1.414l-7-7z" />
 </svg>
 ';
@@ -666,38 +666,38 @@ $breadcrumbs
     ->add('Viewing Invoice [1234]', '#', '', $lastAttributes)
 ;
 
-echo $breadcrumbs->render();    
+echo $breadcrumbs->render();
 ```
 
 Output HTML:
 ```html
 <div class="flex items-center py-4 overflow-x-auto whitespace-nowrap">
     <a href="#" class="text-gray-600 dark:text-gray-200">
-        <svg xmlns="http://www.w3.org/2000/svg" 
-             class="w-5 h-5" 
-             viewBox="0 0 20 20" 
+        <svg xmlns="http://www.w3.org/2000/svg"
+             class="w-5 h-5"
+             viewBox="0 0 20 20"
              fill="currentColor">
-            <path d="M10.707 2.293a1 1 
-                0 00-1.414 0l-7 7a1 1 
-                0 001.414 1.414L4 10.414V17a1 1 
-                0 001 1h2a1 1 0 001-1v-2a1 1 
-                0 011-1h2a1 1 0 011 1v2a1 1 
-                0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 
+            <path d="M10.707 2.293a1 1
+                0 00-1.414 0l-7 7a1 1
+                0 001.414 1.414L4 10.414V17a1 1
+                0 001 1h2a1 1 0 001-1v-2a1 1
+                0 011-1h2a1 1 0 011 1v2a1 1
+                0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1
                 0 001.414-1.414l-7-7z" />
         </svg>
     </a>
 
     <span class="mx-5 text-gray-500 dark:text-gray-300 rtl:-scale-x-100">
-        <svg xmlns="http://www.w3.org/2000/svg" 
-             class="w-5 h-5" 
-             viewBox="0 0 20 20" 
+        <svg xmlns="http://www.w3.org/2000/svg"
+             class="w-5 h-5"
+             viewBox="0 0 20 20"
              fill="currentColor">
-            <path fill-rule="evenodd" 
-                  d="M7.293 14.707a1 1 
-                    0 010-1.414L10.586 10 7.293 6.707a1 1 
-                    0 011.414-1.414l4 4a1 1 
-                    0 010 1.414l-4 4a1 1 
-                    0 01-1.414 0z" 
+            <path fill-rule="evenodd"
+                  d="M7.293 14.707a1 1
+                    0 010-1.414L10.586 10 7.293 6.707a1 1
+                    0 011.414-1.414l4 4a1 1
+                    0 010 1.414l-4 4a1 1
+                    0 01-1.414 0z"
                   clip-rule="evenodd" />
         </svg>
     </span>
@@ -707,16 +707,16 @@ Output HTML:
     </a>
 
     <span class="mx-5 text-gray-500 dark:text-gray-300 rtl:-scale-x-100">
-        <svg xmlns="http://www.w3.org/2000/svg" 
-             class="w-5 h-5" 
-             viewBox="0 0 20 20" 
+        <svg xmlns="http://www.w3.org/2000/svg"
+             class="w-5 h-5"
+             viewBox="0 0 20 20"
              fill="currentColor">
-            <path fill-rule="evenodd" 
-                  d="M7.293 14.707a1 1 
-                    0 010-1.414L10.586 10 7.293 6.707a1 1 
-                    0 011.414-1.414l4 4a1 1 
-                    0 010 1.414l-4 4a1 1 
-                    0 01-1.414 0z" 
+            <path fill-rule="evenodd"
+                  d="M7.293 14.707a1 1
+                    0 010-1.414L10.586 10 7.293 6.707a1 1
+                    0 011.414-1.414l4 4a1 1
+                    0 010 1.414l-4 4a1 1
+                    0 01-1.414 0z"
                   clip-rule="evenodd" />
         </svg>
     </span>
@@ -726,15 +726,15 @@ Output HTML:
     </a>
 
     <span class="mx-5 text-gray-500 dark:text-gray-300 rtl:-scale-x-100">
-        <svg xmlns="http://www.w3.org/2000/svg" 
-             class="w-5 h-5" 
+        <svg xmlns="http://www.w3.org/2000/svg"
+             class="w-5 h-5"
              viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" 
-                  d="M7.293 14.707a1 1 
-                    0 010-1.414L10.586 10 7.293 6.707a1 1 
-                    0 011.414-1.414l4 4a1 1 
-                    0 010 1.414l-4 4a1 1 
-                    0 01-1.414 0z" 
+            <path fill-rule="evenodd"
+                  d="M7.293 14.707a1 1
+                    0 010-1.414L10.586 10 7.293 6.707a1 1
+                    0 011.414-1.414l4 4a1 1
+                    0 010 1.414l-4 4a1 1
+                    0 01-1.414 0z"
                   clip-rule="evenodd" />
         </svg>
     </span>
@@ -797,9 +797,9 @@ $options = [
 ];
 
 echo $helper('click<>me', $options);
-// <button 
-//    id="my-id" 
-//    name="my-name" 
+// <button
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 //     click&lt;&gt;me
 // </button>
@@ -874,9 +874,9 @@ $options = [
 ];
 
 echo $helper('address', 'click<>me', $options);
-// <address 
-//    id="my-id" 
-//    name="my-name" 
+// <address
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 //     click&lt;&gt;me
 // </address>
@@ -906,9 +906,9 @@ $options = [
 ];
 
 echo $helper($options);
-// <form 
-//    id="my-id" 
-//    name="my-name" 
+// <form
+//    id="my-id"
+//    name="my-name"
 //    class="my-class"
 //    method="post"
 //    enctype="multipart/form-data">
@@ -941,10 +941,10 @@ $options = [
 ];
 
 echo $helper('/my-url', $options);
-// <img 
-//    src="/my-url" 
-//    id="my-id" 
-//    name="my-name" 
+// <img
+//    src="/my-url"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1017,9 +1017,9 @@ $options = [
 
 echo $helper('test-name', "test-value", $options);
 // <input type="color"
-//    value="test-value" 
-//    id="my-id" 
-//    name="my-name" 
+//    value="test-value"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1048,9 +1048,9 @@ $options = [
 
 echo $helper('test-name', "test-value", $options);
 // <input type="date"
-//    value="test-value" 
-//    id="my-id" 
-//    name="my-name" 
+//    value="test-value"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1079,9 +1079,9 @@ $options = [
 
 echo $helper('test-name', "test-value", $options);
 // <input type="datetime"
-//    value="test-value" 
-//    id="my-id" 
-//    name="my-name" 
+//    value="test-value"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1110,9 +1110,9 @@ $options = [
 
 echo $helper('test-name', "test-value", $options);
 // <input type="datetime-local"
-//    value="test-value" 
-//    id="my-id" 
-//    name="my-name" 
+//    value="test-value"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1141,9 +1141,9 @@ $options = [
 
 echo $helper('test-name', "test-value", $options);
 // <input type="email"
-//    value="test-value" 
-//    id="my-id" 
-//    name="my-name" 
+//    value="test-value"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1172,9 +1172,9 @@ $options = [
 
 echo $helper('test-name', "test-value", $options);
 // <input type="file"
-//    value="test-value" 
-//    id="my-id" 
-//    name="my-name" 
+//    value="test-value"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1203,9 +1203,9 @@ $options = [
 
 echo $helper('test-name', "test-value", $options);
 // <input type="hidden"
-//    value="test-value" 
-//    id="my-id" 
-//    name="my-name" 
+//    value="test-value"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1234,9 +1234,9 @@ $options = [
 
 echo $helper('test-name', "test-value", $options);
 // <input type="image"
-//    value="test-value" 
-//    id="my-id" 
-//    name="my-name" 
+//    value="test-value"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1265,9 +1265,9 @@ $options = [
 
 echo $helper('test-name', "test-value", $options);
 // <input type="month"
-//    value="test-value" 
-//    id="my-id" 
-//    name="my-name" 
+//    value="test-value"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1307,9 +1307,9 @@ $result->setType('month');
 
 echo $result;
 // <input type="month"
-//    value="test-value" 
-//    id="my-id" 
-//    name="my-name" 
+//    value="test-value"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1338,9 +1338,9 @@ $options = [
 
 echo $helper('test-name', "test-value", $options);
 // <input type="numeric"
-//    value="test-value" 
-//    id="my-id" 
-//    name="my-name" 
+//    value="test-value"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1369,9 +1369,9 @@ $options = [
 
 echo $helper('test-name', "test-value", $options);
 // <input type="password"
-//    value="test-value" 
-//    id="my-id" 
-//    name="my-name" 
+//    value="test-value"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1444,9 +1444,9 @@ $options = [
 
 echo $helper('test-name', "test-value", $options);
 // <input type="range"
-//    value="test-value" 
-//    id="my-id" 
-//    name="my-name" 
+//    value="test-value"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1475,9 +1475,9 @@ $options = [
 
 echo $helper('test-name', "test-value", $options);
 // <input type="search"
-//    value="test-value" 
-//    id="my-id" 
-//    name="my-name" 
+//    value="test-value"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1538,7 +1538,7 @@ $helper  = new Select($escaper);
 $options = [
     'id' => 'carsList',
 ];
- 
+
 $result = $helper('    ', PHP_EOL, $options);
 $result
     ->add("Ferrari", "1", ["class" => "active"])
@@ -1598,9 +1598,9 @@ $options = [
 
 echo $helper('test-name', "test-value", $options);
 // <input type="submit"
-//    value="test-value" 
-//    id="my-id" 
-//    name="my-name" 
+//    value="test-value"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1629,9 +1629,9 @@ $options = [
 
 echo $helper('test-name', "test-value", $options);
 // <input type="tel"
-//    value="test-value" 
-//    id="my-id" 
-//    name="my-name" 
+//    value="test-value"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1660,9 +1660,9 @@ $options = [
 
 echo $helper('test-name', "test-value", $options);
 // <input type="text"
-//    value="test-value" 
-//    id="my-id" 
-//    name="my-name" 
+//    value="test-value"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1690,9 +1690,9 @@ $options = [
 ];
 
 echo $helper('click<>me', $options);
-// <textarea 
-//    id="my-id" 
-//    name="my-name" 
+// <textarea
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 //     click&lt;&gt;me
 // </textarea>
@@ -1723,9 +1723,9 @@ $options = [
 
 echo $helper('test-name', "test-value", $options);
 // <input type="time"
-//    value="test-value" 
-//    id="my-id" 
-//    name="my-name" 
+//    value="test-value"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1754,9 +1754,9 @@ $options = [
 
 echo $helper('test-name', "test-value", $options);
 // <input type="url"
-//    value="test-value" 
-//    id="my-id" 
-//    name="my-name" 
+//    value="test-value"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1785,9 +1785,9 @@ $options = [
 
 echo $helper('test-name', "test-value", $options);
 // <input type="week"
-//    value="test-value" 
-//    id="my-id" 
-//    name="my-name" 
+//    value="test-value"
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1815,9 +1815,9 @@ $options = [
 ];
 
 echo $helper($options);
-// <label 
-//    id="my-id" 
-//    name="my-name" 
+// <label
+//    id="my-id"
+//    name="my-name"
 //    class="my-class">
 ```
 
@@ -1995,9 +1995,9 @@ $result
 ;
 
 echo $result;
-//    <script type="application/javascript" 
+//    <script type="application/javascript"
 //            src="/js/custom.js"></script>
-//    <script type="application/javascript" 
+//    <script type="application/javascript"
 //            src="/js/print.js" ie="active"></script>
 ```
 
@@ -2054,7 +2054,7 @@ echo $result;
 
 ```php
 public function append(
-    string $text, 
+    string $text,
     bool $raw = false
 ): Title
 ```
@@ -2067,7 +2067,7 @@ Returns the title
 
 ```php
 public function set(
-    string $text, 
+    string $text,
     bool $raw = false
 )): Title
 ```
@@ -2075,7 +2075,7 @@ Sets the title
 
 ```php
 public function setSeparator(
-    string $separator, 
+    string $separator,
     bool $raw = false
 )): Title
 ```
@@ -2083,7 +2083,7 @@ Sets the separator
 
 ```php
 public function prepend(
-    string $text, 
+    string $text,
     bool $raw = false
 ): Title
 ```

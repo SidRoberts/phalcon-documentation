@@ -14,7 +14,7 @@ An example is an application that has an `admin` module, an `invoices` area, and
 
 ```php
 Home / Admin / Invoices / Viewing Invoice [1234]
-``` 
+```
 Each of the words above (apart from the last one) are links to the respective pages. This way the user can quickly navigate back to a different area without having to click the back button or use another menu.
 
 [Phalcon\Html\Breadcrumbs][html-breadcrumbs] offers functionality to add text and URLs. The resulting HTML when calling `render()` will have each breadcrumb enclosed in `<dt>` tags, while the whole string is enclosed in `<dl>` tags.
@@ -22,7 +22,7 @@ Each of the words above (apart from the last one) are links to the respective pa
 ### Methods
 ```php
 public function add(
-    string $label, 
+    string $label,
     string $link = ""
 ): Breadcrumbs
 ```

@@ -10,19 +10,19 @@ The following types of relationships are available:
 
 ```php
 hasOne(
-    string|array $fields, 
-    string $referenceModel, 
-    string|array $referencedFields, 
+    string|array $fields,
+    string $referenceModel,
+    string|array $referencedFields,
     array $options = null
 )
 
 hasOneThrough(
-    string|array $fields, 
-    string $intermediateModel, 
-    string|array $intermediateFields, 
+    string|array $fields,
+    string $intermediateModel,
+    string|array $intermediateFields,
     string|array $intermediateReferencedFields,
-    string $referenceModel, 
-    string|array $referencedFields, 
+    string $referenceModel,
+    string|array $referencedFields,
     array $options = null
 )
 ```
@@ -31,9 +31,9 @@ hasOneThrough(
 
 ```php
 hasMany(
-    string|array $fields, 
-    string $referenceModel, 
-    string|array $referencedFields, 
+    string|array $fields,
+    string $referenceModel,
+    string|array $referencedFields,
     array options = null
 )
 ```
@@ -42,9 +42,9 @@ hasMany(
 
 ```php
 belongsTo(
-    string|array $fields, 
-    string $referenceModel, 
-    string|array $referencedFields, 
+    string|array $fields,
+    string $referenceModel,
+    string|array $referencedFields,
     array options = null
 )
 ```
@@ -53,12 +53,12 @@ belongsTo(
 
 ```php
 hasManyToMany(
-    string|array $fields, 
-    string $intermediateModel, 
-    string|array $intermediateFields, 
+    string|array $fields,
+    string $intermediateModel,
+    string|array $intermediateFields,
     string|array $intermediateReferencedFields,
-    string $referenceModel, 
-    string|array $referencedFields, 
+    string $referenceModel,
+    string|array $referencedFields,
     array $options = null
 )
 ```
@@ -249,7 +249,7 @@ class Products extends Model
             InvoicesProducts::class,
             'ixp_prd_id'
         );
-        
+
         // Many to many -> Invoices
         $this->hasManyToMany(
             'prd_id',
@@ -422,17 +422,17 @@ class Products extends Model
     public $prd_id;
     public $prd_type_flag;
     public $prd_name;
-    
+
     public function initialize()
     {
         $this->hasOne(
             [
-                'prd_id', 
+                'prd_id',
                 'prd_type_flag'
             ],
             Parts::class,
             [
-                'par_prd_id', 
+                'par_prd_id',
                 'par_type_flag'
             ],
             [
@@ -1057,14 +1057,14 @@ $unpaidInvoices = $company->InvoicesUnpaid;
 $unpaidInvoices = $company->getInvoicesUnpaid();
 $unpaidInvoices = $company->getRelated('InvoicesUnpaid');
 $unpaidInvoices = $company->getRelated(
-    'Invoices', 
+    'Invoices',
     [
         'conditions' => "inv_status = 'paid'",
     ]
 );
 
 $unpaidInvoices = $company->getRelated(
-    'Invoices', 
+    'Invoices',
     [
         'conditions' => "inv_status = 'paid'",
         'order'      => 'inv_created_date ASC',
@@ -1143,7 +1143,7 @@ class Products extends Model
             'ixp_prd_id',
             [
                 'foreignKey' => [
-                    'message' => 'The product cannot be deleted ' . 
+                    'message' => 'The product cannot be deleted ' .
                                  'because there are invoices ' .
                                  'attached to it',
                 ],
@@ -1305,7 +1305,7 @@ Saving data with the above syntax will implicitly create a transaction and commi
 !!! warning "NOTE"
 
     Adding related entities by overloading the following methods/events is **not** possible:
-    
+
     - `Phalcon\Mvc\Model::beforeSave()`
     - `Phalcon\Mvc\Model::beforeCreate()`
     - `Phalcon\Mvc\Model::beforeUpdate()`
@@ -1401,13 +1401,13 @@ $customer->getInvoices()->delete();
 !!! warning "NOTE"
 
     `delete()` only works safely with `hasMany()` relationships. The deletion callback runs before the actual deletion of the parent model.
-    
+
     This makes it safe for:
-    
+
     - Deleting child models that hold a foreign key to the parent (e.g., hasMany)
-    
+
     But unsafe for:
-    
+
     - Deleting related models that the parent depends on via a foreign key (e.g., belongsTo or hasOne where FK is in parent)
 
 

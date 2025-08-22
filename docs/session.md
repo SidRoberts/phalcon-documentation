@@ -43,7 +43,7 @@ In order to work with the session, you need to start it. `start()` performs this
 
 !!! info "NOTE"
 
-    - If the session has already started, the call will return `true`. 
+    - If the session has already started, the call will return `true`.
     - If any headers have been sent, it will return `false`
     - If the adapter is not set, it will throw an exception
     - It will return the result of `session_start()`
@@ -269,7 +269,7 @@ $session
 $session->setOptions(
     [
         'uniqueId' => 'id-2'
-    ]   
+    ]
 );
 ```
 
@@ -340,7 +340,7 @@ The `servers` option is an array that contains the following options:
 |----------|---------------------------|
 | `host`   | the host                  |
 | `port`   | the port                  |
-| `weight` | the weight for the server | 
+| `weight` | the weight for the server |
 
 ```php
 <?php

@@ -84,12 +84,12 @@ use Phalcon\Http\Request;
 use Phalcon\Http\Response;
 use Phalcon\Mvc\Controller;
 use Phalcon\Mvc\View;
-use Vokuro\Auth\Auth; 
+use Vokuro\Auth\Auth;
 use Vokuro\Models\Users;
 use Vokuro\Models\ResetPasswords;
 
 /**
- * Controller used to handle non-authenticated session actions like 
+ * Controller used to handle non-authenticated session actions like
  * login/logout, user signup, and forgotten passwords
  *
  * @property Auth     $auth
@@ -129,7 +129,7 @@ class SessionController extends Controller
                             'remember' => $remember,
                         ]
                     );
-                    
+
                     return $this->response->redirect('users');
                 }
             }
@@ -442,7 +442,7 @@ echo $flash->getImplicitFlush(); // true
 $flash->error('Error'); // No output
 
 echo $flash
-    ->setImplicitFlush(false) 
+    ->setImplicitFlush(false)
     ->error('Error Message') // 'Error Message'
 ;
 ```

@@ -20,7 +20,7 @@ $(which php) -S localhost:8000 -t public .htrouter.php
 
 The above command does:
 
-| Command             | Description                                                                                                                         | 
+| Command             | Description                                                                                                                         |
 |---------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | `$(which php)`      | will insert the absolute path to your PHP binary                                                                                    |
 | `-S localhost:8000` | invokes server mode with the provided `host:port`                                                                                   |
@@ -139,11 +139,11 @@ server {
         if (!-f $document_root$fastcgi_script_name) {
             return 404;
         }
-        
+
         fastcgi_param PATH_INFO       $fastcgi_path_info;
         # fastcgi_param PATH_TRANSLATED $document_root$fastcgi_path_info;
         # and set php.ini cgi.fix_pathinfo=0
-        
+
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
     }
 
@@ -373,7 +373,7 @@ and save it.
 Also edit the `php.ini` file, which is located at `C:\wamp\bin\apache\apache2.4.9\bin\php.ini`. Append at the end of the file:
 
 ```ini
-extension=php_phalcon.dll 
+extension=php_phalcon.dll
 ```
 
 and save it.

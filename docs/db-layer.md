@@ -92,8 +92,8 @@ Additional constants are available in the [Phalcon\Db\Column][db-column] object.
 
 ```php
 public function addColumn(
-    string $tableName, 
-    string $schemaName, 
+    string $tableName,
+    string $schemaName,
     ColumnInterface $column
 ): bool
 ```
@@ -101,7 +101,7 @@ Adds a column to a table
 
 ```php
 public function addIndex(
-    string $tableName, 
+    string $tableName,
     string $schemaName,
     IndexInterface $index
 ): bool
@@ -110,8 +110,8 @@ Adds an index to a table
 
 ```php
 public function addForeignKey(
-    string $tableName, 
-    string $schemaName, 
+    string $tableName,
+    string $schemaName,
     ReferenceInterface $reference
 ): bool
 ```
@@ -119,8 +119,8 @@ Adds a foreign key to a table
 
 ```php
 public function addPrimaryKey(
-    string $tableName, 
-    string $schemaName, 
+    string $tableName,
+    string $schemaName,
     IndexInterface $index
 ): bool
 ```
@@ -166,8 +166,8 @@ Creates a new savepoint
 
 ```php
 public function createTable(
-    string $tableName, 
-    string $schemaName, 
+    string $tableName,
+    string $schemaName,
     array $definition
 ): bool
 ```
@@ -175,8 +175,8 @@ Creates a table
 
 ```php
 public function createView(
-    string $viewName, 
-    array $definition, 
+    string $viewName,
+    array $definition,
     string $schemaName = null
 ): bool
 ```
@@ -184,9 +184,9 @@ Creates a view
 
 ```php
 public function delete(
-    mixed $table, 
-    string $whereCondition = null, 
-    array $placeholders = [], 
+    mixed $table,
+    string $whereCondition = null,
+    array $placeholders = [],
     array $dataTypes = []
 ): bool
 ```
@@ -194,7 +194,7 @@ Deletes data from a table using custom RDBMS SQL syntax
 
 ```php
 public function describeColumns(
-    string $table, 
+    string $table,
     string $schema = null
 ): ColumnInterface[]
 ```
@@ -202,7 +202,7 @@ Returns an array of Phalcon\Db\Column objects describing a table
 
 ```php
 public function describeIndexes(
-    string $table, 
+    string $table,
         string $schema = null
 ): IndexInterface[]
 ```
@@ -210,7 +210,7 @@ Lists table indexes
 
 ```php
 public function describeReferences(
-    string $table, 
+    string $table,
     string $schema = null
 ): ReferenceInterface[]
 ```
@@ -218,8 +218,8 @@ Lists table references
 
 ```php
 public function dropColumn(
-    string $tableName, 
-    string $schemaName, 
+    string $tableName,
+    string $schemaName,
     string $columnName
 ): bool
 ```
@@ -227,8 +227,8 @@ Drops a column from a table
 
 ```php
 public function dropForeignKey(
-    string $tableName, 
-    string $schemaName, 
+    string $tableName,
+    string $schemaName,
     string $referenceName
 ): bool
 ```
@@ -236,8 +236,8 @@ Drops a foreign key from a table
 
 ```php
 public function dropIndex(
-    string $tableName, 
-    string $schemaName, 
+    string $tableName,
+    string $schemaName,
     string $indexName
 ): bool
 ```
@@ -245,7 +245,7 @@ Drop an index from a table
 
 ```php
 public function dropPrimaryKey(
-    string $tableName, 
+    string $tableName,
     string $schemaName
 ): bool
 ```
@@ -253,8 +253,8 @@ Drops primary key from a table
 
 ```php
 public function dropTable(
-    string $tableName, 
-    string $schemaName = null, 
+    string $tableName,
+    string $schemaName = null,
     bool $ifExists = true
 ): bool
 ```
@@ -262,8 +262,8 @@ Drops a table from a schema/database
 
 ```php
 public function dropView(
-    string $viewName, 
-    string $schemaName = null, 
+    string $viewName,
+    string $schemaName = null,
     bool $ifExists = true
 ): bool
 ```
@@ -283,8 +283,8 @@ Escapes a value to avoid SQL injections
 
 ```php
 public function execute(
-    string $sqlStatement, 
-    array $bindParams = [], 
+    string $sqlStatement,
+    array $bindParams = [],
     array $bindTypes = []
 ): bool
 ```
@@ -292,9 +292,9 @@ Sends SQL statements to the database server returning the success state. Use thi
 
 ```php
 public function fetchAll(
-    string $sqlQuery, 
-    int $fetchMode = 2, 
-    array $bindParams = [], 
+    string $sqlQuery,
+    int $fetchMode = 2,
+    array $bindParams = [],
     array $bindTypes = []
 ): array
 ```
@@ -302,8 +302,8 @@ Dumps the complete result of a query into an array
 
 ```php
 public function fetchColumn(
-    string $sqlQuery, 
-    array $placeholders = [], 
+    string $sqlQuery,
+    array $placeholders = [],
     mixed $column = 0
 ): string | bool
 ```
@@ -315,7 +315,7 @@ $invoicesCount = $connection
 print_r($invoicesCount)
 
 $invoice = $connection->fetchColumn(
-    'SELECT inv_id, inv_title 
+    'SELECT inv_id, inv_title
     FROM co_invoices
     ORDER BY inv_created_at DESC',
     1
@@ -325,9 +325,9 @@ print_r($invoice)
 
 ```php
 public function fetchOne(
-    string $sqlQuery, 
-    int $fetchMode = 2, 
-    array $bindParams = [], 
+    string $sqlQuery,
+    int $fetchMode = 2,
+    array $bindParams = [],
     array $bindTypes = []
 ): array
 ```
@@ -426,9 +426,9 @@ Returns the type of database system the adapter is used for
 
 ```php
 public function insert(
-    string $table, 
-    array $values, 
-    mixed $fields = null, 
+    string $table,
+    array $values,
+    mixed $fields = null,
     mixed $dataTypes = null
 ): bool
 ```
@@ -436,8 +436,8 @@ Inserts data into a table using custom RDBMS SQL syntax
 
 ```php
 public function insertAsDict(
-    string $table, 
-    mixed $data, 
+    string $table,
+    mixed $data,
     mixed $dataTypes = null
 ): bool
 ```
@@ -453,9 +453,9 @@ $success = $connection->insertAsDict(
 )
 
 // SQL
-// INSERT INTO `co_invoices` 
-//     ( `inv_cst_id`, `inv_title` ) 
-// VALUES 
+// INSERT INTO `co_invoices`
+//     ( `inv_cst_id`, `inv_title` )
+// VALUES
 //     ( 1, 'Invoice for ACME Inc.' )
 ```
 
@@ -478,7 +478,7 @@ Returns insert id for the auto_increment column inserted in the last SQL stateme
 
 ```php
 public function limit(
-    string $sqlQuery, 
+    string $sqlQuery,
     int $number
 ): string
 ```
@@ -500,9 +500,9 @@ List all views on a database
 
 ```php
 public function modifyColumn(
-    string $tableName, 
-    string $schemaName, 
-    ColumnInterface $column, 
+    string $tableName,
+    string $schemaName,
+    ColumnInterface $column,
     ColumnInterface $currentColumn = null
 ): bool
 ```
@@ -510,8 +510,8 @@ Modifies a table column based on a definition
 
 ```php
 public function query(
-    string $sqlStatement, 
-    array $bindParams = [], 
+    string $sqlStatement,
+    array $bindParams = [],
     array $bindTypes = []
 ): ResultInterface | bool
 ```
@@ -564,7 +564,7 @@ Check whether the database system requires a sequence to produce auto-numeric va
 
 ```php
 public function tableExists(
-    string $tableName, 
+    string $tableName,
     string $schemaName = null
 ): bool
 ```
@@ -572,7 +572,7 @@ Generates SQL checking for the existence of a `schema.table`
 
 ```php
 public function tableOptions(
-    string $tableName, 
+    string $tableName,
     string $schemaName = null
 ): array
 ```
@@ -580,10 +580,10 @@ Gets creation options from a table
 
 ```php
 public function update(
-    string $table, 
-    mixed $fields, 
-    mixed $values, 
-    mixed $whereCondition = null, 
+    string $table,
+    mixed $fields,
+    mixed $values,
+    mixed $whereCondition = null,
     mixed $dataTypes = null
 ): bool
 ```
@@ -591,9 +591,9 @@ Updates data on a table using custom RDBMS SQL syntax
 
 ```php
 public function updateAsDict(
-    string $table, 
-    mixed $data, 
-    mixed $whereCondition = null, 
+    string $table,
+    mixed $data,
+    mixed $whereCondition = null,
     mixed $dataTypes = null
 ): bool
 ```
@@ -609,8 +609,8 @@ $success = $connection->updateAsDict(
 )
 
 // SQL
-// UPDATE `co_invoices` 
-// SET    `inv_title` = 'Invoice for ACME Inc.' 
+// UPDATE `co_invoices`
+// SET    `inv_title` = 'Invoice for ACME Inc.'
 // WHERE   inv_id = 1
 ```
 
@@ -621,7 +621,7 @@ Check whether the database system requires an explicit value for identity column
 
 ```php
 public function viewExists(
-    string $viewName, 
+    string $viewName,
     string $schemaName = null
 ): bool
 ```
@@ -719,7 +719,7 @@ $config = new Ini('config.ini');
 $container->set('config', $config);
 
 $container->set(
-    'db', 
+    'db',
     function () {
         return (new PdoFactory())->load($this->config->database);
     }
@@ -781,7 +781,7 @@ $phql = '
   SELECT *
   FROM   Invoices
   WHERE  MATCH_AGAINST(title, :pattern:)';
-  
+
 $posts = $modelsManager->executeQuery(
     $phql,
     [
@@ -874,9 +874,9 @@ To insert a row in the database, you can use raw SQL or use the methods presente
 <?php
 
 $sql     = "
-INSERT INTO `co_invoices` 
-    ( `inv_cst_id`, `inv_title` ) 
-VALUES 
+INSERT INTO `co_invoices`
+    ( `inv_cst_id`, `inv_title` )
+VALUES
     ( 1, 'Invoice for ACME Inc.' )
 ";
 $success = $connection->execute($sql);
@@ -887,9 +887,9 @@ Raw SQL
 <?php
 
 $sql     = '
-INSERT INTO `co_invoices` 
-    ( `inv_cst_id`, `inv_title` ) 
-VALUES 
+INSERT INTO `co_invoices`
+    ( `inv_cst_id`, `inv_title` )
+VALUES
     ( ?, ? )
 ';
 $success = $connection->execute(
@@ -913,7 +913,7 @@ $success = $connection->insert(
     ],
     [
         'inv_cst_id',
-        'inv_title', 
+        'inv_title',
     ]
 );
 ```
@@ -939,10 +939,10 @@ To update a row in the database, you can use raw SQL or use the methods presente
 <?php
 
 $sql     = "
-UPDATE 
-    `co_invoices` 
-SET 
-    `inv_cst_id`= 1, 
+UPDATE
+    `co_invoices`
+SET
+    `inv_cst_id`= 1,
     `inv_title` = 'Invoice for ACME Inc.'
 WHERE
     `inv_id` = 4
@@ -955,10 +955,10 @@ Raw SQL
 <?php
 
 $sql     = "
-UPDATE 
-    `co_invoices` 
-SET 
-    `inv_cst_id`= ?, 
+UPDATE
+    `co_invoices`
+SET
+    `inv_cst_id`= ?,
     `inv_title` = ?
 WHERE
     `inv_id` = ?
@@ -1068,8 +1068,8 @@ With conditionals escaped (alternative syntax)
 <?php
 
 $sql     = '
-DELETE 
-   `co_invoices` 
+DELETE
+   `co_invoices`
 WHERE
    `inv_id` = 4
 ';
@@ -1081,13 +1081,13 @@ Raw SQL
 <?php
 
 $sql     = '
-DELETE 
-   `co_invoices` 
+DELETE
+   `co_invoices`
 WHERE
    `inv_id` = ?
 ';
 $success = $connection->execute(
-    $sql, 
+    $sql,
     [
         4
     ]
@@ -1115,12 +1115,12 @@ The `Phalcon\Db` adapters provide several methods to query rows from tables. The
 <?php
 
 $sql = '
-SELECT 
+SELECT
     inv_id,
     inv_title
-FROM 
+FROM
     co_invoices
-ORDER BY 
+ORDER BY
     inv_created_at
 ';
 $result = $connection->query($sql);
@@ -1156,12 +1156,12 @@ There are many other constants that can be used similar to PDO:FETCH_* constants
 <?php
 
 $sql = '
-SELECT 
+SELECT
     inv_id,
     inv_title
-FROM 
+FROM
     co_invoices
-ORDER BY 
+ORDER BY
     inv_created_at
 ';
 $result = $connection->query($sql);
@@ -1191,12 +1191,12 @@ The `query()` method returns an instance of [Phalcon\Db\Result\Pdo][db-result-pd
 <?php
 
 $sql = '
-SELECT 
+SELECT
     inv_id,
     inv_title
-FROM 
+FROM
     co_invoices
-ORDER BY 
+ORDER BY
     inv_created_at
 ';
 $result = $connection->query($sql);
@@ -1219,14 +1219,14 @@ Bound parameters are also supported. Although there is a minimal performance imp
 <?php
 
 $sql = '
-SELECT 
+SELECT
     inv_id,
     inv_title
-FROM 
+FROM
     co_invoices
 WHERE
     inv_cst_id = ?
-ORDER BY 
+ORDER BY
     inv_created_at
 ';
 
@@ -1243,10 +1243,10 @@ Binding with numeric placeholders
 <?php
 
 $sql     = "
-UPDATE 
-    `co_invoices` 
-SET 
-    `inv_cst_id`= :cstId, 
+UPDATE
+    `co_invoices`
+SET
+    `inv_cst_id`= :cstId,
     `inv_title` = :title
 WHERE
     `inv_id` = :id
@@ -1270,14 +1270,14 @@ Also, you can pass your parameters directly to the `execute` or `query` methods.
 <?php
 
 $sql = '
-SELECT 
+SELECT
     inv_id,
     inv_title
-FROM 
+FROM
     co_invoices
 WHERE
     inv_cst_id = ?
-ORDER BY 
+ORDER BY
     inv_created_at
 ';
 
@@ -1297,14 +1297,14 @@ Placeholders allowed you to bind parameters to avoid SQL injections:
 <?php
 
 $phql = '
-SELECT 
+SELECT
     inv_id,
     inv_title
-FROM 
+FROM
     Invoices
 WHERE
     inv_cst_id = :customerId:
-ORDER BY 
+ORDER BY
     inv_created_at
 ';
 
@@ -1329,14 +1329,14 @@ use Phalcon\Db\Column;
 // ...
 
 $phql = '
-SELECT 
+SELECT
     inv_id,
     inv_title
-FROM 
+FROM
     Invoices
 WHERE
     inv_cst_id = :customerId:
-ORDER BY 
+ORDER BY
     inv_created_at
 ';
 
@@ -1358,14 +1358,14 @@ You can use typed placeholders in your parameters, instead of specifying the bin
 <?php
 
 $phql = '
-SELECT 
+SELECT
     inv_id,
     inv_title
-FROM 
+FROM
     Invoices
 WHERE
     inv_cst_id = {customerId:int}
-ORDER BY 
+ORDER BY
     inv_created_at
 ';
 
@@ -1380,14 +1380,14 @@ $invoices = $this
 ;
 
 $phql = '
-SELECT 
+SELECT
     inv_id,
     inv_title
-FROM 
+FROM
     Invoices
 WHERE
     inv_title <> {title:str}
-ORDER BY 
+ORDER BY
     inv_created_at
 ';
 
@@ -1408,14 +1408,14 @@ You can also omit the type if you do not need to specify it:
 <?php
 
 $phql = '
-SELECT 
+SELECT
     inv_id,
     inv_title
-FROM 
+FROM
     Invoices
 WHERE
     inv_cst_id = {customerId}
-ORDER BY 
+ORDER BY
     inv_created_at
 ';
 
@@ -1436,14 +1436,14 @@ Typed placeholders are also more powerful since we can now bind a static array w
 <?php
 
 $phql = '
-SELECT 
+SELECT
     inv_id,
     inv_title
-FROM 
+FROM
     Invoices
 WHERE
     inv_cst_id IN ({ids:array})
-ORDER BY 
+ORDER BY
     inv_created_at
 ';
 
@@ -1480,12 +1480,12 @@ By default, bound parameters are not cast in the PHP userland to the specified b
 
 $number = '100';
 $phql   = '
-SELECT 
+SELECT
     inv_id,
     inv_title
-FROM 
+FROM
     Invoices
-LIMIT 
+LIMIT
     {number:int}
 ';
 
@@ -1500,9 +1500,9 @@ $invoices = $modelsManager->executeQuery(
 This causes the following exception:
 
 ```
-Fatal error: Uncaught exception 'PDOException' with message 
-'SQLSTATE[42000]: Syntax error or access violation: 1064. 
-You have an error in your SQL syntax; check the manual that 
+Fatal error: Uncaught exception 'PDOException' with message
+'SQLSTATE[42000]: Syntax error or access violation: 1064.
+You have an error in your SQL syntax; check the manual that
 corresponds to your MySQL server version for the right
 syntax to use near ''100'' at line 1' in ....
 ```
@@ -1514,12 +1514,12 @@ This happens because `'100'` is a string variable. It is easily fixable by casti
 
 $number = '100';
 $phql   = '
-SELECT 
+SELECT
     inv_id,
     inv_title
-FROM 
+FROM
     Invoices
-LIMIT 
+LIMIT
     {number:int}
 ';
 
@@ -1722,10 +1722,10 @@ $manager->attach(
 $connection->setEventsManager($manager);
 
 $sql = '
-SELECT 
+SELECT
     inv_id,
     inv_title
-FROM 
+FROM
     co_invoices
 ';
 $connection->query($sql);
@@ -1825,7 +1825,7 @@ $connection->insert(
     ],
     [
         'inv_cst_id',
-        'inv_title', 
+        'inv_title',
     ]
 );
 ```
@@ -1833,18 +1833,18 @@ $connection->insert(
 As above, the file `/storage/logs/queries.log` will contain something like this:
 
 ```
-[2019-12-25 01:02:03][INFO] INSERT INTO `co_invoices` 
-    SET (`inv_cst_id`, `inv_title`) 
+[2019-12-25 01:02:03][INFO] INSERT INTO `co_invoices`
+    SET (`inv_cst_id`, `inv_title`)
     VALUES (1, 'Invoice for ACME Inc.')
 ```
 
 The listener will also work with models and their operations. It will also include all bound parameters that the query uses at the end of the logged statement.
 
 ```
-[2019-12-25 01:02:03][INFO] SELECT `co_customers`.`cst_id`, 
+[2019-12-25 01:02:03][INFO] SELECT `co_customers`.`cst_id`,
     ...,
-    FROM `co_customers` 
-    WHERE LOWER(`co_customers`.`cst_email`) = :cst_email 
+    FROM `co_customers`
+    WHERE LOWER(`co_customers`.`cst_email`) = :cst_email
     LIMIT :APL0 - [{"emp_email":"team@phalcon.ld","APL0":1}]
 ```
 

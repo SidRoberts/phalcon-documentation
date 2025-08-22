@@ -157,7 +157,7 @@ namespace MyApp\Html\Serializers;
 
 use Phalcon\Html\Link\Serializer\SerializerInterface;
 
-class Custom implements SerializerInterface 
+class Custom implements SerializerInterface
 {
     public function serialize(array $links): ?string
     {

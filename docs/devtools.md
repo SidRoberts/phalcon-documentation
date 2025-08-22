@@ -145,7 +145,7 @@ Change the database section in your config.php file:
 <?php
 
 /*
- * Modified: prepend directory path of current file, because of this 
+ * Modified: prepend directory path of current file, because of this
  * file own different ENV under between Apache and command line.
  * NOTE: please remove this comment.
  */
@@ -260,22 +260,22 @@ use Phalcon\Filter\Validation\Validator\PresenceOf as EmailValidator;
 class Customers extends Model
 {
     /**
-     * @var int 
+     * @var int
      */
     public $cst_id;
 
     /**
-     * @var int 
+     * @var int
      */
     public $cst_status_flag;
 
     /**
-     * @var string 
+     * @var string
      */
     public $cst_name_last;
 
     /**
-     * @var string 
+     * @var string
      */
     public $cst_name_first;
 

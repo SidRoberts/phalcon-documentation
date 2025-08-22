@@ -117,25 +117,25 @@ hide:
         </span>
     </div>
     <div style="float: left; margin-left: 1em;">
-        <span class="legend legend-old-version-supported" 
+        <span class="legend legend-old-version-supported"
               title="An older version, yet still maintained">
             Older version, still maintained
         </span>
     </div>
     <div style="float: left; margin-left: 1em;">
-        <span class="legend legend-latest" 
+        <span class="legend legend-latest"
               title="Latest stable version">
             <strong>Latest version</strong>
         </span>
     </div>
     <div style="float: left; margin-left: 1em;">
-        <span class="legend legend-future" 
+        <span class="legend legend-future"
               title="Latest preview of a future release">
             Latest preview version
         </span>
     </div>
     <div style="float: left; margin-left: 1em;">
-        <span class="legend legend-future" 
+        <span class="legend legend-future"
               title="A future release">
             Future release
         </span>

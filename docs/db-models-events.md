@@ -436,8 +436,8 @@ Invoices::find(
 $profiles = $container->get('profiler')->getProfiles();
 
 foreach ($profiles as $profile) {
-    echo 'SQL: ', 
-        $profile->getSQLStatement(), 
+    echo 'SQL: ',
+        $profile->getSQLStatement(),
         PHP_EOL,
         'Start: ',
         $profile->getInitialTime(),

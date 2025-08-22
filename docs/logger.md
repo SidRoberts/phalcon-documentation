@@ -50,7 +50,7 @@ $loggerFactory  = new LoggerFactory($adapterFactory);
 
 !!! info "NOTE"
 
-    Use Case: Create a Logger with two Stream adapters. One adapter will be called `main` for logging all messages, while the second one will be called `admin`, logging only messages generated in the admin area of our application 
+    Use Case: Create a Logger with two Stream adapters. One adapter will be called `main` for logging all messages, while the second one will be called `admin`, logging only messages generated in the admin area of our application
 
 ```php
 <?php
@@ -309,7 +309,7 @@ The above can be used in situations where you want to log messages above a certa
 
 !!! danger "NOTE"
 
-    It is **never** a good idea to suppress logging levels in your application since even warning errors do require CPU cycles to be processed, and neglecting these errors could potentially lead to unintended circumstances 
+    It is **never** a good idea to suppress logging levels in your application since even warning errors do require CPU cycles to be processed, and neglecting these errors could potentially lead to unintended circumstances
 
 ## Transactions
 [Phalcon\Logger\Logger][logger-logger] also offers the ability to queue the messages in your logger, and then _commit_ them all together in the log file. This is similar to a database transaction with `begin` and `commit`. Each adapter exposes the following methods:
@@ -468,7 +468,7 @@ $logger  = new Logger(
     ]
 );
 
-$logger->error('Something went wrong'); 
+$logger->error('Something went wrong');
 ```
 which produces:
 
@@ -599,7 +599,7 @@ try {
             'main' => $adapter,
         ]
     );
-    
+
     // Log to all adapters
     $logger->error('Something went wrong');
 } catch (Exception $ex) {

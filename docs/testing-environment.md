@@ -33,7 +33,7 @@ git clone git@github.com:niden/cphalcon
    Navigate to the cphalcon folder (or your chosen repository location) and build the containers with the following command:
 
 ```bash
-docker compose build 
+docker compose build
 ```
 
 This process may take some time, depending on your machine's specifications. It is not required frequently, only when changes occur in the dockerfiles or when you choose to rebuild your containers.
@@ -225,7 +225,7 @@ root@cphalcon-81:/srv# test-db-common
 root@cphalcon-81:/srv# test-db-mysql
 root@cphalcon-81:/srv# test-db-pgsql
 root@cphalcon-81:/srv# test-db-sqlite
-root@cphalcon-81:/srv# test-db       
+root@cphalcon-81:/srv# test-db
 ```
 
 # Development

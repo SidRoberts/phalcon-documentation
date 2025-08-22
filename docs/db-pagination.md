@@ -5,12 +5,12 @@
 A paginator is a component that helps with splitting a large amount of data gradually. An example would be displaying all the posts of a blog, 5 at a time. The Phalcon Paginator accepts parameters and based on those returns the relevant _slice_ of the whole resultset so that the developer can present the paginated data.
 
 ```php
-<?php 
+<?php
 
 declare(strict_types=1);
 
 use Phalcon\Paginator\Adapter\NativeArray;
- 
+
 $currentPage = 2;
 $paginator   = new NativeArray(
     [
@@ -57,8 +57,8 @@ Every adapter requires options to operate properly. These options are passed as 
 | `data`          | The data to paginate. ([Phalcon\Paginator\Adapter\NativeArray][paginator-adapter-nativearray] adapter)                                                        |
 | `limit` (`int`) | The size of the page slice. If `limit` is negative, an exception will be thrown.                                                                              |
 | `model`         | The data to paginate. ([Phalcon\Paginator\Adapter\Model][paginator-adapter-model] adapter)                                                                    |
-| `page` (`int`)  | The current page                                                                                                                                              | 
-| `repository`    | [Phalcon\Paginator\RepositoryInterface][paginator-repositoryinterface] - A repository object setting up the resultset. For more about repositories see below. | 
+| `page` (`int`)  | The current page                                                                                                                                              |
+| `repository`    | [Phalcon\Paginator\RepositoryInterface][paginator-repositoryinterface] - A repository object setting up the resultset. For more about repositories see below. |
 
 The methods exposed are:
 
@@ -213,7 +213,7 @@ echo $paginate->getCurrent();    // 2
 echo $paginate->current     ;    // 2
 echo $paginate->getFirst();      // 1
 echo $paginate->first;           // 1
-var_dump($paginate->getItems());  
+var_dump($paginate->getItems());
 // [
 //     [
 //         'id'   => 3
@@ -224,7 +224,7 @@ var_dump($paginate->getItems());
 //         'name' => "Lettuce",
 //     ]
 // ]
-var_dump($paginate->getItems());  
+var_dump($paginate->getItems());
 echo $paginate->getLast();       // 3
 echo $paginate->last;            // 3
 echo $paginate->getLimit();      // 2
@@ -233,8 +233,8 @@ echo $paginate->getNext();       // 3
 echo $paginate->next;            // 3
 echo $paginate->getPrevious();   // 1
 echo $paginate->previous;        // 1
-echo $paginate->getTotalItems(); // 5 
-echo $paginate->total_items;     // 5 
+echo $paginate->getTotalItems(); // 5
+echo $paginate->total_items;     // 5
 ```
 
 ### Aliases
@@ -334,7 +334,7 @@ declare(strict_types=1);
 
 use MyApp\Models\Invoices;
 use Phalcon\Paginator\PaginatorFactory;
- 
+
 $builder = $this
     ->modelsManager
     ->createBuilder()
@@ -389,7 +389,7 @@ try {
             "page"  => $currentPage,
         ]
     );
-    
+
     $paginate = $paginator->paginate();
 } catch (Exception $ex) {
     echo $ex->getMessage();
@@ -426,11 +426,11 @@ class InvoicesController extends Controller
                 'page'  => $currentPage,
             ]
         );
-        
+
         $page = $paginator->paginate();
-        
+
         $this->view->setVar('page', $page);
-    
+
     }
 }
 ```

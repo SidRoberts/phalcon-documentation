@@ -159,7 +159,7 @@ Returns parameters to views
 
 ```php
 public function getPartial(
-    string $partialPath, 
+    string $partialPath,
     mixed $params = null
 ): string
 ```
@@ -187,9 +187,9 @@ Gets the current partials subdirectory
 
 ```php
 public function getRender(
-    string $controllerName, 
-    string $actionName, 
-    array $params = [], 
+    string $controllerName,
+    string $actionName,
+    array $params = [],
     mixed configCallback = null
 ): string
 ```
@@ -227,7 +227,7 @@ Whether automatic rendering is enabled
 
 ```php
 public function partial(
-    string $partialPath, 
+    string $partialPath,
     mixed $params = null
 )
 ```
@@ -382,7 +382,7 @@ $view->setPartialsDir(
 
 ```php
 public function setParamToView(
-    string $key, 
+    string $key,
     mixed $value
 ): View
 ```
@@ -425,7 +425,7 @@ Sets a template before the controller layout
 
 ```php
 public function setVar(
-    string $key, 
+    string $key,
     mixed $value
 ): View
 ```
@@ -440,7 +440,7 @@ $this
 
 ```php
 public function setVars(
-    array $params, 
+    array $params,
     bool $merge = true
 ): View
 ```
@@ -599,13 +599,13 @@ The generated HTML will be:
         <h1>Main layout!</h1>
 
         <!-- app/views/layouts/invoices.phtml -->
-        
+
         <h2>Controller view: "invoices"</h2>
-        
+
         <!-- app/views/invoices/view.phtml -->
-        
+
         <h3>View Name: "view"</h3>
-        
+
         <p>I have received the parameter 12345</p>
 
     </body>
@@ -705,7 +705,7 @@ The final output will be the following:
     <body>
 
         <!-- app/views/layouts/common.phtml -->
-        
+
         <ul class='menu'>
             <li><a href='/'>Home</a></li>
             <li><a href='/list'>List</a></li>
@@ -719,12 +719,12 @@ The final output will be the following:
             <h1>Invoices</h1>
 
             <!-- app/views/invoices/last.phtml -->
-            
+
             <article>
                 <h2>This is a title</h2>
                 <p>This is Invoice One</p>
             </article>
-            
+
             <article>
                 <h2>Another title</h2>
                 <p>This is Invoice Two</p>
@@ -1119,14 +1119,14 @@ One way to use partials is to treat them as HTML fragments that can be injected 
 The `partial()` method does accept a second parameter as an array of variables/parameters that only will exist in the scope of the partial:
 
 ```php
-<?php 
+<?php
     $this->partial(
-        'shared/ad_banner', 
+        'shared/ad_banner',
         [
-            'id'   => $site->id, 
+            'id'   => $site->id,
             'size' => 'big'
         ]
-    ); 
+    );
 ?>
 ```
 
@@ -1240,7 +1240,7 @@ $container->setShared(
                 'prefix'    => '-prefix-',
             ]
         );
-        
+
         return $volt;
     }
 );
@@ -1475,7 +1475,7 @@ $container->set(
         $manager->attach(
             'view',
             function (Event $event, $view) {
-                echo $event->getType(), ' - ', 
+                echo $event->getType(), ' - ',
                      $view->getActiveRenderPath(), PHP_EOL;
             }
         );
@@ -1548,7 +1548,7 @@ use Phalcon\Mvc\View\Exception;
 try {
 
     $view = new View();
-    
+
     echo $view->getRender(
         'unknown-view',
         'list',
@@ -1558,7 +1558,7 @@ try {
         ],
         function ($view) {
             $view->setViewsDir('../app/views/');
-    
+
             $view->setRenderLevel(
                 View::LEVEL_LAYOUT
             );

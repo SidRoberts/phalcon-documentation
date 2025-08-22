@@ -49,8 +49,8 @@ The methods exposed by the manager are:
 
 ```php
 public function attach(
-    string $eventType, 
-    mixed $handler, 
+    string $eventType,
+    mixed $handler,
     int $priority = self::DEFAULT_PRIORITY
 )
 ```
@@ -302,8 +302,8 @@ use MyApp\Auth\Adapters\AbstractAdapter;
 class NotFoundListener extends Injectable
 {
     public function beforeException(
-        Event $event, 
-        Dispatcher $dispatcher, 
+        Event $event,
+        Dispatcher $dispatcher,
         \Exception $ex
     ) {
         switch ($ex->getCode()) {
@@ -334,7 +334,7 @@ class NotFoundListener extends Injectable
         }
     }
 }
-``` 
+```
 
 and attaching it to the events manager:
 
@@ -376,7 +376,7 @@ use Phalcon\Events\ManagerInterface;
 class NotificationsAware extends Injectable implements EventsAwareInterface
 {
     protected $eventsManager;
-    
+
     public function getEventsManager()
     {
         return $this->eventsManager;
@@ -430,14 +430,14 @@ class MotificationsListener
     }
 
     public function afterSend(
-        Event $event, 
+        Event $event,
         NotificationsAware $component
     ) {
         $this->logger->info('After Notification');
     }
 
     public function beforeSend(
-        Event $event, 
+        Event $event,
         NotificationsAware $component
     ) {
         $this->logger->info('Before Notification');
@@ -581,20 +581,20 @@ $eventsManager = new EventsManager();
 $eventsManager->enablePriorities(true);
 
 $eventsManager->attach(
-    'db', 
-    new QueryListener(), 
+    'db',
+    new QueryListener(),
     150
 );
 $eventsManager->attach(
-    'db', 
-    new QueryListener(), 
+    'db',
+    new QueryListener(),
     100
 );
 $eventsManager->attach(
-    'db', 
-    new QueryListener(), 
+    'db',
+    new QueryListener(),
     50
-); 
+);
 ```
 
 !!! info "NOTE"
@@ -710,7 +710,7 @@ class BaseController extends Controller
         return true;
     }
 }
-``` 
+```
 Execute the code before the router, so we can determine if the user is logged in or not. If not, forward them to the login page.
 
 ## Models
@@ -782,7 +782,7 @@ class Invoices extends Model
         $this->inv_number = 'INV-' . $customer . '-' . $date;
     }
 }
-``` 
+```
 
 ## Custom
 The [Phalcon\Events\ManagerInterface][events-managerinterface] interface must be implemented to create your own events manager replacing the one provided by Phalcon.
@@ -818,13 +818,13 @@ class EventsManager implements ManagerInterface
      * @param object $source
      * @param mixed  $data
      * @param mixed  $cancelable
-     * 
+     *
      * @return mixed
      */
     public function fire(
-        string $eventType, 
-        $source, 
-        $data = null, 
+        string $eventType,
+        $source,
+        $data = null,
         bool $cancelable = false
     );
 
@@ -987,4 +987,4 @@ The events available in Phalcon are:
 [response]: response.md
 [routing]: routing.md
 [views]: views.md
-[volt]: volt.md                
+[volt]: volt.md

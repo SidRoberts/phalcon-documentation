@@ -102,7 +102,7 @@ last (optional) parameter is the TTL (time to live). The method will return `tru
 ```php
 $value = $cache->setMultiple(
     [
-        'my-key1' => $data1, 
+        'my-key1' => $data1,
         'my-key2' => $data2,
     ],
     9600
@@ -230,7 +230,7 @@ purpose of these classes is to transform the data before saving it to the storag
 
 !!! info "NOTE"
 
-    The default serializer for all adapters is `Phalcon\Storage\Serializer\Php` which uses PHP's `serialize` and `unserialize` methods. These methods can suit most applications. However, the developer might want to use something more efficient such as [igbinary][igbinary] which is faster and achieves better compression. 
+    The default serializer for all adapters is `Phalcon\Storage\Serializer\Php` which uses PHP's `serialize` and `unserialize` methods. These methods can suit most applications. However, the developer might want to use something more efficient such as [igbinary][igbinary] which is faster and achieves better compression.
 
 The cache adapter can be configured to use a different serializer. The available serializers are:
 
@@ -308,20 +308,20 @@ class Garble implements SerializerInterface
 {
     /**
      * Data storage
-     * 
+     *
      * @var string
      */
     private $data = '';
-    
+
     /**
      * Return the stored data
-     * 
+     *
      * @return string
      */
     public function getData(): string
     {
         return $this->data;
-    }       
+    }
 
     /**
      * Serializes data
@@ -333,7 +333,7 @@ class Garble implements SerializerInterface
 
     /**
      * Set the data
-     * 
+     *
      * @var Garble
      *
      * @return Garble
@@ -341,9 +341,9 @@ class Garble implements SerializerInterface
     public function setData($data): Garble
     {
         $this->data = (string) $data;
-        
+
         return $this;
-    }       
+    }
 
     /**
      * Unserializes data
@@ -369,7 +369,7 @@ $garble = new Garble();
 
 $garble
     ->setData($data)
-    ->serialize()  
+    ->serialize()
 ;
 
 echo $garble->getData(); // "V pnzr, V fnj, V pbadhrerq."
@@ -379,7 +379,7 @@ $encrypted = 'V pnzr, V fnj, V pbadhrerq.';
 $garble->unserialize($encrypted);
 
 echo $garble->getData(); // "I came, I saw, I conquered."
-``` 
+```
 
 ## Serializer Factory
 
@@ -394,7 +394,7 @@ The example below shows how you can create a `Json` serializer either using the 
 ```php
 <?php
 
-use Phalcon\Storage\Serializer\Json; 
+use Phalcon\Storage\Serializer\Json;
 use Phalcon\Storage\SerializerFactory;
 
 $jsonSerializer = new Json();
@@ -771,7 +771,7 @@ class Custom implements AdapterInterface
     }
 
     /**
-     * Returns all the keys stored. If a filter has been passed the 
+     * Returns all the keys stored. If a filter has been passed the
      * keys that match the filter will be returned
      */
     public function getKeys(string $prefix = ""): array
@@ -825,7 +825,7 @@ use MyApp\Cache\Adapter\Custom;
 $custom = new Custom();
 
 $custom->set('my-key', $data);
-``` 
+```
 
 ## Adapter Factory
 
@@ -882,8 +882,8 @@ The parameters you can use for the factory are:
 
 ## Events
 
-The [Phalcon\Cache\AbstractCache][cache-abstract-cache] object implements the 
-[Phalcon\Events\EventsAware][events-eventsawareinterface] interfaces. 
+The [Phalcon\Cache\AbstractCache][cache-abstract-cache] object implements the
+[Phalcon\Events\EventsAware][events-eventsawareinterface] interfaces.
 As a result `getEventsManager()` and `setEventsManager()` are available for you to use.
 
 | Event             | Description                                 | Can stop operation |

@@ -796,7 +796,7 @@ $result = $helper->validateAll(
     }
 );
 
-echo $result; // true        
+echo $result; // true
 ```
 
 ### `validateAny`
@@ -1478,7 +1478,7 @@ Generates a random string based on the given type. Type is one of:
 | `RANDOM_ALPHA`    | Only alphabetical characters [azAZ]                                                              |
 | `RANDOM_DISTINCT` | Only alphanumeric uppercase characters exclude similar characters [2345679ACDEFHJKLMNPRSTUVWXYZ] |
 | `RANDOM_HEXDEC`   | Only hexadecimal characters [0-9a-f]                                                             |
-| `RANDOM_NOZERO`   | Only numbers without 0 [1-9]                                                                     | 
+| `RANDOM_NOZERO`   | Only numbers without 0 [1-9]                                                                     |
 | `RANDOM_NUMERIC`  | Only numbers [0-9]                                                                               |
 
 ```php

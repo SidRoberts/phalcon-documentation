@@ -262,24 +262,24 @@ $container->set(
         $request = new Request();
         $request
             ->setParameterFilters(
-                'id', 
-                Filter::FILTER_ABSINT, 
+                'id',
+                Filter::FILTER_ABSINT,
                 [
                     'post'
                 ]
             )
             ->setParameterFilters(
-                'name', 
+                'name',
                 [
-                    'trim', 
+                    'trim',
                     'string'
-                ], 
+                ],
                 [
                     'post'
                 ]
             )
         ;
-        
+
         return $request;
     }
 );
@@ -304,7 +304,7 @@ use Phalcon\Mvc\Controller;
 
 /**
  * Class PostsController
- * 
+ *
  * @property Request $request
  */
 class PostsController extends Controller
@@ -472,7 +472,7 @@ echo $request->getMethod();
 
 /**
  * header('X-HTTP-Method-Override: GET');
- */ 
+ */
 $_SERVER['REQUEST_METHOD'] = 'POST';
 $request->setHttpMethodParameterOverride(true);
 echo $request->getMethod();
@@ -529,7 +529,7 @@ use Phalcon\Mvc\Controller;
 
 /**
  * Class PostsController
- * 
+ *
  * @property Request $request
  */
 class PostsController extends Controller
@@ -653,8 +653,8 @@ class NegotiateAuthorizationListener
         }
 
         list($type,) = explode(
-            ' ', 
-            $data['server']['CUSTOM_KERBEROS_AUTH'], 
+            ' ',
+            $data['server']['CUSTOM_KERBEROS_AUTH'],
             2
         );
 

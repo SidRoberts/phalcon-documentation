@@ -5,7 +5,7 @@
 
 !!! info "NOTE"
 
-    Currently, only symmetric algorithms are supported 
+    Currently, only symmetric algorithms are supported
 
 `Phalcon\Encryption\Security\JWT` is a namespace that contains components that allow you to issue, parse, and validate JSON Web Tokens as described in [RFC 7915][rfc-7519]. These components are:
 
@@ -43,13 +43,13 @@ $passphrase = 'QcMpZ&b&mo3TPsPk668J6QH8JA$&U&m2';
 $builder
     ->setAudience('https://target.phalcon.io')  // aud
     ->setContentType('application/json')        // cty - header
-    ->setExpirationTime($expires)               // exp 
-    ->setId('abcd123456789')                    // JTI id 
-    ->setIssuedAt($issued)                      // iat 
-    ->setIssuer('https://phalcon.io')           // iss 
+    ->setExpirationTime($expires)               // exp
+    ->setId('abcd123456789')                    // JTI id
+    ->setIssuedAt($issued)                      // iat
+    ->setIssuer('https://phalcon.io')           // iss
     ->setNotBefore($notBefore)                  // nbf
     ->setSubject('my subject for this claim')   // sub
-    ->setPassphrase($passphrase)                // password 
+    ->setPassphrase($passphrase)                // password
 ;
 
 // Phalcon\Encryption\Security\JWT\Token\Token
@@ -419,16 +419,16 @@ $passphrase = 'QcMpZ&b&mo3TPsPk668J6QH8JA$&U&m2';
 $builder
     ->setAudience('https://target.phalcon.io')  // aud
     ->setContentType('application/json')        // cty - header
-    ->setExpirationTime($expires)               // exp 
-    ->setId('abcd123456789')                    // JTI id 
-    ->setIssuedAt($issued)                      // iat 
-    ->setIssuer('https://phalcon.io')           // iss 
+    ->setExpirationTime($expires)               // exp
+    ->setId('abcd123456789')                    // JTI id
+    ->setIssuedAt($issued)                      // iat
+    ->setIssuer('https://phalcon.io')           // iss
     ->setNotBefore($notBefore)                  // nbf
     ->setSubject('my subject for this claim')   // sub
-    ->setPassphrase($passphrase)                // password 
+    ->setPassphrase($passphrase)                // password
 ;
 
-// Phalcon\Encryption\Security\JWT\Token\Token 
+// Phalcon\Encryption\Security\JWT\Token\Token
 $tokenObject = $builder->getToken();
 
 echo $tokenObject->getToken();
@@ -547,10 +547,10 @@ $passphrase = 'QcMpZ&b&mo3TPsPk668J6QH8JA$&U&m2';
 
 $parser      = new Parser();
 
-// Phalcon\Encryption\Security\JWT\Token\Token 
+// Phalcon\Encryption\Security\JWT\Token\Token
 $tokenObject = $parser->parse($tokenReceived);
 
-// Phalcon\Encryption\Security\JWT\Validator 
+// Phalcon\Encryption\Security\JWT\Validator
 $validator = new Validator($tokenObject, 100); // allow for a time shift of 100
 
 $validator
@@ -624,10 +624,10 @@ $passphrase = 'QcMpZ&b&mo3TPsPk668J6QH8JA$&U&m2';
 
 $parser      = new Parser();
 
-// Phalcon\Encryption\Security\JWT\Token\Token 
+// Phalcon\Encryption\Security\JWT\Token\Token
 $tokenObject = $parser->parse($tokenReceived);
 
-// Phalcon\Encryption\Security\JWT\Validator 
+// Phalcon\Encryption\Security\JWT\Validator
 $validator = new Validator($tokenObject, 100); // allow for a time shift of 100
 
 $validator
@@ -672,7 +672,7 @@ class IndexController extends Controller
             $issued     = strtotime('now') + 100;
             $notBefore  = strtotime('-1 day');
             $passphrase = '&vsJBETaizP3A3VX&TPMJUqi48fJEgN7';
-            
+
             return $builder
                 ->setAudience('my-audience')
                 ->setExpirationTime($expiry)
@@ -684,7 +684,7 @@ class IndexController extends Controller
                 ->setPassphrase($passphrase)
                 ->getToken()
             ;
-            
+
             $validator = new Validator($token);
             $validator->validateAudience("unknown");
         } catch (Exception $ex) {

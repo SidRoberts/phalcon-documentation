@@ -181,7 +181,7 @@ class Invoices extends Model
             if (true !== is_array($parameters)) {
                 $parameters = [$parameters];
             }
-    
+
             if (true !== isset($parameters['cache'])) {
                 $parameters['cache'] = [
                     'key'      => self::generateCacheKey($parameters),
@@ -189,7 +189,7 @@ class Invoices extends Model
                 ];
             }
         }
-        
+
         return $parameters;
     }
 
@@ -247,7 +247,7 @@ abstract class AbstractCacheable extends Model
             if (true !== is_array($parameters)) {
                 $parameters = [$parameters];
             }
-    
+
             if (true !== isset($parameters['cache'])) {
                 $parameters['cache'] = [
                     'key'      => self::generateCacheKey($parameters),
@@ -255,7 +255,7 @@ abstract class AbstractCacheable extends Model
                 ];
             }
         }
-        
+
         return $parameters;
     }
 
@@ -417,7 +417,7 @@ $invoice = Invoices::findFirst(
 );
 
 // Invoices::findFirst('...');
-$customer = $invoice->customer;               
+$customer = $invoice->customer;
 
 // Invoices::findFirst('...');
 $customer = $invoice->getCustomer();
@@ -494,14 +494,14 @@ class Invoices extends Model
     protected static function cacheGet($cacheKey)
     {
         $cache = Di::getDefault()->get('cache');
-        
+
         return $cache->get($cacheKey);
     }
 
     protected static function cacheSet($cacheKey, $results)
     {
         $cache = Di::getDefault()->get('cache');
-        
+
         return $cache->save($cacheKey, $results);
     }
 
@@ -569,7 +569,7 @@ class Invoices extends Model
         $query->cache(
             [
                 'key'      => self::generateCacheKey(
-                    $conditions, 
+                    $conditions,
                     $params
                 ),
                 'lifetime' => 300,
@@ -679,7 +679,7 @@ class CustomQueryBuilder extends QueryBuilder
         $query->setDI(
             $this->getDI()
         );
-        
+
         if (true === is_array($this->bindParams)) {
             $query->setBindParams(
                 $this->bindParams
@@ -746,7 +746,7 @@ class CustomQuery extends ModelQuery
 
             if (true === is_object($result)) {
                 return $result;
-            }   
+            }
         }
 
         $result   = $this->executeSelect($ir, $params, $types);

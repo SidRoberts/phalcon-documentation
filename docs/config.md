@@ -167,7 +167,7 @@ $config = new Config(
             'timezone' => getenv('APP_TIMEZONE'),  // 'UTC'
             'url'      => getenv('APP_URL'),       // 'http://127.0.0.1',
             'version'  => getenv('VERSION'),       // '0.1'
-            'time'     => microtime(true),         // 
+            'time'     => microtime(true),         //
         ],
     ]
 );
@@ -340,7 +340,7 @@ Phalcon\Config Object
         )
     [logging] => true
 )
-``` 
+```
 
 ## Has
 Using `has()` you can determine if a particular key exists in the collection.
@@ -526,7 +526,7 @@ $factory  = new ConfigFactory();
 $options = [
     'adapter'  => 'ini',
     'filePath' => $fileName,
-    'mode'     => INI_SCANNER_NORMAL, 
+    'mode'     => INI_SCANNER_NORMAL,
 ];
 
 $config = $factory->load($options);
@@ -543,7 +543,7 @@ $fileName = '/app/storage/config.ini';
 $factory  = new ConfigFactory();
 
 $params = [
-    'mode' => INI_SCANNER_NORMAL, 
+    'mode' => INI_SCANNER_NORMAL,
 ];
 
 $config = $factory->newinstance('ini', $fileName, $params);
@@ -635,13 +635,13 @@ Example PHP file:
 ```php
 <?php
 
-return [ 
+return [
     'database' => [
         'adapter'  => 'Mysql',
         'host'     => 'localhost',
         'username' => 'scott',
         'password' => 'cheetah',
-        'dbname'   => 'test_db',  
+        'dbname'   => 'test_db',
     ],
     'models'   => [
         'metadata' => [

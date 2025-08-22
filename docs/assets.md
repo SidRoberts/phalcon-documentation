@@ -259,13 +259,13 @@ class IndexController extends Controller
     {
         $css1 = new Css('css/style.css');
         $css2 = new Css('css/index.css');
-        
+
         $this->assets->addAsset($css1);
         $this->assets->addAssetByType('css', $css2);
 
         $js1 = new Js('js/jquery.js');
         $js2 = new Js('js/bootstrap.min.js');
-        
+
         $this->assets->addAsset($js1);
         $this->assets->addAssetByType('js', $js2);
     }
@@ -318,7 +318,7 @@ The second parameter of `addCss()` and `addJs()` signifies whether the asset is 
 public function indexAction()
 {
     $this->assets->addCss(
-        '//cdn.assets.com/bootstrap/4/css/library.min.css', 
+        '//cdn.assets.com/bootstrap/4/css/library.min.css',
         false
     );
 
@@ -605,7 +605,7 @@ Then in the views:
     </head>
     <?php $this->assets->outputInlineCss(); ?>
     <body>
-        
+
         <!-- ... -->
 
         <?php $this->assets->outputInlineJs(); ?>

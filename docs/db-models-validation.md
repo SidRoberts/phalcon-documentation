@@ -145,8 +145,8 @@ class Invoices extends Model
                     break;
 
                 case 'PresenceOf':
-                    $messages[] = 'The field ' 
-                                . $message->getField() 
+                    $messages[] = 'The field '
+                                . $message->getField()
                                 . ' is mandatory';
                     break;
             }

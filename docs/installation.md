@@ -91,7 +91,7 @@ if it gives you an error, you can use
 
 ```bash
 sudo ln -s /opt/local/include/pcre.h /usr/include/
-sudo pecl install apc 
+sudo pecl install apc
 ```
 
 ## Installation Platforms
@@ -103,7 +103,7 @@ Since Phalcon is compiled as a PHP extension, its installation is somewhat diffe
 
 !!! warning "NOTE"
 
-    To install phalcon with PECL you will need at least 4GB of RAM, otherwise the PECL build command will fail. 
+    To install phalcon with PECL you will need at least 4GB of RAM, otherwise the PECL build command will fail.
 
 ### PECL
 The PECL installation method is available for Windows, Linux, and macOS. Under Windows pre-compiled dll files are available, while under Linux and macOS, Phalcon will be compiled locally. To install Phalcon using PECL make sure you have [pecl/pear][install-pecl] installed.
@@ -203,7 +203,7 @@ brew install phalcon
 Compile phalcon:
 ```bash
 brew tap phalcon/extension https://github.com/phalcon/homebrew-tap
-brew install phalcon --build-from-source 
+brew install phalcon --build-from-source
 ```
 
 #### MacPorts
@@ -284,9 +284,9 @@ phpenmod zephir_parser
 You will then need to download the latest `zephir.phar` from [here][zephir-phar]. Move the file to a folder that is available in your `PATH`, such as `/usr/local/bin` for example, and make it executable:
 
 ```bash
-mv zephir.phar /usr/local/bin 
+mv zephir.phar /usr/local/bin
 cd /usr/local/bin/
-mv zephir.phar zephir 
+mv zephir.phar zephir
 chmod a+x zephir
 ```
 You might also need to change the ownership of the file, depending on your environment.

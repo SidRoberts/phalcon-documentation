@@ -85,11 +85,11 @@ Each element in the form can be rendered as required by the developer. Internall
         Name
     </label>
 
-    <?php 
+    <?php
         echo $form->render(
-            'nameFirst', 
+            'nameFirst',
             [
-                'maxlength'   => 30, 
+                'maxlength'   => 30,
                 'placeholder' => 'First Name',
             ]
         ); ?>
@@ -109,7 +109,7 @@ $form->add(
     new Text(
         'nameFirst',
         [
-            'maxlength'   => 30, 
+            'maxlength'   => 30,
             'placeholder' => 'First Name',
         ]
     )
@@ -121,7 +121,7 @@ $form->add(
 
 ```php
 public function __construct(
-    mixed $entity = null, 
+    mixed $entity = null,
     array $userOptions = []
 )
 ```
@@ -176,8 +176,8 @@ If the `entity` is passed, and it is not an object, a [Phalcon\Forms\Exception][
 
 ```php
 public function add(
-    ElementInterface $element, 
-    string $position = null, 
+    ElementInterface $element,
+    string $position = null,
     bool $type = null
 ): Form
 ```
@@ -186,8 +186,8 @@ Adds an element to the form. The first parameter is an `ElementInterface` object
 
 ```php
 public function bind(
-    array $data, 
-    mixed $entity, 
+    array $data,
+    mixed $entity,
     array $whitelist = []
 ): Form
 ```
@@ -284,7 +284,7 @@ Returns the `Phalcon\Html\TagFactory` object
 
 ```php
 public function getUserOption(
-    string option, 
+    string option,
     mixed defaultValue = null
 ): mixed
 ```
@@ -317,7 +317,7 @@ Check if messages were generated for a specific element
 
 ```php
 public function isValid(
-    array $data = null, 
+    array $data = null,
     object $entity = null,
     array $whitelist = []
 ): bool
@@ -359,7 +359,7 @@ Returns the current position/key in the iterator
 
 ```php
 public function label(
-    string $name, 
+    string $name,
     array $attributes = null
 ): string
 ```
@@ -372,7 +372,7 @@ Moves the internal iteration pointer to the next position
 
 ```php
 public function render(
-    string $name, 
+    string $name,
     array $attributes = []
 ): string
 ```
@@ -419,7 +419,7 @@ Sets the validation object in the form.
 
 ```php
 public function setUserOption(
-    string $option, 
+    string $option,
     mixed $value
 ): Form
 ```
@@ -460,13 +460,13 @@ class CustomersForm extends Form
                 'nameLast'
             )
         );
-        
+
         $this->add(
             new Text(
                 'nameFirst'
             )
         );
-        
+
         $this->add(
             new Select(
                 'phoneType',
@@ -664,8 +664,8 @@ For the above entity class, the `getReceiveEmails` and `getTimezone` methods wil
 
 !!! warning "NOTE"
 
-    The default behavior of `Phalcon\Forms\Form::bind()` is to bind all form fields to the Model. To only bind the 
-    fields that exist in the model, set `phalcon.form.strict_entity_property_check` value to `1`. 
+    The default behavior of `Phalcon\Forms\Form::bind()` is to bind all form fields to the Model. To only bind the
+    fields that exist in the model, set `phalcon.form.strict_entity_property_check` value to `1`.
 
 
 ## Elements
@@ -978,7 +978,7 @@ $form->isValid($_POST);
 // Get the messages from the form
 $messages = $form->getMessages();
 
-echo count($messages); 
+echo count($messages);
 // 1 message
 
 echo $messages[0]->getMessage();
@@ -1011,11 +1011,11 @@ You can render the form with total flexibility, the following example shows how 
             }
 
             echo '<p>';
-            echo '<label for="' . 
+            echo '<label for="' .
                     $element->getName() .
                  '">' .
                  $element->getLabel() .
-                 '</label>' 
+                 '</label>'
              ;
 
             echo $element;

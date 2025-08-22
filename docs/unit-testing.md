@@ -173,7 +173,7 @@ If you need to overload the `setUp` method, it is important you call the parent 
     protected function setUp(): void
     {
         parent::setUp();
-        
+
         //...
     }
 ````

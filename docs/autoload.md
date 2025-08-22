@@ -505,7 +505,7 @@ $loader->setNamespaces(
 $eventsManager->attach(
     'loader:beforeCheckPath',
     function (
-        Event $event, 
+        Event $event,
         Loader $loader
     ) {
         echo $loader->getCheckedPath();
@@ -544,7 +544,7 @@ $loader->setNamespaces(
 $eventsManager->attach(
     'loader:beforeCheckPath',
     function (
-        Event $event, 
+        Event $event,
         Loader $loader
     ) {
         if ('app/models' === $loader->getCheckedPath()) {
@@ -684,7 +684,7 @@ Register the autoload method
 
 ```php
 public function setClasses(
-    array $classes, 
+    array $classes,
     bool $merge = false
 ): Loader
 ```
@@ -692,7 +692,7 @@ Register classes and their locations
 
 ```php
 public function setDirectories(
-    array $directories, 
+    array $directories,
     bool $merge = false
 ): Loader
 ```
@@ -700,7 +700,7 @@ Register directories in which "not found" classes could be found
 
 ```php
 public function setExtensions(
-    array $extensions, 
+    array $extensions,
     bool $merge = false
 ): Loader
 ```
@@ -715,7 +715,7 @@ Sets the file check callback.
 
 ```php
 public function setFiles(
-    array $files, 
+    array $files,
     bool $merge = false
 ): Loader
 ```
@@ -723,7 +723,7 @@ Register files that are "non-classes" and hence need a "require". This is useful
 
 ```php
 public function setNamespaces(
-    array namespaces, 
+    array namespaces,
     bool merge = false
 ): Loader
 ```

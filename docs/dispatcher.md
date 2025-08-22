@@ -25,8 +25,8 @@ $controller = $dispatcher->dispatch();
 
 ```php
 public function callActionMethod(
-    mixed $handler, 
-    string $actionMethod, 
+    mixed $handler,
+    string $actionMethod,
     array $params = []
 )
 ```
@@ -76,8 +76,8 @@ $eventsManager = $container->getShared("eventsManager");
 $eventsManager->attach(
     "dispatch:beforeForward",
     function (
-        Event $event, 
-        Dispatcher $dispatcher, 
+        Event $event,
+        Dispatcher $dispatcher,
         array $forward
     ) use ($modules) {
         $metadata = $modules[$forward["module"]]["metadata"];
@@ -194,8 +194,8 @@ Gets a namespace to be prepended to the current handler name
 
 ```php
 public function getParam(
-    mixed $param, 
-    string | array $filters = null, 
+    mixed $param,
+    string | array $filters = null,
     mixed $defaultValue = null
 ): mixed
 ```
@@ -296,7 +296,7 @@ Sets the default suffix for the handler
 
 ```php
 public function setModelBinder(
-    BinderInterface $modelBinder, 
+    BinderInterface $modelBinder,
     mixed $cache = null
 ): DispatcherInterface
 ```
@@ -334,7 +334,7 @@ Sets the namespace where the controller class is
 
 ```php
 public function setParam(
-    mixed $param, 
+    mixed $param,
     mixed $value
 ): void
 ```
@@ -402,7 +402,7 @@ class InvoicesController extends Controller
 {
     public function saveAction($year, $postTitle)
     {
-        // ... 
+        // ...
 
         $this->dispatcher->forward(
             [
@@ -714,7 +714,7 @@ $container->set(
 
                 try {
                     $reflection = new ReflectionMethod(
-                        $controllerName, 
+                        $controllerName,
                         $actionName
                     );
                     $parameters = $reflection->getParameters();
@@ -857,8 +857,8 @@ $container->setShared(
         $eventsManager->attach(
             'dispatch:beforeException',
             function (
-                Event $event, 
-                $dispatcher, 
+                Event $event,
+                $dispatcher,
                 Exception $exception
             ) {
                 // 404
@@ -902,8 +902,8 @@ $container->setShared(
         $eventsManager->attach(
             'dispatch:beforeException',
             function (
-                Event $event, 
-                $dispatcher, 
+                Event $event,
+                $dispatcher,
                 Exception $exception
             ) {
                 switch ($exception->getCode()) {
@@ -943,8 +943,8 @@ use Phalcon\Mvc\Dispatcher\Exception as DispatchException;
 class ExceptionsPlugin
 {
     public function beforeException(
-        Event $event, 
-        Dispatcher $dispatcher, 
+        Event $event,
+        Dispatcher $dispatcher,
         Exception $exception
     ) {
         $action = 'fiveOhThree';
@@ -1074,8 +1074,8 @@ $manager = new Manager();
 $manager->attach(
     'dispatch:beforeForward',
     function (
-        Event $event, 
-        Dispatcher $dispatcher, 
+        Event $event,
+        Dispatcher $dispatcher,
         array $forward
     ) use ($modules) {
         $moduleName = $forward['module'];

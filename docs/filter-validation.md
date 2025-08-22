@@ -64,7 +64,7 @@ public function __construct(
 
 ```php
 public function add(
-    mixed $field, 
+    mixed $field,
     ValidatorInterface $validator
 ): ValidationInterface
 ```
@@ -79,7 +79,7 @@ Appends a message to the messages list
 
 ```php
 public function bind(
-    object $entity, 
+    object $entity,
     array | object $data,
     array $whitelist = []
 ): ValidationInterface
@@ -134,7 +134,7 @@ Gets the value to validate in the array/object data source
 
 ```php
 public function rule(
-    mixed $field, 
+    mixed $field,
     ValidatorInterface $validator
 ): ValidationInterface
 ```
@@ -142,7 +142,7 @@ Alias of `add` method
 
 ```php
 public function rules(
-    mixed $field, 
+    mixed $field,
     array $validators
 ): ValidationInterface
 ```
@@ -157,7 +157,7 @@ Sets the bound entity
 
 ```php
 public function setFilters(
-    string $field, 
+    string $field,
     array | string $filters
 ): ValidationInterface
 ```
@@ -172,7 +172,7 @@ Adds labels for fields
 
 ```php
 public function validate(
-    array | object $data = null, 
+    array | object $data = null,
     object $entity = null,
     array $whitelist = []
 ): Messages
@@ -252,9 +252,9 @@ Phalcon offers a set of built-in validators for this component:
 | [Phalcon\Filter\Validation\Validator\Alnum][validation-validator-alnum]                                 | Alphanumeric character(s)  |
 | [Phalcon\Filter\Validation\Validator\Alpha][validation-validator-alpha]                                 | Alphabet character(s).     |
 | [Phalcon\Filter\Validation\Validator\Between][validation-validator-between]                             | Between two values         |
-| [Phalcon\Filter\Validation\Validator\Callback][validation-validator-callback]                           | Callback function          |                       
+| [Phalcon\Filter\Validation\Validator\Callback][validation-validator-callback]                           | Callback function          |
 | [Phalcon\Filter\Validation\Validator\Confirmation][validation-validator-confirmation]                   | Identical field values     |
-| [Phalcon\Filter\Validation\Validator\CreditCard][validation-validator-creditcard]                       | Credit card number         |                           
+| [Phalcon\Filter\Validation\Validator\CreditCard][validation-validator-creditcard]                       | Credit card number         |
 | [Phalcon\Filter\Validation\Validator\Date][validation-validator-date]                                   | Date.                      |
 | [Phalcon\Filter\Validation\Validator\Digit][validation-validator-digit]                                 | Numeric character(s).      |
 | [Phalcon\Filter\Validation\Validator\Email][validation-validator-email]                                 | Email                      |
@@ -480,7 +480,7 @@ $validator->add(
         [
             "message" => "User cannot belong to two groups",
             "callback" => function($data) {
-                if (!empty($data->getUser()) && 
+                if (!empty($data->getUser()) &&
                     !empty($data->getAdmin())) {
                     return false;
                 }
@@ -513,7 +513,7 @@ $validator->add(
 Checks that two values have the same value
 
 ```php
-<?php 
+<?php
 
 use Phalcon\Filter\Validation;
 use Phalcon\Filter\Validation\Validator\Confirmation;
@@ -1234,7 +1234,7 @@ $validator->add(
         [
             "message"       => ":field must contain only ip addresses",
             // v6 and v4. The same if not specified
-            "version"       => IP::VERSION_4 | Ip::VERSION_6, 
+            "version"       => IP::VERSION_4 | Ip::VERSION_6,
             // False if not specified. Ignored for v6
             "allowReserved" => false,
             // False if not specified
@@ -1477,7 +1477,7 @@ $validation->add(
 Validates that a string has the specified minimum constraints. The validation passes if for a string length `L` it is more or equal to the minimum. The formula is:
 
 ```
-minimum <= string length 
+minimum <= string length
 ```
 
 ```php

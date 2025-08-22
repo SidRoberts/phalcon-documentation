@@ -32,7 +32,7 @@ use Phalcon\Encryption\Security;
 
 $security = new Security();
 
-echo $security->hash('Phalcon'); 
+echo $security->hash('Phalcon');
 // $2y$08$ZUFGUUk5c3VpcHFoVUFXeOYoA4NPFEP4G9gcm6rdo3jFPaNFdR2/O
 ```
 
@@ -85,7 +85,7 @@ class SessionController extends Controller
             $check = $this
                 ->security
                 ->checkHash($password, $user->password);
-            
+
             if (true === $check) {
                 // OK
             }
@@ -146,7 +146,7 @@ The work factor is what we also refer to as `cost`. It is a number that is passe
 
 The work factor can be set using the `setWorkFactor()` method or passed as an element of the second parameter to the `hash()` method.
 
-```php 
+```php
 <?php
 
 use Phalcon\Encryption\Security;
@@ -165,7 +165,7 @@ The `workFactor` (or `cost`) is used when:
 ## Argon2i
 `Phalcon\Encryption\Security` also supports the new [Argon2i][argon2i] hashing algorithm. This algorithm is the winner of the [Password Hashing Competition][password-hashing-competition] and is considered to be the best algorithm for hashing passwords. It is also the default algorithm used by PHP's `password_hash()` method.
 
-```php 
+```php
 <?php
 
 use Phalcon\Encryption\Security;
@@ -174,7 +174,7 @@ $password = 'password1';
 $security = new Security();
 $security->setDefaultHash(Security::CRYPT_ARGON2I);
 $hashed   = $security->hash(
-    'Phalcon', 
+    'Phalcon',
     [
         'memory_cost' => PASSWORD_ARGON2_DEFAULT_MEMORY_COST,
         'time_cost'   => PASSWORD_ARGON2_DEFAULT_TIME_COST,
@@ -220,7 +220,7 @@ The idea is to prevent the form values from being sent outside our application. 
 
     <!-- Login and password inputs ... -->
 
-    <input type='hidden' 
+    <input type='hidden'
            name='<?php echo $this->security->getTokenKey() ?>'
            value='<?php echo $this->security->getToken() ?>'/>
 

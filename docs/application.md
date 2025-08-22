@@ -63,7 +63,7 @@ Return the modules registered in the application
 
 ```php
 public function registerModules(
-    array $modules, 
+    array $modules,
     bool $merge = false
 ): AbstractApplication
 ```
@@ -374,11 +374,11 @@ $loader->register();
 $container = new FactoryDefault();
 
 $container->set(
-    'view', 
+    'view',
     function () {
         $view = new View();
         $view->setViewsDir('../apps/views/');
-    
+
         return $view;
     }
 );
@@ -420,14 +420,14 @@ $container = new FactoryDefault();
 $container->set('dispatcher', function () {
     $dispatcher = new Dispatcher();
     $dispatcher->setDefaultNamespace('Single\Controllers');
-    
+
     return $dispatcher;
 });
 
 $container->set('view', function () {
     $view = new View();
     $view->setViewsDir('../apps/views/');
-    
+
     return $view;
 });
 

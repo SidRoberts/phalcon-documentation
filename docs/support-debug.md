@@ -17,7 +17,7 @@ A very common way to control the flow of errors in your application (intentional
 
 try {
 
-    // ... 
+    // ...
 
 } catch (\Exception $ex) {
 
@@ -40,10 +40,10 @@ class Exception
     protected int $line;
 
     protected string $message;
-    
+
     public function __construct(
-        string $message = '' 
-        [, int $code = 0 
+        string $message = ''
+        [, int $code = 0
         [, Exception $previous = null ]]]
     );
 

@@ -144,7 +144,7 @@ The [Assets][phalcon-assets] component has had changes to the interface as well 
 
 ```php
 public function __construct(
-    Phalcon\Html\TagFactory $tagFactory, 
+    Phalcon\Html\TagFactory $tagFactory,
     array $options = []
 )
 ```
@@ -164,12 +164,12 @@ public function addCss(
 
 - `addInlineCss()` now requires `$filter` to be `bool` and `$attributes` to be an array
 
-```php 
+```php
 public function addInlineCss(
     string $content,
     bool $filter = true,
     array $attributes = []
-): Manager 
+): Manager
 ```
 
 - `addJs()` now requires `$local` to be `bool` and `$attributes` to be an array
@@ -187,12 +187,12 @@ public function addJs(
 
 - `addInlineJs()` now requires `$filter` to be `bool` and `$attributes` to be an array
 
-```php 
+```php
 public function addInlineJs(
     string $content,
     bool $filter = true,
     array $attributes = []
-): Manager 
+): Manager
 ```
 
 - Added `has()` method to return if a collection exists
@@ -458,7 +458,7 @@ The [Di][phalcon-di] component has been moved to the `Di` namespace.
 - The `__construct` now sets `useSigning` as `true` (previously `false`)
 - The `__construct` accepts a third parameter (`null` by default), which is a `Phalcon\Encryption\Crypt\PadFactory`
 
-```php 
+```php
 use Phalcon\Encryption\Crypt;
 use Phalcon\Encryption\Crypt\PadFactory;
 

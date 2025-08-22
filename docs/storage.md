@@ -70,20 +70,20 @@ class Garble implements SerializerInterface
 {
     /**
      * Data storage
-     * 
+     *
      * @var string
      */
     private $data = '';
-    
+
     /**
      * Return the stored data
-     * 
+     *
      * @return string
      */
     public function getData(): string
     {
         return $this->data;
-    }       
+    }
 
     /**
      * Serializes data
@@ -95,7 +95,7 @@ class Garble implements SerializerInterface
 
     /**
      * Set the data
-     * 
+     *
      * @var Garble
      *
      * @return Garble
@@ -103,9 +103,9 @@ class Garble implements SerializerInterface
     public function setData($data): Garble
     {
         $this->data = (string) $data;
-        
+
         return $this;
-    }       
+    }
 
     /**
      * Unserializes data
@@ -130,7 +130,7 @@ $garble = new Garble();
 
 $garble
     ->setData($data)
-    ->serialize()  
+    ->serialize()
 ;
 
 echo $garble->getData(); // "V pnzr, V fnj, V pbadhrerq."
@@ -140,7 +140,7 @@ $encrypted = 'V pnzr, V fnj, V pbadhrerq.';
 $garble->unserialize($encrypted);
 
 echo $garble->getData(); // "I came, I saw, I conquered."
-``` 
+```
 
 ## Serializer Factory
 Although all serializer classes can be instantiated using the `new` keyword, Phalcon offers the [Phalcon\Storage\SerializerFactory][storage-serializerfactory] class, so that developers can easily instantiate serializer classes. All the above serializers are registered in the factory and lazy loaded when called. The factory also allows you to register additional (custom) serializer classes. The only thing to consider is choosing the name of the serializer in comparison to the existing ones. If you define the same name, you will overwrite the built-in one. The objects are cached in the factory so if you call the `newInstance()` method with the same parameters during the same request, you will get the same object back.
@@ -150,7 +150,7 @@ The example below shows how you can create a `Json` serializer either using the 
 ```php
 <?php
 
-use Phalcon\Storage\Serializer\Json; 
+use Phalcon\Storage\Serializer\Json;
 use Phalcon\Storage\SerializerFactory;
 
 $jsonSerializer = new Json();
@@ -487,7 +487,7 @@ class Custom implements AdapterInterface
     }
 
     /**
-     * Returns all the keys stored. If a filter has been passed the 
+     * Returns all the keys stored. If a filter has been passed the
      * keys that match the filter will be returned
      */
     public function getKeys(string $prefix = ""): array
@@ -540,7 +540,7 @@ use MyApp\Storage\Adapter\Custom;
 $custom = new Custom();
 
 $custom->set('my-key', $data);
-``` 
+```
 
 ## Adapter Factory
 Although all adapter classes can be instantiated using the `new` keyword, Phalcon offers the [Phalcon\Storage\AdapterFactory][storage-adapterfactory] class, so that you can easily instantiate cache adapter classes. All the above adapters are registered in the factory and lazy loaded when called. The factory also allows you to register additional (custom) adapter classes. The only thing to consider is choosing the name of the adapter in comparison to the existing ones. If you define the same name, you will overwrite the built-in one. The objects are cached in the factory so if you call the `newInstance()` method with the same parameters during the same request, you will get the same object back.

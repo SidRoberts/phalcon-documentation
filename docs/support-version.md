@@ -31,7 +31,7 @@ $version = new Version();
 
 var_dump($version->getVersion);
 // 5.0.0RC4
-// [5, 0, 0, 3, 4] 
+// [5, 0, 0, 3, 4]
 ```
 
 ```php

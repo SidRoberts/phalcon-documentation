@@ -261,10 +261,10 @@ class IndexController extends Controller
     {
         try {
             $adapter = new Memory();
-            
+
             $reflector   = $adapter->get('Invoices');
             $annotations = $reflector->getClassAnnotations();
-            
+
             foreach ($annotations as $annotation) {
                 echo $annotation->getExpression('unknown-expression');
             }
@@ -315,7 +315,7 @@ use MyApp\Components\Auth;
 
 /**
  * @property Apcu $annotations
- * @property Auth $auth 
+ * @property Auth $auth
  */
 class BaseController extends Controller
 {
@@ -339,7 +339,7 @@ class BaseController extends Controller
             ->getClassAnnotations()
             ->has('Private')
         ;
-        
+
         if (!$exists) {
             return true;
         }
@@ -369,7 +369,7 @@ namespace MyApp\Controllers;
 use MyApp\Controllers\BaseController;
 
 /**
- * @Private(true) 
+ * @Private(true)
  */
 class Invoices extends BaseController
 {
@@ -419,7 +419,7 @@ use MyApp\Components\Auth;
 
 /**
  * @property Apcu $annotations
- * @property Auth $auth 
+ * @property Auth $auth
  */
 class BaseController extends Controller
 {
@@ -444,7 +444,7 @@ class BaseController extends Controller
 
         $user   = $this->acl->getUser();
         $groups = $user->getRelated('groups');
-        
+
         $userGroups = [];
         foreach ($groups as $group) {
             $userGroups[] = $group->grp_name;
@@ -452,7 +452,7 @@ class BaseController extends Controller
 
         $allowed = array_intersect($userGroups, $aclGroups);
         $allowed = (count($allowed) > 0);
-        
+
         if ($allowed) {
             return true;
         }
@@ -478,7 +478,7 @@ namespace MyApp\Controllers;
 use MyApp\Controllers\BaseController;
 
 /**
- * @Private(true) 
+ * @Private(true)
  */
 class Invoices extends BaseController
 {

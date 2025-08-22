@@ -20,7 +20,7 @@ The following configuration will be used:
 | VirtualHost directory | `/shared/httpd/my-phalcon`                        |
 | Database              | n.a.                                              |
 | `TLD_SUFFIX`          | loc                                               |
-| Project URL           | `http://my-phalcon.loc`, `https://my-phalcon.loc` |                          
+| Project URL           | `http://my-phalcon.loc`, `https://my-phalcon.loc` |
 
 
 !!! info "NOTE"

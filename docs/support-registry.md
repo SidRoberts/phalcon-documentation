@@ -119,8 +119,8 @@ echo $collection->get('year', 1987, true); // 1987
 
 ```php
 public function get(
-    string $element, 
-    mixed $defaultValue = null, 
+    string $element,
+    mixed $defaultValue = null,
     string $cast = null
 ):  mixed
 ```
@@ -214,7 +214,7 @@ You can use `__set($element, $value)` but it is not advisable as it is much slow
 $collection->__set('year', 1987);
 $collection['year'] = 1987;
 $collection->offsetSet('year', 1987);
-$collection->set('year', 1987); 
+$collection->set('year', 1987);
 ```
 
 ## Remove
@@ -251,7 +251,7 @@ You can use `__unset($element)` but it is not advisable as it is much slower tha
 $collection->__unset('year');
 unset($collection['year']);
 $collection->offsetUnset('year');
-$collection->remove('year'); 
+$collection->remove('year');
 ```
 
 ```php
@@ -323,7 +323,7 @@ $data = [
 
 $collection = new Registry($data);
 
-echo $collection->serialize();    
+echo $collection->serialize();
 // a:2:{s:6:"colors";a:3:{i:0;s:3:"red";
 // i:1;s:5:"green";i:2;s:4:"blue";}s:4:"year";i:1987;}
 

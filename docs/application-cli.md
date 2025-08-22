@@ -121,7 +121,7 @@ CLI applications need a specific dispatcher. `Phalcon\Cli\Dispatcher` offers the
 
 ```php
 $container->setShared(
-    'config', 
+    'config',
     function () {
         return include 'app/config/config.php';
     }

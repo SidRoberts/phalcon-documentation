@@ -12,14 +12,14 @@ use Phalcon\Mvc\Url;
 $url = new Url();
 
 $url->setBaseUri("/portal/");
-echo $url->get("invoices/edit/1"); // /portal/invoices/edit/1 
+echo $url->get("invoices/edit/1"); // /portal/invoices/edit/1
 
 echo $url->get(
     [
         "for"   => "invoices-edit", // route name
         "title" => "Edit Invoice",  // title
         "id"    => 1,               // route parameter
-    ]                             
+    ]
 );
 ```
 

@@ -9,7 +9,7 @@
 
 !!! danger "NOTE"
 
-    **DOES NOT** support insecure algorithms with modes: 
+    **DOES NOT** support insecure algorithms with modes:
 
     `des*`, `rc2*`, `rc4*`, `des*`, `*ecb`
 
@@ -94,7 +94,7 @@ The `encrypt()` method encrypts a string. The component will use the previously 
 
 use Phalcon\Encryption\Crypt;
 
-$key   = "12345"; 
+$key   = "12345";
 $crypt = new Crypt();
 $crypt->setKey($key);
 
@@ -109,7 +109,7 @@ or using the key as the second parameter
 
 use Phalcon\Encryption\Crypt;
 
-$key       = "12345"; 
+$key       = "12345";
 $crypt     = new Crypt();
 $text      = 'This is the text that you want to encrypt.';
 $encrypted = $crypt->encrypt($text, $key);
@@ -129,7 +129,7 @@ The `decrypt()` method decrypts a string. Similar to `encrypt()` the component w
 
 use Phalcon\Encryption\Crypt;
 
-$key   = "12345"; 
+$key   = "12345";
 $crypt = new Crypt();
 $crypt->setKey($key);
 
@@ -144,7 +144,7 @@ or using the key as the second parameter
 
 use Phalcon\Encryption\Crypt;
 
-$key   = "12345"; 
+$key   = "12345";
 $crypt = new Crypt();
 $crypt->setKey($key);
 
@@ -202,7 +202,7 @@ The component offers a getter and a setter for the key to be used. Once the key 
 
 !!! danger "NOTE"
 
-    You should always create as secure keys as possible. `12345` might be good for your luggage combination, or `password1` for your email, but for your application, you should try something a lot more complex. The longer and more random the key is the better. The length of course depends on the chosen cipher. 
+    You should always create as secure keys as possible. `12345` might be good for your luggage combination, or `password1` for your email, but for your application, you should try something a lot more complex. The longer and more random the key is the better. The length of course depends on the chosen cipher.
 
     Several online services can generate random and strong text that can be used for a key. Alternatively, you can always use the `hash()` methods from the [Phalcon\Security][encryption-security] component, which can offer a strong key by hashing a string.
 
@@ -310,8 +310,8 @@ You can use them in your project or override them if you want to implement your 
 
 ```php
 public function __construct(
-    string $cipher = self::DEFAULT_CIPHER, 
-    bool $useSigning = true, 
+    string $cipher = self::DEFAULT_CIPHER,
+    bool $useSigning = true,
     PadFactory $padFactory = null
 )
 ```
@@ -324,8 +324,8 @@ Decrypt an encrypted text
 
 ```php
 public function decryptBase64(
-    string $input, 
-    string $key = null, 
+    string $input,
+    string $key = null,
     bool $safe = false
 ): string
 ```
@@ -338,8 +338,8 @@ Encrypt a text
 
 ```php
 public function encryptBase64(
-    string $input, 
-    string $key = null, 
+    string $input,
+    string $key = null,
     bool $safe = false
 ): string
 ```

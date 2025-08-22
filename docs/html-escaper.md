@@ -120,7 +120,7 @@ $escaper = new Escaper();
 
 $css = '"><script>alert(1)</script><a href="#';
 echo $escaper->css($css);
-// \22 \3e \3c script\3e alert\28 1\29 \3c \2f script\3e \3c a\20 href\3d \22 \23 
+// \22 \3e \3c script\3e alert\28 1\29 \3c \2f script\3e \3c a\20 href\3d \22 \23
 ```
 
 HTML syntax:
@@ -197,7 +197,7 @@ use Phalcon\Html\Escaper;
 
 $escaper = new Escaper();
 
-echo $escaper->normalizeEncoding('ḂḃĊċḊḋḞḟĠġṀṁ');  
+echo $escaper->normalizeEncoding('ḂḃĊċḊḋḞḟĠġṀṁ');
 ```
 
 ### `setEncoding()`
@@ -271,7 +271,7 @@ class IndexController extends Controller
     public function index()
     {
         try {
-            echo $this->escaper->normalizeEncoding('ḂḃĊċḊḋḞḟĠġṀṁ');  
+            echo $this->escaper->normalizeEncoding('ḂḃĊċḊḋḞḟĠġṀṁ');
         } catch (Exception $ex) {
             echo $ex->getMessage();
         }

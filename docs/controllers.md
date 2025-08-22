@@ -430,11 +430,11 @@ class InvoicesController extends Controller
                 ->request
                 ->getPost('perPage', 'int', 25)
             ;
-            
+
             // ......
-            
+
             $data = $records->toArray();
-            
+
             $this
                 ->response
                 ->setStatusCode(200, 'OK')
@@ -478,9 +478,9 @@ class InvoicesController extends Controller
                 ->request
                 ->getPost('perPage', 'int', 25)
             ;
-            
+
             // ......
-            
+
             return $records->toArray();
         }
     }
@@ -490,7 +490,7 @@ class InvoicesController extends Controller
         $this->view->disable();
         $this->response->setContentType('application/json', 'UTF-8');
         $this->response->setHeader('Cache-Control', 'no-store');
-        
+
         /** @var array $data */
         $data = $dispatcher->getReturnedValue();
         $dispatcher->setReturnedValue([]);
@@ -570,9 +570,9 @@ class InvoicesController extends Controller
                 ->request
                 ->getPost('perPage', 'int', 25)
             ;
-            
+
             // ......
-            
+
             return $records->toArray();
         }
     }
@@ -582,7 +582,7 @@ class InvoicesController extends Controller
         $this->view->disable();
         $this->response->setContentType('application/json', 'UTF-8');
         $this->response->setHeader('Cache-Control', 'no-store');
-        
+
         /** @var array $data */
         $data = $dispatcher->getReturnedValue();
         $dispatcher->setReturnedValue([]);

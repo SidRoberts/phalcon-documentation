@@ -13,7 +13,7 @@ In this tutorial, you will learn how to create a simple application that provide
 
 !!! warning "NOTE"
 
-    This is just a sample application. It lacks a lot of features such as authentication, authorization, sanitization of input, and error management to name a few. Please use it as a building block for your application, or as a tutorial to understand how you can build a REST API with Phalcon. You can also have a look at the [rest-api][rest-api] project. 
+    This is just a sample application. It lacks a lot of features such as authentication, authorization, sanitization of input, and error management to name a few. Please use it as a building block for your application, or as a tutorial to understand how you can build a REST API with Phalcon. You can also have a look at the [rest-api][rest-api] project.
 
 ## Methods
 The API consists of the following methods:
@@ -137,7 +137,7 @@ class Robots extends Model
     public function validation()
     {
         $validator = new Validation();
-        
+
         $validator->add(
             "type",
             new InclusionIn(
@@ -167,7 +167,7 @@ class Robots extends Model
                 new Message('The year cannot be less than zero')
             );
         }
-        
+
         // Validate the validator
         return $this->validate($validator);
     }

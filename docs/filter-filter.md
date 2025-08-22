@@ -332,7 +332,7 @@ use Phalcon\Mvc\Controller;
 
 /**
  * Class ProductsController
- * 
+ *
  * @property Request $request
  */
 class ProductsController extends Controller
@@ -364,7 +364,7 @@ use Phalcon\Mvc\Controller;
 
 /**
  * Class ProductsController
- * 
+ *
  * @property Filter $filter
  */
 class ProductsController extends Controller
@@ -499,7 +499,7 @@ use Phalcon\Mvc\Controller;
 
 /**
  * Class ProductsController
- * 
+ *
  * @property Request $request
  */
 class ProductsController extends Controller

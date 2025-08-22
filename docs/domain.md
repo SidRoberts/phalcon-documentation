@@ -105,9 +105,9 @@ class ReportsController extends Controller
                 'bind'       => [
                     'reportId' => $reportId,
                  ],
-            ]          
+            ]
         );
-        
+
         if (false === $report) {
             $payload
                 ->setStatus(Status::NOT_FOUND)
@@ -122,7 +122,7 @@ class ReportsController extends Controller
 
         return $payload;
     }
-}   
+}
 ```
 
 ## Links

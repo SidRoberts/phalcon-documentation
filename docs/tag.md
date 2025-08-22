@@ -36,7 +36,7 @@ use Phalcon\Tag;
 
 Tag::setDocType(Tag::XHTML20);
 
-echo Tag::getDocType(); 
+echo Tag::getDocType();
 ```
 
 The above example will produce:
@@ -114,7 +114,7 @@ The parameters can be:
 
 use Phalcon\Tag;
 
-echo Tag::friendlyTitle('Phalcon Framework'); 
+echo Tag::friendlyTitle('Phalcon Framework');
 // 'Phalcon-Framework';
 
 echo Tag::friendlyTitle(
@@ -134,7 +134,7 @@ echo Tag::friendlyTitle(
             'a' => 'x',
             'e' => 'x',
             'o' => 'x',
-        ] 
+        ]
     ]
 ); // 'phxlcxn_frxmxwxrk
 ```
@@ -224,13 +224,13 @@ Tag::prependTitle('Hello');
 Tag::setTitle('World');
 Tag::appendTitle('from Phalcon');
 
-echo Tag::renderTitle();             
+echo Tag::renderTitle();
 // '<title>Hello World from Phalcon</title>';
-echo Tag::renderTitle(false);        
+echo Tag::renderTitle(false);
 // '<title>World from Phalcon</title>';
-echo Tag::renderTitle(true, false);  
+echo Tag::renderTitle(true, false);
 // '<title>Hello World</title>';
-echo Tag::renderTitle(false, false); 
+echo Tag::renderTitle(false, false);
 // '<title>World</title>';
 ```
 
@@ -279,7 +279,7 @@ HTML syntax:
 ```php
 <?php echo $this->tag->checkField(
     [
-        'terms', 
+        'terms',
         'value' => 'Y',
     ]
 ); ?>
@@ -371,7 +371,7 @@ echo Tag::dateTimeField(
     ]
 );
 
-// <input type='datetime' id='born' name='born' 
+// <input type='datetime' id='born' name='born'
 //        value='1980-01-01 01:02:03' />
 ```
 
@@ -405,7 +405,7 @@ echo Tag::dateTimeLocalField(
     ]
 );
 
-// <input type='datetime-local' id='born' name='born' 
+// <input type='datetime-local' id='born' name='born'
 //        value='1980-01-01 01:02:03' />
 ```
 
@@ -964,7 +964,7 @@ echo Tag::select(
         'invoiceId',
         $resultset,
         'using'      => [
-            'inv_id', 
+            'inv_id',
             'inv_title',
         ],
         'useEmpty'   => true,
@@ -987,7 +987,7 @@ HTML syntax:
         'invoiceId',
         $resultset,
         'using'      => [
-            'inv_id', 
+            'inv_id',
             'inv_title',
         ],
         'useEmpty'   => true,
@@ -1004,7 +1004,7 @@ Volt syntax:
         'invoiceId',
         $resultset,
         'using'      : [
-            'inv_id', 
+            'inv_id',
             'inv_title',
         ],
         'useEmpty'   : true,
@@ -1095,14 +1095,14 @@ The `tagHtml()` accepts the following parameters
 use Phalcon\Tag;
 
 echo Tag::tagHtml(
-    'canvas', 
+    'canvas',
     [
-        'id'    => 'canvas1', 
-        'width' => '300', 
+        'id'    => 'canvas1',
+        'width' => '300',
         'class' => 'cnvclass',
-    ], 
-    false, 
-    true, 
+    ],
+    false,
+    true,
     true
 );
 
@@ -1116,22 +1116,22 @@ echo Tag::tagHtmlClose('canvas');
 
 HTML syntax:
 ```php
-<?php 
+<?php
 
 echo $this->tag->tagHtml(
-    'canvas', 
+    'canvas',
     [
-        'id'    => 'canvas1', 
-        'width' => '300', 
+        'id'    => 'canvas1',
+        'width' => '300',
         'class' => 'cnvclass',
-    ], 
-    false, 
-    true, 
+    ],
+    false,
+    true,
     true
 );
 
 echo 'This is my canvas';
-echo $this->tag->tagHtmlClose('canvas'); 
+echo $this->tag->tagHtmlClose('canvas');
 
 ?>
 ```
@@ -1161,8 +1161,8 @@ echo Tag::stylesheetLink(
     'https://fonts.googleapis.com/css?family=Rosario',
     false
 );
-// <link rel='stylesheet' 
-//       href='https://fonts.googleapis.com/css?family=Rosario' 
+// <link rel='stylesheet'
+//       href='https://fonts.googleapis.com/css?family=Rosario'
 //       type='text/css'>
 
 echo Tag::stylesheetLink(
@@ -1172,8 +1172,8 @@ echo Tag::stylesheetLink(
     ],
     false
 );
-// <link rel='stylesheet' 
-//       href='https://fonts.googleapis.com/css?family=Rosario' 
+// <link rel='stylesheet'
+//       href='https://fonts.googleapis.com/css?family=Rosario'
 //       type='text/css'>
 ```
 
@@ -1182,14 +1182,14 @@ HTML syntax
 ```php
 <?php echo $this->tag->stylesheetLink('css/style.css'); ?>
 
-<?php 
+<?php
 
 echo $this->tag->stylesheetLink(
     'https://fonts.googleapis.com/css?family=Rosario',
     false
 ); ?>
 
-<?php 
+<?php
 
 echo $this->tag->stylesheetLink(
     [
@@ -1205,9 +1205,9 @@ Volt Syntax:
 ```php
 {{ stylesheet_link('css/style.css') }}
 {{ stylesheet_link(
-        'https://fonts.googleapis.com/css?family=Rosario', 
+        'https://fonts.googleapis.com/css?family=Rosario',
         false
-    ) 
+    )
 }}
 {{ stylesheet_link(
         [
@@ -1215,7 +1215,7 @@ Volt Syntax:
             'class' : 'some-class',
         ],
         false
-    ) 
+    )
 }}
 ```
 
@@ -1234,7 +1234,7 @@ echo Tag::javascriptInclude(
     'https://code.jquery.com/jquery/jquery.min.js',
     false
 );
-// <script src='https://code.jquery.com/jquery/jquery.min.js' 
+// <script src='https://code.jquery.com/jquery/jquery.min.js'
 //         type='text/javascript'></script>
 
 echo Tag::javascriptInclude(
@@ -1244,7 +1244,7 @@ echo Tag::javascriptInclude(
     ],
     false
 );
-// <script src='https://code.jquery.com/jquery/jquery.min.js' 
+// <script src='https://code.jquery.com/jquery/jquery.min.js'
 //         type='application/javascript'></script>
 ```
 
@@ -1253,14 +1253,14 @@ HTML syntax
 ```php
 <?php echo $this->tag->javascriptInclude('js/jquery.js'); ?>
 
-<?php 
+<?php
 
 echo $this->tag->javascriptInclude(
     'https://fonts.googleapis.com/css?family=Rosario',
     false
 ); ?>
 
-<?php 
+<?php
 
 echo $this->tag->javascriptInclude(
     [
@@ -1276,9 +1276,9 @@ Volt Syntax:
 ```php
 {{ javascript_include('js/jquery.js') }}
 {{ javascript_include(
-        'https://code.jquery.com/jquery/jquery.min.js', 
+        'https://code.jquery.com/jquery/jquery.min.js',
         false
-    ) 
+    )
 }}
 {{ javascript_include(
         [
@@ -1286,7 +1286,7 @@ Volt Syntax:
             'type' : 'application/javascript',
         ],
         false
-    ) 
+    )
 }}
 ```
 
@@ -1333,7 +1333,7 @@ echo Tag::linkTo('https://phalcon.io/', 'Phalcon', false);
 
 HTML syntax:
 ```php
-<?php 
+<?php
 
 echo $this->tag->linkTo('signup/register', 'Register Here!');
 
@@ -1385,11 +1385,11 @@ use Phalcon\Tag;
 
 echo Tag::linkTo(
     [
-        [   
-            'for'   => 'invoice-view', 
-            'title' => 12345, 
+        [
+            'for'   => 'invoice-view',
+            'title' => 12345,
             'name'  => 'invoice-12345'
-        ], 
+        ],
         'Show Invoice'
     ]
 );
@@ -1397,15 +1397,15 @@ echo Tag::linkTo(
 
 HTML syntax:
 ```php
-<?php 
+<?php
 
 echo $this->tag->linkTo(
     [
-        [   
-            'for'   => 'invoice-view', 
-            'title' => 12345, 
+        [
+            'for'   => 'invoice-view',
+            'title' => 12345,
             'name'  => 'invoice-12345'
-        ], 
+        ],
         'Show Invoice'
     ]
 );
@@ -1417,11 +1417,11 @@ Volt syntax:
 ```twig
 {{ link_to('signup/register', 'Register Here!') }}
 {{ link_to(
-    [   
-        'for'   : 'invoice-view', 
-        'title' : 12345, 
+    [
+        'for'   : 'invoice-view',
+        'title' : 12345,
         'name'  : 'invoice-12345'
-    ], 
+    ],
     'Show Invoice',
     'class': 'edit-btn'
 ) }}
@@ -1437,7 +1437,7 @@ use Phalcon\Tag;
 
 echo Tag::form(
     [
-        '/admin/invoices/create', 
+        '/admin/invoices/create',
         'method' => 'post',
         'class'  => 'input'
     ]
@@ -1454,11 +1454,11 @@ echo Tag::endForm();
 
 HTML syntax:
 ```php
-<?php 
+<?php
 
 echo $this->tag->form(
     [
-        '/admin/invoices/create', 
+        '/admin/invoices/create',
         'method' => 'post',
         'class'  => 'input'
     ]
@@ -1474,7 +1474,7 @@ Volt syntax:
 ```twig
 {{ form(
     [
-        '/admin/invoices/create', 
+        '/admin/invoices/create',
         'method' : 'post',
         'class'  : 'input'
     ]
@@ -1498,12 +1498,12 @@ Tag::setDefault('framework', 'Phalcon');
 
 echo Tag::textField(
     [
-        'framework', 
+        'framework',
         'class'  => 'input'
     ]
 );
 
-// <input type='text' id='framework' name='framework' 
+// <input type='text' id='framework' name='framework'
 //        value='Phalcon' class='class' />
 ```
 
@@ -1524,22 +1524,22 @@ Tag::setDefaults(
 
 echo Tag::textField(
     [
-        'framework', 
+        'framework',
         'class'  => 'input'
     ]
 );
 
-// <input type='text' id='framework' name='framework' 
+// <input type='text' id='framework' name='framework'
 //        value='Phalcon' class='class' />
 
 echo Tag::textField(
     [
-        'version', 
+        'version',
         'class'  => 'input'
     ]
 );
 
-// <input type='text' id='version' name='version' 
+// <input type='text' id='version' name='version'
 //        value='4.0' class='class' />
 ```
 
@@ -1604,11 +1604,11 @@ use Phalcon\Tag;
 echo Tag::textField(
     [
         'framework',
-        'value' => '<h1>hello</h1>', 
+        'value' => '<h1>hello</h1>',
     ]
 );
 
-// <input type="text" id="framework" name="framework" 
+// <input type="text" id="framework" name="framework"
 //        value="&lt;h1&gt;hello&lt;/h1&gt;" />
 
 Tag::setAutoescape(false);
@@ -1616,11 +1616,11 @@ Tag::setAutoescape(false);
 echo Tag::textField(
     [
         'framework',
-        'value' => '<h1>hello</h1>', 
+        'value' => '<h1>hello</h1>',
     ]
 );
 
-// <input type="text" id="framework" name="framework" 
+// <input type="text" id="framework" name="framework"
 //        value="<h1>hello</h1>" />
 ```
 

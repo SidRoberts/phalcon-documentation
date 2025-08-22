@@ -210,10 +210,10 @@ The ORM provides an API to create your own behaviors. A behavior must be a class
 
 The [Phalcon\Mvc\Model\BehaviorInterface][mvc-model-behaviorinterface] requires two methods to be present in your custom behavior:
 
-```php 
+```php
 public function missingMethod(
-    ModelInterface $model, 
-    string $method, 
+    ModelInterface $model,
+    string $method,
     array $arguments = []
 )
 ```
@@ -222,7 +222,7 @@ This method acts as a fallback when a missing method is called on the model
 
 ```php
 public function notify(
-    string $type, 
+    string $type,
     ModelInterface $model
 )
 ```

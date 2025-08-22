@@ -50,7 +50,7 @@ Each adapter offers getters to provide information about the component:
 | `getMime(): string`     | Returns the image mime type                       |
 | `getRealpath(): string` | Returns the real path where the image is located  |
 | `getType(): int`        | Returns the image type (This is driver dependent) |
-| `getWidth(): int`       | Returns the image width                           | 
+| `getWidth(): int`       | Returns the image width                           |
 
 ## GD
 [Phalcon\Image\Adapters\Gd][image-adapter-gd] utilizes the [GD PHP extension][gd]. In order for you to use this adapter, the extension has to be present in your system. The adapter offers all the methods described below in the operations section.
@@ -147,7 +147,7 @@ This method is only available in the [Phalcon\Image\Imagick][image-adapter-imagi
 
 | Parameter       | Description                                                                                                     |
 |-----------------|-----------------------------------------------------------------------------------------------------------------|
-| `int $width`    | the new width                                                                                                   | 
+| `int $width`    | the new width                                                                                                   |
 | `int $height`   | the new height                                                                                                  |
 | `int $deltaX`   | How much the seam can traverse on x-axis. Passing `0` causes the seams to be straight. (optional - default `0`) |
 | `int $rigidity` | Introduces a bias for non-straight seams. (optional - default `0`)                                              |
@@ -450,8 +450,8 @@ You can add text to your image by calling `text()`. The available parameters are
 | Property                  | Description                                                 |
 |---------------------------|-------------------------------------------------------------|
 | `string $text`            | the text                                                    |
-| `int|false $offsetX` | the X offset, `false` to disable                            | 
-| `int|false $offsetY` | the Y offset, `false` to disable                            | 
+| `int|false $offsetX` | the X offset, `false` to disable                            |
+| `int|false $offsetY` | the Y offset, `false` to disable                            |
 | `int $opacity`            | the opacity of the text (optional - default `100`)          |
 | `string $color`           | the color for the text (optional - default `"000000"`)      |
 | `int $size`               | the size of the font for the text (optional - default `12`) |
@@ -484,7 +484,7 @@ Adds a watermark to an image. The available parameters are:
 |-------------------------------|-----------------------------------------------------|
 | `AdapterInterface $watermark` | the image to use for the watermark                  |
 | `int $offsetX`                | the X offset (optional)                             |
-| `int $offsetY`                | the Y offset (optional)                             | 
+| `int $offsetY`                | the Y offset (optional)                             |
 | `int $opacity`                | the opacity of the image (optional - default `100`) |
 
 The following example puts the watermark in the top left corner of the image:
@@ -629,7 +629,7 @@ class MyImageAdapter implements AdapterInterface
      * Manipulate the background
      */
     public function background(
-        string $color, 
+        string $color,
         int $opacity = 100
     );
 
@@ -642,9 +642,9 @@ class MyImageAdapter implements AdapterInterface
      * Crop the image
      */
     public function crop(
-        int $width, 
-        int $height, 
-        int $offsetX = null, 
+        int $width,
+        int $height,
+        int $offsetX = null,
         int $offsetY = null
     );
 
@@ -667,8 +667,8 @@ class MyImageAdapter implements AdapterInterface
      * Add a reflection to the image
      */
     public function reflection(
-        int $height, 
-        int $opacity = 100, 
+        int $height,
+        int $opacity = 100,
         bool $fadeIn = false
     );
 
@@ -676,7 +676,7 @@ class MyImageAdapter implements AdapterInterface
      * Render the image
      */
     public function render(
-        string $ext = null, 
+        string $ext = null,
         int $quality = 100
     );
 
@@ -684,8 +684,8 @@ class MyImageAdapter implements AdapterInterface
      * Resize the image
      */
     public function resize(
-        int $width = null, 
-        int $height = null, 
+        int $width = null,
+        int $height = null,
         int $master = Enum::AUTO
     );
 
@@ -708,12 +708,12 @@ class MyImageAdapter implements AdapterInterface
      * Add text to the image
      */
     public function text(
-        string $text, 
-        int $offsetX = 0, 
-        int $offsetY = 0, 
-        int $opacity = 100, 
-        string $color = "000000", 
-        int $size = 12, 
+        string $text,
+        int $offsetX = 0,
+        int $offsetY = 0,
+        int $opacity = 100,
+        string $color = "000000",
+        int $size = 12,
         string $fontfile = null
     );
 
@@ -721,9 +721,9 @@ class MyImageAdapter implements AdapterInterface
      * Add a watermark to the image
      */
     public function watermark(
-        AdapterInterface $watermark, 
-        int $offsetX = 0, 
-        int $offsetY = 0, 
+        AdapterInterface $watermark,
+        int $offsetX = 0,
+        int $offsetY = 0,
         int $opacity = 100
     );
 }
